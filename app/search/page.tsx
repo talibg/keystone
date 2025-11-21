@@ -10,11 +10,12 @@ export const metadata: Metadata = {
 };
 
 type SearchPageProps = {
-  searchParams: { q?: string };
+  searchParams: Promise<{ q?: string }>;
 };
 
-export default function SearchPage({ searchParams }: SearchPageProps) {
-  const query = searchParams.q?.trim() ?? "";
+export default async function SearchPage({ searchParams }: SearchPageProps) {
+  const { q } = await searchParams;
+  const query = q?.trim() ?? "";
   const searchTerm = query.toLowerCase();
   const allFallacies = getAllFallacies();
 

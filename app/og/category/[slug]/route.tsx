@@ -1,14 +1,16 @@
 import { ImageResponse } from "next/og";
+import type { NextRequest } from "next/server";
 import type { FallacyCategorySlug } from "@/data/fallacies";
 import { getCategoryBySlug, getFallaciesByCategory } from "@/lib/fallacies";
 
 export const runtime = "edge";
 
 export async function GET(
-  _request: Request,
-  { params }: { params: { slug: string } },
+  _request: NextRequest,
+  context: { params: Promise<{ slug: string }> },
 ) {
-  const category = getCategoryBySlug(params.slug as FallacyCategorySlug);
+  const { slug } = await context.params;
+  const category = getCategoryBySlug(slug as FallacyCategorySlug);
 
   if (!category) {
     return new Response("Not found", { status: 404 });

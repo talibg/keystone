@@ -1,13 +1,15 @@
 import { ImageResponse } from "next/og";
+import type { NextRequest } from "next/server";
 import { getFallacyBySlug } from "@/lib/fallacies";
 
 export const runtime = "edge";
 
 export async function GET(
-  _request: Request,
-  { params }: { params: { slug: string } },
+  _request: NextRequest,
+  context: { params: Promise<{ slug: string }> },
 ) {
-  const fallacy = getFallacyBySlug(params.slug);
+  const { slug } = await context.params;
+  const fallacy = getFallacyBySlug(slug);
 
   if (!fallacy) {
     return new Response("Not found", { status: 404 });
