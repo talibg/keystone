@@ -2,8 +2,8 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Logical Fallacies Guide",
-    short_name: "Fallacies",
+    name: "The Fallacy Guide",
+    short_name: "Fallacy Guide",
     description: "Master the art of logic and identify flaws in reasoning.",
     start_url: "/",
     display: "standalone",

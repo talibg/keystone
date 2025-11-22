@@ -3,7 +3,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { categories } from "@/data/fallacies";
 
 export const metadata = {
-  title: "Types of Logical Fallacies – Logical Fallacies Guide",
+  title: "Fallacies in Everyday Argument",
   description:
     "Explore fallacies grouped by type and category for faster scanning.",
 };

@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getAllCategories, getAllFallacies } from "@/lib/fallacies";
 
-const baseUrl = "https://logicalfallacies.guide";
+const baseUrl = "https://fallacyguide.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const fallacies = getAllFallacies();
@@ -71,10 +71,34 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/search`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.85,
+    },
+    {
       url: `${baseUrl}/about`,
       lastModified: new Date(),
       changeFrequency: "yearly",
       priority: 0.5,
+    },
+    {
+      url: `${baseUrl}/contact`,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.5,
+    },
+    {
+      url: `${baseUrl}/privacy`,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/terms`,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.3,
     },
     ...fallacyUrls,
     ...categoryUrls,

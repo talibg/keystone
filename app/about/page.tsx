@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "About – Logical Fallacies Guide",
+  title: "About",
   description:
     "Why this guide exists, how it is maintained, and how to use it responsibly.",
 };
@@ -8,10 +8,10 @@ export default function AboutPage() {
   return (
     <div className="space-y-6">
       <h1 className="text-3xl font-semibold text-foreground">
-        About Logical Fallacies Guide
+        About The Fallacy Guide
       </h1>
       <p className="text-muted-foreground">
-        Logical Fallacies Guide is a concise reference to common reasoning
+        The Fallacy Guide is a concise reference to common reasoning
         errors. It is maintained in-repo with static data so it can be reviewed,
         improved, and extended without external dependencies.
       </p>

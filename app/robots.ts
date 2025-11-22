@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://logicalfallacies.guide/sitemap.xml",
+    sitemap: "https://fallacyguide.com/sitemap.xml",
   };
 }

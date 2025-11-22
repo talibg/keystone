@@ -29,7 +29,7 @@ type FallacyPageProps = {
   params: Promise<{ slug: string }>;
 };
 
-const siteUrl = "https://logicalfallacies.guide";
+const siteUrl = "https://fallacyguide.com";
 const defaultOgImage = `${siteUrl}/og-default.svg`;
 const WORDS_PER_MINUTE = 220;
 
@@ -51,7 +51,7 @@ export async function generateMetadata({
 
   if (!fallacy) {
     return {
-      title: "Fallacy not found – Logical Fallacies Guide",
+      title: "Fallacy not found – The Fallacy Guide",
     };
   }
 

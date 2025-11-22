@@ -28,24 +28,24 @@ export async function generateMetadata({
 
   if (!category) {
     return {
-      title: "Category not found – Logical Fallacies Guide",
+      title: "Category not found – The Fallacy Guide",
     };
   }
 
   return {
-    title: `${category.name} – Logical Fallacies Guide`,
+    title: `${category.name} – The Fallacy Guide`,
     description: `${category.description} Explore the common mistakes in this group and how to spot them quickly.`,
     openGraph: {
-      title: `${category.name} – Logical Fallacies Guide`,
+      title: `${category.name} – The Fallacy Guide`,
       description: category.description,
-      url: `https://logicalfallacies.guide/categories/${category.slug}`,
-      images: [`https://logicalfallacies.guide/og/category/${category.slug}`],
+      url: `https://fallacyguide.com/categories/${category.slug}`,
+      images: [`https://fallacyguide.com/og/category/${category.slug}`],
     },
     twitter: {
       card: "summary_large_image",
-      title: `${category.name} – Logical Fallacies Guide`,
+      title: `${category.name} – The Fallacy Guide`,
       description: category.description,
-      images: [`https://logicalfallacies.guide/og/category/${category.slug}`],
+      images: [`https://fallacyguide.com/og/category/${category.slug}`],
     },
   };
 }
@@ -67,19 +67,19 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://logicalfallacies.guide",
+        item: "https://fallacyguide.com",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Categories",
-        item: "https://logicalfallacies.guide/categories",
+        item: "https://fallacyguide.com/categories",
       },
       {
         "@type": "ListItem",
         position: 3,
         name: category.name,
-        item: `https://logicalfallacies.guide/categories/${category.slug}`,
+        item: `https://fallacyguide.com/categories/${category.slug}`,
       },
     ],
   };

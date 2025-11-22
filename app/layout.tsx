@@ -20,17 +20,18 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://fallacyguide.com"),
   title: {
-    template: "%s | Logical Fallacies Guide",
-    default: "Logical Fallacies Guide – Master Critical Thinking",
+    template: "%s | The Fallacy Guide",
+    default: "The Fallacy Guide – Master Critical Thinking",
   },
   description:
     "The most comprehensive and modern guide to logical fallacies. Learn to spot, understand, and counter common errors in reasoning.",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://logicalfallacies.guide",
-    siteName: "Logical Fallacies Guide",
+    url: "https://fallacyguide.com",
+    siteName: "The Fallacy Guide",
   },
 };
 
@@ -47,6 +48,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-background text-foreground flex flex-col`}
       >
+        {/* Skip Navigation for Accessibility */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-md focus:shadow-lg"
+        >
+          Skip to main content
+        </a>
+
         <ThemeProvider>
           <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60">
             <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
@@ -96,22 +105,36 @@ export default function RootLayout({
             </div>
           </header>
 
-          <main className="flex-1">
+          <main className="flex-1" id="main-content">
             <div className="mx-auto max-w-7xl px-6 py-12">{children}</div>
           </main>
 
           <footer className="border-t border-border/40 bg-muted/30">
             <div className="mx-auto max-w-7xl px-6 py-12">
               <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+
                 <div className="space-y-4">
-                  <h3 className="text-lg font-semibold text-foreground">
-                    Logical Fallacies Guide
+                  <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider">
+                    About
                   </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
-                    A modern, open-source reference for identifying and
-                    understanding errors in reasoning. Built for clarity and
-                    utility.
-                  </p>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li>
+                      <Link
+                        href="/about"
+                        className="hover:text-primary transition-colors"
+                      >
+                        About This Guide
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/contact"
+                        className="hover:text-primary transition-colors"
+                      >
+                        Contact
+                      </Link>
+                    </li>
+                  </ul>
                 </div>
 
                 <div className="space-y-4">
@@ -202,48 +225,35 @@ export default function RootLayout({
                   </ul>
                 </div>
 
-                <div className="space-y-4">
-                  <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider">
-                    About
-                  </h3>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li>
-                      <Link
-                        href="/about"
-                        className="hover:text-primary transition-colors"
-                      >
-                        About This Guide
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
 
-                <div className="space-y-4">
-                  <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider">
-                    Connect
-                  </h3>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li>
-                      <a
-                        href="https://github.com/talibg"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:text-primary transition-colors"
-                      >
-                        GitHub (@talibg)
-                      </a>
-                    </li>
-                  </ul>
-                </div>
               </div>
 
               <div className="mt-12 border-t border-border/40 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
                 <p>
-                  &copy; {new Date().getFullYear()} Logical Fallacies Guide.
-                  Open source.
+                  &copy; {new Date().getFullYear()} The Fallacy Guide by{" "}
+                  <a
+                    href="https://github.com/talibg"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-primary transition-colors"
+                  >
+                    talibg
+                  </a>
+                  .
                 </p>
                 <div className="flex gap-4">
-                  {/* Add privacy/terms links here if they exist, otherwise just placeholder or omit */}
+                  <Link
+                    href="/privacy"
+                    className="hover:text-primary transition-colors"
+                  >
+                    Privacy
+                  </Link>
+                  <Link
+                    href="/terms"
+                    className="hover:text-primary transition-colors"
+                  >
+                    Terms
+                  </Link>
                 </div>
               </div>
             </div>

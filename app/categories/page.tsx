@@ -11,7 +11,7 @@ import {
 import { getAllCategories } from "@/lib/fallacies";
 
 export const metadata = {
-  title: "Categories – Logical Fallacies Guide",
+  title: "Categories – The Fallacy Guide",
   description:
     "Explore logical fallacies by category to understand how they group together.",
 };

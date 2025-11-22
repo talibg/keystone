@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { getAllFallacies, getCategoryClasses } from "@/lib/fallacies";
 
 export const metadata = {
-  title: "Fallacies in Everyday Argument – Logical Fallacies Guide",
+  title: "Fallacies in Everyday Argument – The Fallacy Guide",
   description:
     "See common logical fallacies that show up in daily conversation, work, and media.",
 };

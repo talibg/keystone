@@ -153,7 +153,7 @@ export const fallacies: Fallacy[] = [
     typeLabel: "Relevance fallacy",
     typicalContexts: ["Debate", "Politics", "Online forums"],
     relatedSlugs: ["ad-hominem", "guilt-by-association", "poisoning-the-well"],
-    seoTitle: "Abusive Ad Hominem – Logical Fallacies Guide",
+    seoTitle: "Abusive Ad Hominem – The Fallacy Guide",
     seoDescription:
       "Abusive ad hominem attacks a speaker with insults instead of addressing the argument. Learn the pattern, examples, and counters.",
   },
@@ -198,7 +198,7 @@ export const fallacies: Fallacy[] = [
     typeLabel: "Ambiguity fallacy",
     typicalContexts: ["Media", "Advertising", "Debate"],
     relatedSlugs: ["equivocation", "quote-mining", "strawman"],
-    seoTitle: "Accent Fallacy – Logical Fallacies Guide",
+    seoTitle: "Accent Fallacy – The Fallacy Guide",
     seoDescription:
       "The accent fallacy changes meaning through emphasis or formatting. See how it misleads and how to counter it.",
   },
@@ -243,7 +243,7 @@ export const fallacies: Fallacy[] = [
     typeLabel: "Logical fallacy",
     typicalContexts: ["Debate", "Media", "Everyday conversation"],
     relatedSlugs: ["red-herring", "gish-gallop"],
-    seoTitle: "Ad Hominem Fallacy – Logical Fallacies Guide",
+    seoTitle: "Ad Hominem Fallacy – The Fallacy Guide",
     seoDescription:
       "Ad Hominem attacks the person instead of the argument. Learn the pattern, examples, and how to counter it.",
   },
@@ -289,7 +289,7 @@ export const fallacies: Fallacy[] = [
     typeLabel: "Ambiguity fallacy",
     typicalContexts: ["Media", "Legal writing", "Debate"],
     relatedSlugs: ["equivocation", "accent-fallacy", "strawman"],
-    seoTitle: "Amphiboly – Logical Fallacies Guide",
+    seoTitle: "Amphiboly – The Fallacy Guide",
     seoDescription:
       "Amphiboly uses grammatically ambiguous statements to mislead. Learn the pattern and how to clarify it.",
   },
@@ -338,7 +338,7 @@ export const fallacies: Fallacy[] = [
       "appeal-to-popularity",
       "appeal-to-common-practice",
     ],
-    seoTitle: "Appeal to Authority – Logical Fallacies Guide",
+    seoTitle: "Appeal to Authority – The Fallacy Guide",
     seoDescription:
       "Appeal to authority treats an expert’s word as proof without evidence. See when authority helps—and when it misleads.",
   },
@@ -387,7 +387,7 @@ export const fallacies: Fallacy[] = [
       "appeal-to-tradition",
       "appeal-to-authority",
     ],
-    seoTitle: "Appeal to Common Practice – Logical Fallacies Guide",
+    seoTitle: "Appeal to Common Practice – The Fallacy Guide",
     seoDescription:
       "Appeal to common practice claims something is right because it’s widespread. Learn why prevalence is not proof.",
   },
@@ -432,7 +432,7 @@ export const fallacies: Fallacy[] = [
     typeLabel: "Rhetorical appeal",
     typicalContexts: ["Policy debates", "Corporate comms", "Technology"],
     relatedSlugs: ["appeal-to-ignorance", "red-herring", "smokescreen"],
-    seoTitle: "Appeal to Complexity – Logical Fallacies Guide",
+    seoTitle: "Appeal to Complexity – The Fallacy Guide",
     seoDescription:
       "Appeal to complexity claims an issue is too complex to judge, sidestepping evidence. See how to spot and counter it.",
   },
@@ -477,7 +477,7 @@ export const fallacies: Fallacy[] = [
     typeLabel: "Relevance fallacy",
     typicalContexts: ["Debate", "Policy", "Marketing"],
     relatedSlugs: ["appeal-to-emotion", "appeal-to-fear", "appeal-to-nature"],
-    seoTitle: "Appeal to Consequences – Logical Fallacies Guide",
+    seoTitle: "Appeal to Consequences – The Fallacy Guide",
     seoDescription:
       "Appeal to consequences claims a belief is true or false because of desirable or undesirable outcomes. Learn to separate truth from wishes.",
   },
@@ -521,7 +521,7 @@ export const fallacies: Fallacy[] = [
     typeLabel: "Rhetorical appeal",
     typicalContexts: ["Marketing", "Politics", "Fundraising"],
     relatedSlugs: ["appeal-to-popularity", "slippery-slope"],
-    seoTitle: "Appeal to Emotion – Logical Fallacies Guide",
+    seoTitle: "Appeal to Emotion – The Fallacy Guide",
     seoDescription:
       "Appeal to emotion substitutes feelings for evidence. Learn the signs, dialogue examples, and ways to respond.",
   },
@@ -570,7 +570,7 @@ export const fallacies: Fallacy[] = [
       "slippery-slope",
       "appeal-to-consequences",
     ],
-    seoTitle: "Appeal to Fear – Logical Fallacies Guide",
+    seoTitle: "Appeal to Fear – The Fallacy Guide",
     seoDescription:
       "Appeal to fear uses frightening scenarios to force agreement instead of evidence. Learn to calibrate risk and respond.",
   },
@@ -614,7 +614,7 @@ export const fallacies: Fallacy[] = [
     typeLabel: "Logical fallacy",
     typicalContexts: ["Debate", "Media", "Everyday conversation"],
     relatedSlugs: ["red-herring", "gish-gallop"],
-    seoTitle: "Strawman Fallacy – Logical Fallacies Guide",
+    seoTitle: "Strawman Fallacy – The Fallacy Guide",
     seoDescription:
       "A strawman distorts an argument to knock it down. See the pattern, dialogue examples, and ways to respond.",
   },
@@ -659,7 +659,7 @@ export const fallacies: Fallacy[] = [
     typeLabel: "Logical fallacy",
     typicalContexts: ["Debate", "Media", "Everyday conversation"],
     relatedSlugs: ["ad-hominem", "gish-gallop"],
-    seoTitle: "Red Herring Fallacy – Logical Fallacies Guide",
+    seoTitle: "Red Herring Fallacy – The Fallacy Guide",
     seoDescription:
       "A red herring diverts attention with an irrelevant point. Learn how to spot the pattern and keep the discussion on track.",
   },
@@ -704,7 +704,7 @@ export const fallacies: Fallacy[] = [
     typeLabel: "Logical fallacy",
     typicalContexts: ["Debate", "Media", "Everyday conversation"],
     relatedSlugs: ["appeal-to-emotion", "false-dichotomy"],
-    seoTitle: "Appeal to Popularity – Logical Fallacies Guide",
+    seoTitle: "Appeal to Popularity – The Fallacy Guide",
     seoDescription:
       "Appeal to popularity treats consensus as proof. See examples, the pattern, and quick counters.",
   },
@@ -748,7 +748,7 @@ export const fallacies: Fallacy[] = [
     typeLabel: "Relevance fallacy",
     typicalContexts: ["Sales", "Workplace", "Politics"],
     relatedSlugs: ["appeal-to-emotion", "appeal-to-popularity"],
-    seoTitle: "Appeal to Flattery – Logical Fallacies Guide",
+    seoTitle: "Appeal to Flattery – The Fallacy Guide",
     seoDescription:
       "Appeal to flattery swaps praise for proof. See how to spot it and keep the focus on evidence.",
   },
@@ -796,7 +796,7 @@ export const fallacies: Fallacy[] = [
       "begging-the-question",
       "appeal-to-consequences",
     ],
-    seoTitle: "Appeal to Ignorance – Logical Fallacies Guide",
+    seoTitle: "Appeal to Ignorance – The Fallacy Guide",
     seoDescription:
       "Appeal to ignorance claims a statement is true because it’s unproven false. Learn why missing evidence isn’t proof.",
   },
@@ -841,7 +841,7 @@ export const fallacies: Fallacy[] = [
     typeLabel: "Rhetorical appeal",
     typicalContexts: ["Debate", "Politics", "Workplace"],
     relatedSlugs: ["ad-hominem", "poisoning-the-well", "appeal-to-ignorance"],
-    seoTitle: "Appeal to Motive – Logical Fallacies Guide",
+    seoTitle: "Appeal to Motive – The Fallacy Guide",
     seoDescription:
       "Appeal to motive dismisses claims by attacking intentions instead of evidence. Learn to keep focus on substance.",
   },
@@ -890,7 +890,7 @@ export const fallacies: Fallacy[] = [
       "moralistic-fallacy",
       "naturalistic-fallacy",
     ],
-    seoTitle: "Appeal to Nature – Logical Fallacies Guide",
+    seoTitle: "Appeal to Nature – The Fallacy Guide",
     seoDescription:
       "Appeal to nature claims something is good because it’s natural. Learn why ‘natural’ isn’t proof and how to respond.",
   },
@@ -939,7 +939,7 @@ export const fallacies: Fallacy[] = [
       "appeal-to-tradition",
       "appeal-to-consequences",
     ],
-    seoTitle: "Appeal to Novelty – Logical Fallacies Guide",
+    seoTitle: "Appeal to Novelty – The Fallacy Guide",
     seoDescription:
       "Appeal to novelty claims something is better because it’s new. See why recency isn’t proof and how to evaluate claims.",
   },
@@ -987,7 +987,7 @@ export const fallacies: Fallacy[] = [
       "appeal-to-consequences",
       "appeal-to-fear",
     ],
-    seoTitle: "Appeal to Pity – Logical Fallacies Guide",
+    seoTitle: "Appeal to Pity – The Fallacy Guide",
     seoDescription:
       "Appeal to pity uses sympathy in place of evidence. Learn to separate compassion from claim evaluation.",
   },
@@ -1032,7 +1032,7 @@ export const fallacies: Fallacy[] = [
     typeLabel: "Relevance fallacy",
     typicalContexts: ["Debate", "Media commentary", "Online discourse"],
     relatedSlugs: ["appeal-to-emotion", "strawman", "appeal-to-spite"],
-    seoTitle: "Appeal to Ridicule – Logical Fallacies Guide",
+    seoTitle: "Appeal to Ridicule – The Fallacy Guide",
     seoDescription:
       "Appeal to ridicule mocks a claim instead of refuting it. Learn to separate jokes from justification.",
   },
@@ -1076,7 +1076,7 @@ export const fallacies: Fallacy[] = [
     typeLabel: "Relevance fallacy",
     typicalContexts: ["Politics", "Workplace conflict", "Online feuds"],
     relatedSlugs: ["appeal-to-emotion", "appeal-to-ridicule", "ad-hominem"],
-    seoTitle: "Appeal to Spite – Logical Fallacies Guide",
+    seoTitle: "Appeal to Spite – The Fallacy Guide",
     seoDescription:
       "Appeal to spite uses resentment instead of reasons. Learn to spot the motive and ask for evidence.",
   },
@@ -1125,7 +1125,7 @@ export const fallacies: Fallacy[] = [
       "appeal-to-popularity",
       "appeal-to-common-practice",
     ],
-    seoTitle: "Appeal to Tradition – Logical Fallacies Guide",
+    seoTitle: "Appeal to Tradition – The Fallacy Guide",
     seoDescription:
       "Appeal to tradition claims something is right because it’s old. Learn why longevity isn’t proof and how to respond.",
   },
@@ -1174,7 +1174,7 @@ export const fallacies: Fallacy[] = [
       "appeal-to-popularity",
       "appeal-to-poverty",
     ],
-    seoTitle: "Appeal to Wealth – Logical Fallacies Guide",
+    seoTitle: "Appeal to Wealth – The Fallacy Guide",
     seoDescription:
       "Appeal to wealth treats money or status as proof of correctness. Learn to separate status from evidence.",
   },
@@ -1223,7 +1223,7 @@ export const fallacies: Fallacy[] = [
       "appeal-to-authority",
       "appeal-to-popularity",
     ],
-    seoTitle: "Appeal to Poverty – Logical Fallacies Guide",
+    seoTitle: "Appeal to Poverty – The Fallacy Guide",
     seoDescription:
       "Appeal to poverty claims a view is true because it comes from the poor or rejects wealth. Learn why status doesn’t prove accuracy.",
   },
@@ -1268,7 +1268,7 @@ export const fallacies: Fallacy[] = [
     typeLabel: "Relevance fallacy",
     typicalContexts: ["Politics", "Debate", "Workplace feedback"],
     relatedSlugs: ["ad-hominem", "whataboutism", "appeal-to-motive"],
-    seoTitle: "Appeal to Hypocrisy – Logical Fallacies Guide",
+    seoTitle: "Appeal to Hypocrisy – The Fallacy Guide",
     seoDescription:
       "Appeal to hypocrisy (tu quoque) dodges a claim by pointing out inconsistency. Learn to keep focus on evidence.",
   },
@@ -1317,7 +1317,7 @@ export const fallacies: Fallacy[] = [
       "appeal-to-poverty",
       "appeal-to-authority",
     ],
-    seoTitle: "Appeal to Wealth or Poverty – Logical Fallacies Guide",
+    seoTitle: "Appeal to Wealth or Poverty – The Fallacy Guide",
     seoDescription:
       "Combined appeal to wealth or poverty uses status as proof. Learn why status cues aren’t evidence.",
   },
@@ -1366,7 +1366,7 @@ export const fallacies: Fallacy[] = [
       "appeal-to-popularity",
       "appeal-to-common-practice",
     ],
-    seoTitle: "Authority Bias – Logical Fallacies Guide",
+    seoTitle: "Authority Bias – The Fallacy Guide",
     seoDescription:
       "Authority bias overvalues status over evidence. Learn to check domain relevance and data before deferring.",
   },
@@ -1415,7 +1415,7 @@ export const fallacies: Fallacy[] = [
       "masked-relationship-fallacy",
       "interpolation-extrapolation-fallacy",
     ],
-    seoTitle: "Base Rate Fallacy – Logical Fallacies Guide",
+    seoTitle: "Base Rate Fallacy – The Fallacy Guide",
     seoDescription:
       "Base rate fallacy ignores prior probabilities when reading evidence. Learn to combine prevalence with new data.",
   },
@@ -1460,7 +1460,7 @@ export const fallacies: Fallacy[] = [
     typeLabel: "Propaganda tactic",
     typicalContexts: ["Politics", "Marketing", "Debate"],
     relatedSlugs: ["cherry-picking", "firehose-of-falsehood", "quote-mining"],
-    seoTitle: "Card Stacking – Logical Fallacies Guide",
+    seoTitle: "Card Stacking – The Fallacy Guide",
     seoDescription:
       "Card stacking presents only favorable evidence and hides the rest. Learn to spot omissions and restore balance.",
   },
@@ -1509,7 +1509,7 @@ export const fallacies: Fallacy[] = [
       "texas-sharpshooter",
       "misleading-vividness",
     ],
-    seoTitle: "Cherry-Picking – Logical Fallacies Guide",
+    seoTitle: "Cherry-Picking – The Fallacy Guide",
     seoDescription:
       "Cherry-picking uses selective data to prove a point. Learn to ask for full context and balanced evidence.",
   },
@@ -1554,7 +1554,7 @@ export const fallacies: Fallacy[] = [
     typeLabel: "Cognitive bias",
     typicalContexts: ["Research", "Hiring decisions", "Everyday judgments"],
     relatedSlugs: ["cherry-picking", "card-stacking", "appeal-to-ignorance"],
-    seoTitle: "Confirmation Bias – Logical Fallacies Guide",
+    seoTitle: "Confirmation Bias – The Fallacy Guide",
     seoDescription:
       "Confirmation bias favors supporting evidence and filters out conflict. Learn how to counter it with balanced data.",
   },
@@ -1606,7 +1606,7 @@ export const fallacies: Fallacy[] = [
       "cherry-picking",
       "slippery-slope",
     ],
-    seoTitle: "Post Hoc Ergo Propter Hoc – Logical Fallacies Guide",
+    seoTitle: "Post Hoc Ergo Propter Hoc – The Fallacy Guide",
     seoDescription:
       "Post hoc assumes earlier events caused later ones just by sequence. Learn to demand evidence beyond timing.",
   },
@@ -1651,7 +1651,7 @@ export const fallacies: Fallacy[] = [
     typeLabel: "Weak induction",
     typicalContexts: ["Policy debates", "Marketing", "Everyday persuasion"],
     relatedSlugs: ["hasty-generalisation", "cherry-picking", "false-dichotomy"],
-    seoTitle: "Faulty Analogy – Logical Fallacies Guide",
+    seoTitle: "Faulty Analogy – The Fallacy Guide",
     seoDescription:
       "Faulty analogy relies on weak comparisons to reach conclusions. Learn to test similarities and surface critical differences.",
   },
@@ -1695,7 +1695,7 @@ export const fallacies: Fallacy[] = [
     typeLabel: "Propaganda tactic",
     typicalContexts: ["Politics", "Disinformation", "Online debates"],
     relatedSlugs: ["card-stacking", "gish-gallop", "smokescreen"],
-    seoTitle: "Firehose of Falsehood – Logical Fallacies Guide",
+    seoTitle: "Firehose of Falsehood – The Fallacy Guide",
     seoDescription:
       "Firehose of falsehood overwhelms with rapid claims to outrun fact-checking. Learn to spot and counter the tactic.",
   },
@@ -1737,7 +1737,7 @@ export const fallacies: Fallacy[] = [
     typeLabel: "Statistical fallacy",
     typicalContexts: ["Gambling", "Forecasting", "Everyday hunches"],
     relatedSlugs: ["hot-hand-fallacy", "base-rate-fallacy", "post-hoc"],
-    seoTitle: "Gambler’s Fallacy – Logical Fallacies Guide",
+    seoTitle: "Gambler’s Fallacy – The Fallacy Guide",
     seoDescription:
       "Gambler’s fallacy expects random outcomes to ‘balance’ in the short term. Learn why independence keeps odds constant.",
   },
@@ -1786,7 +1786,7 @@ export const fallacies: Fallacy[] = [
       "thought-terminating-cliche",
       "virtue-signalling",
     ],
-    seoTitle: "Glittering Generalities – Logical Fallacies Guide",
+    seoTitle: "Glittering Generalities – The Fallacy Guide",
     seoDescription:
       "Glittering generalities use vague, positive phrases instead of evidence. Learn to ask for specifics and substance.",
   },
@@ -1830,7 +1830,7 @@ export const fallacies: Fallacy[] = [
     typeLabel: "Relevance fallacy",
     typicalContexts: ["Politics", "Workplace factions", "Online debates"],
     relatedSlugs: ["ad-hominem", "poisoning-the-well", "appeal-to-motive"],
-    seoTitle: "Guilt by Association – Logical Fallacies Guide",
+    seoTitle: "Guilt by Association – The Fallacy Guide",
     seoDescription:
       "Guilt by association discredits by linking to disliked groups instead of addressing evidence. Learn to keep focus on merits.",
   },
@@ -1875,7 +1875,7 @@ export const fallacies: Fallacy[] = [
     typeLabel: "Propaganda tactic",
     typicalContexts: ["Media", "Politics", "Marketing"],
     relatedSlugs: ["card-stacking", "quote-mining", "cherry-picking"],
-    seoTitle: "Half-Truth – Logical Fallacies Guide",
+    seoTitle: "Half-Truth – The Fallacy Guide",
     seoDescription:
       "Half-truths omit key context to mislead. Learn to spot what’s missing and demand complete information.",
   },
@@ -1924,7 +1924,7 @@ export const fallacies: Fallacy[] = [
       "base-rate-fallacy",
       "appeal-to-probability",
     ],
-    seoTitle: "Hot Hand Fallacy – Logical Fallacies Guide",
+    seoTitle: "Hot Hand Fallacy – The Fallacy Guide",
     seoDescription:
       "Hot hand fallacy assumes streaks guarantee continued success. Learn to separate skill from chance and temper momentum bias.",
   },
@@ -1969,7 +1969,7 @@ export const fallacies: Fallacy[] = [
     typeLabel: "Relevance fallacy",
     typicalContexts: ["Meetings", "Debate", "Media interviews"],
     relatedSlugs: ["red-herring", "smokescreen", "strawman"],
-    seoTitle: "Ignoring the Question – Logical Fallacies Guide",
+    seoTitle: "Ignoring the Question – The Fallacy Guide",
     seoDescription:
       "Ignoring the question swaps in a different topic and leaves the real issue untouched. Learn to restate and refocus.",
   },
@@ -2015,7 +2015,7 @@ export const fallacies: Fallacy[] = [
       "hot-hand-fallacy",
       "gambler-fallacy",
     ],
-    seoTitle: "Illusion of Control – Logical Fallacies Guide",
+    seoTitle: "Illusion of Control – The Fallacy Guide",
     seoDescription:
       "Illusion of control overestimates personal influence on random or external outcomes. Learn to separate control from chance.",
   },
@@ -2065,7 +2065,7 @@ export const fallacies: Fallacy[] = [
       "cherry-picking",
       "base-rate-fallacy",
     ],
-    seoTitle: "Interpolation / Extrapolation Fallacy – Logical Fallacies Guide",
+    seoTitle: "Interpolation / Extrapolation Fallacy – The Fallacy Guide",
     seoDescription:
       "Interpolation/extrapolation fallacy assumes trends hold outside observed data. Learn to test ranges and add uncertainty.",
   },
@@ -2114,7 +2114,7 @@ export const fallacies: Fallacy[] = [
       "illusion-of-control",
       "regression-fallacy",
     ],
-    seoTitle: "Ludic Fallacy – Logical Fallacies Guide",
+    seoTitle: "Ludic Fallacy – The Fallacy Guide",
     seoDescription:
       "Ludic fallacy treats reality like a tidy game, ignoring messy uncertainty. Learn to stress-test models against real risks.",
   },
@@ -2167,7 +2167,7 @@ export const fallacies: Fallacy[] = [
       "simpsons-paradox",
       "base-rate-fallacy",
     ],
-    seoTitle: "Masked Relationship Fallacy – Logical Fallacies Guide",
+    seoTitle: "Masked Relationship Fallacy – The Fallacy Guide",
     seoDescription:
       "Masked relationship fallacy overlooks effects hidden by confounders. Learn to stratify data and uncover real patterns.",
   },
@@ -2212,7 +2212,7 @@ export const fallacies: Fallacy[] = [
     typeLabel: "Statistical fallacy",
     typicalContexts: ["Media", "Health decisions", "Travel and safety"],
     relatedSlugs: ["anecdotal-fallacy", "cherry-picking", "appeal-to-emotion"],
-    seoTitle: "Misleading Vividness – Logical Fallacies Guide",
+    seoTitle: "Misleading Vividness – The Fallacy Guide",
     seoDescription:
       "Misleading vividness uses striking anecdotes to outweigh statistics. Learn to balance stories with representative data.",
   },
@@ -2261,7 +2261,7 @@ export const fallacies: Fallacy[] = [
       "appeal-to-consequences",
       "appeal-to-nature",
     ],
-    seoTitle: "Moralistic Fallacy – Logical Fallacies Guide",
+    seoTitle: "Moralistic Fallacy – The Fallacy Guide",
     seoDescription:
       "Moralistic fallacy assumes what should be is what is. Learn to separate values from facts.",
   },
@@ -2310,7 +2310,7 @@ export const fallacies: Fallacy[] = [
       "moralistic-fallacy",
       "appeal-to-consequences",
     ],
-    seoTitle: "Naturalistic Fallacy – Logical Fallacies Guide",
+    seoTitle: "Naturalistic Fallacy – The Fallacy Guide",
     seoDescription:
       "Naturalistic fallacy derives ‘ought’ from ‘is’, treating natural as morally right. Learn to separate facts from values.",
   },
@@ -2363,7 +2363,7 @@ export const fallacies: Fallacy[] = [
       "illusion-of-control",
       "appeal-to-probability",
     ],
-    seoTitle: "Planning Fallacy – Logical Fallacies Guide",
+    seoTitle: "Planning Fallacy – The Fallacy Guide",
     seoDescription:
       "Planning fallacy underestimates time and cost despite history. Learn to use reference classes and buffers to counter it.",
   },
@@ -2407,7 +2407,7 @@ export const fallacies: Fallacy[] = [
     typeLabel: "Relevance fallacy",
     typicalContexts: ["Politics", "Litigation", "Workplace disputes"],
     relatedSlugs: ["ad-hominem", "guilt-by-association", "appeal-to-motive"],
-    seoTitle: "Poisoning the Well – Logical Fallacies Guide",
+    seoTitle: "Poisoning the Well – The Fallacy Guide",
     seoDescription:
       "Poisoning the well discredits a speaker before they argue, biasing the audience. Learn to separate preloaded attacks from evidence.",
   },
@@ -2456,7 +2456,7 @@ export const fallacies: Fallacy[] = [
       "masked-relationship-fallacy",
       "correlation-is-not-causation",
     ],
-    seoTitle: "Prosecutor’s Fallacy – Logical Fallacies Guide",
+    seoTitle: "Prosecutor’s Fallacy – The Fallacy Guide",
     seoDescription:
       "Prosecutor’s fallacy flips conditional probabilities, overstating guilt from evidence. Learn to apply base rates correctly.",
   },
@@ -2509,7 +2509,7 @@ export const fallacies: Fallacy[] = [
       "base-rate-fallacy",
       "post-hoc",
     ],
-    seoTitle: "Regression Fallacy – Logical Fallacies Guide",
+    seoTitle: "Regression Fallacy – The Fallacy Guide",
     seoDescription:
       "Regression fallacy credits interventions for natural return to average. Learn to separate variance from causation.",
   },
@@ -2554,7 +2554,7 @@ export const fallacies: Fallacy[] = [
     typeLabel: "Ambiguity fallacy",
     typicalContexts: ["Philosophy talk", "Politics", "Economics commentary"],
     relatedSlugs: ["equivocation", "amphiboly", "glittering-generalities"],
-    seoTitle: "Reification – Logical Fallacies Guide",
+    seoTitle: "Reification – The Fallacy Guide",
     seoDescription:
       "Reification treats abstractions as concrete actors. Learn to unpack who or what really causes effects.",
   },
@@ -2599,7 +2599,7 @@ export const fallacies: Fallacy[] = [
     typeLabel: "Propaganda tactic",
     typicalContexts: ["Politics", "Crisis narratives", "Workplace blame games"],
     relatedSlugs: ["strawman", "poisoning-the-well", "card-stacking"],
-    seoTitle: "Scapegoating – Logical Fallacies Guide",
+    seoTitle: "Scapegoating – The Fallacy Guide",
     seoDescription:
       "Scapegoating blames a target for complex problems to deflect responsibility. Learn to restore nuance and evidence.",
   },
@@ -2644,7 +2644,7 @@ export const fallacies: Fallacy[] = [
     typeLabel: "Statistical fallacy",
     typicalContexts: ["Surveys", "Clinical studies", "Business metrics"],
     relatedSlugs: ["sampling-bias", "publication-bias", "survivorship-bias"],
-    seoTitle: "Selection Bias – Logical Fallacies Guide",
+    seoTitle: "Selection Bias – The Fallacy Guide",
     seoDescription:
       "Selection bias skews conclusions with unrepresentative samples. Learn to check who’s included—and who isn’t.",
   },
@@ -2693,7 +2693,7 @@ export const fallacies: Fallacy[] = [
       "selection-bias",
       "ecological-fallacy",
     ],
-    seoTitle: "Simpson’s Paradox – Logical Fallacies Guide",
+    seoTitle: "Simpson’s Paradox – The Fallacy Guide",
     seoDescription:
       "Simpson’s paradox shows trends reversing when data are aggregated. Learn to check confounders and stratify before concluding.",
   },
@@ -2738,7 +2738,7 @@ export const fallacies: Fallacy[] = [
     typeLabel: "Relevance fallacy",
     typicalContexts: ["Debates", "Press briefings", "Meetings"],
     relatedSlugs: ["red-herring", "firehose-of-falsehood", "gish-gallop"],
-    seoTitle: "Smokescreen – Logical Fallacies Guide",
+    seoTitle: "Smokescreen – The Fallacy Guide",
     seoDescription:
       "Smokescreen floods discussion with tangents to hide weak arguments. Learn to refocus on the core issue.",
   },
@@ -2790,7 +2790,7 @@ export const fallacies: Fallacy[] = [
       "illusion-of-control",
       "appeal-to-probability",
     ],
-    seoTitle: "Sunk Cost Fallacy – Logical Fallacies Guide",
+    seoTitle: "Sunk Cost Fallacy – The Fallacy Guide",
     seoDescription:
       "Sunk cost fallacy keeps investing because of past spend, not future value. Learn to pivot using forward-looking decisions.",
   },
@@ -2839,7 +2839,7 @@ export const fallacies: Fallacy[] = [
       "Historical analysis",
     ],
     relatedSlugs: ["selection-bias", "publication-bias", "cherry-picking"],
-    seoTitle: "Survivorship Bias – Logical Fallacies Guide",
+    seoTitle: "Survivorship Bias – The Fallacy Guide",
     seoDescription:
       "Survivorship bias looks only at successes and ignores failures. Learn to ask about the missing data to avoid skewed conclusions.",
   },
@@ -2884,7 +2884,7 @@ export const fallacies: Fallacy[] = [
     typeLabel: "Relevance fallacy",
     typicalContexts: ["Debate", "Media", "Workplace"],
     relatedSlugs: ["ad-hominem", "appeal-to-motive", "poisoning-the-well"],
-    seoTitle: "Genetic Fallacy – Logical Fallacies Guide",
+    seoTitle: "Genetic Fallacy – The Fallacy Guide",
     seoDescription:
       "Genetic fallacy accepts or rejects claims because of their source. Learn to separate provenance from proof.",
   },
@@ -2933,7 +2933,7 @@ export const fallacies: Fallacy[] = [
       "hasty-generalisation",
       "reification",
     ],
-    seoTitle: "Fallacy of Composition – Logical Fallacies Guide",
+    seoTitle: "Fallacy of Composition – The Fallacy Guide",
     seoDescription:
       "Fallacy of composition assumes the whole shares the parts’ traits. Learn to check for interactions and emergent properties.",
   },
@@ -2986,7 +2986,7 @@ export const fallacies: Fallacy[] = [
       "ecological-fallacy",
       "hasty-generalisation",
     ],
-    seoTitle: "Fallacy of Division – Logical Fallacies Guide",
+    seoTitle: "Fallacy of Division – The Fallacy Guide",
     seoDescription:
       "Fallacy of division assumes parts mirror the whole. Learn to account for variation and avoid overgeneralizing.",
   },
@@ -3031,7 +3031,7 @@ export const fallacies: Fallacy[] = [
       "undistributed-middle",
       "quantifier-shift",
     ],
-    seoTitle: "Denying the Antecedent – Logical Fallacies Guide",
+    seoTitle: "Denying the Antecedent – The Fallacy Guide",
     seoDescription:
       "Denying the antecedent treats a sufficient condition as necessary. Learn why Not A doesn’t prove Not B.",
   },
@@ -3080,7 +3080,7 @@ export const fallacies: Fallacy[] = [
       "Everyday syllogisms",
     ],
     relatedSlugs: ["fallacy-of-four-terms", "illicit-major", "illicit-minor"],
-    seoTitle: "Undistributed Middle – Logical Fallacies Guide",
+    seoTitle: "Undistributed Middle – The Fallacy Guide",
     seoDescription:
       "Undistributed middle links categories without proper overlap. Learn to check distribution in syllogisms.",
   },
@@ -3125,7 +3125,7 @@ export const fallacies: Fallacy[] = [
     typeLabel: "Formal fallacy",
     typicalContexts: ["Syllogisms", "Policy generalizations", "Stereotyping"],
     relatedSlugs: ["illicit-minor", "undistributed-middle", "quantifier-shift"],
-    seoTitle: "Illicit Major – Logical Fallacies Guide",
+    seoTitle: "Illicit Major – The Fallacy Guide",
     seoDescription:
       "Illicit major overextends a term’s scope in syllogisms. Learn to check distribution before accepting the conclusion.",
   },
@@ -3170,7 +3170,7 @@ export const fallacies: Fallacy[] = [
     typeLabel: "Formal fallacy",
     typicalContexts: ["Syllogisms", "Policy extensions", "Generalizations"],
     relatedSlugs: ["illicit-major", "undistributed-middle", "quantifier-shift"],
-    seoTitle: "Illicit Minor – Logical Fallacies Guide",
+    seoTitle: "Illicit Minor – The Fallacy Guide",
     seoDescription:
       "Illicit minor distributes the minor term in the conclusion without premise support. Learn to track quantifiers and avoid the leap.",
   },
@@ -3215,7 +3215,7 @@ export const fallacies: Fallacy[] = [
     typeLabel: "Formal fallacy",
     typicalContexts: ["Logic puzzles", "Debate", "Policy rhetoric"],
     relatedSlugs: ["equivocation", "undistributed-middle", "illicit-major"],
-    seoTitle: "Fallacy of Four Terms – Logical Fallacies Guide",
+    seoTitle: "Fallacy of Four Terms – The Fallacy Guide",
     seoDescription:
       "Fallacy of four terms uses an extra distinct term in a syllogism, breaking validity. Learn to spot hidden equivocations.",
   },
@@ -3268,7 +3268,7 @@ export const fallacies: Fallacy[] = [
       "slippery-slope",
       "quantifier-shift",
     ],
-    seoTitle: "Modal Fallacy – Logical Fallacies Guide",
+    seoTitle: "Modal Fallacy – The Fallacy Guide",
     seoDescription:
       "Modal fallacy confuses possible, probable, and necessary. Learn to keep modalities clear and avoid overstating certainty.",
   },
@@ -3317,7 +3317,7 @@ export const fallacies: Fallacy[] = [
       "Everyday language",
     ],
     relatedSlugs: ["modal-fallacy", "illicit-major", "illicit-minor"],
-    seoTitle: "Quantifier Shift – Logical Fallacies Guide",
+    seoTitle: "Quantifier Shift – The Fallacy Guide",
     seoDescription:
       "Quantifier shift swaps ‘all’ and ‘some’ scopes, changing meaning. Learn to keep quantifiers aligned to preserve validity.",
   },
@@ -3367,7 +3367,7 @@ export const fallacies: Fallacy[] = [
       "spurious-correlation",
       "reversed-causation",
     ],
-    seoTitle: "False Cause – Logical Fallacies Guide",
+    seoTitle: "False Cause – The Fallacy Guide",
     seoDescription:
       "False cause asserts causation without evidence. Learn to demand mechanisms, controls, and confounder checks.",
   },
@@ -3415,7 +3415,7 @@ export const fallacies: Fallacy[] = [
       "third-variable-fallacy",
       "spurious-correlation",
     ],
-    seoTitle: "Cum Hoc Ergo Propter Hoc – Logical Fallacies Guide",
+    seoTitle: "Cum Hoc Ergo Propter Hoc – The Fallacy Guide",
     seoDescription:
       "Cum hoc assumes co-occurring variables cause each other. Learn to separate correlation from causation.",
   },
@@ -3464,7 +3464,7 @@ export const fallacies: Fallacy[] = [
       "spurious-correlation",
       "masked-relationship-fallacy",
     ],
-    seoTitle: "Third Variable Fallacy – Logical Fallacies Guide",
+    seoTitle: "Third Variable Fallacy – The Fallacy Guide",
     seoDescription:
       "Third variable fallacy ignores confounders and misreads correlation as causation. Learn to check hidden drivers.",
   },
@@ -3517,7 +3517,7 @@ export const fallacies: Fallacy[] = [
       "third-variable-fallacy",
       "spurious-correlation",
     ],
-    seoTitle: "Reversed Causation – Logical Fallacies Guide",
+    seoTitle: "Reversed Causation – The Fallacy Guide",
     seoDescription:
       "Reversed causation mistakes which variable drives the other. Learn to test direction before acting.",
   },
@@ -3562,7 +3562,7 @@ export const fallacies: Fallacy[] = [
     typeLabel: "Causal fallacy",
     typicalContexts: ["Data mining", "Finance", "Pop statistics"],
     relatedSlugs: ["false-cause", "third-variable-fallacy", "cum-hoc"],
-    seoTitle: "Spurious Correlation – Logical Fallacies Guide",
+    seoTitle: "Spurious Correlation – The Fallacy Guide",
     seoDescription:
       "Spurious correlation confuses coincidence for causation. Learn to demand mechanisms and robustness before acting.",
   },
@@ -3611,7 +3611,7 @@ export const fallacies: Fallacy[] = [
       "cherry-picking",
       "appeal-to-emotion",
     ],
-    seoTitle: "Anecdotal Fallacy – Logical Fallacies Guide",
+    seoTitle: "Anecdotal Fallacy – The Fallacy Guide",
     seoDescription:
       "Anecdotal fallacy uses personal stories as proof. Learn to balance anecdotes with representative evidence.",
   },
@@ -3656,7 +3656,7 @@ export const fallacies: Fallacy[] = [
     typeLabel: "Statistical fallacy",
     typicalContexts: ["Surveys", "Clinical studies", "Market research"],
     relatedSlugs: ["selection-bias", "survivorship-bias", "publication-bias"],
-    seoTitle: "Sampling Bias – Logical Fallacies Guide",
+    seoTitle: "Sampling Bias – The Fallacy Guide",
     seoDescription:
       "Sampling bias skews results with unrepresentative samples. Learn to check sample design before generalizing.",
   },
@@ -3705,7 +3705,7 @@ export const fallacies: Fallacy[] = [
       "Marketing",
     ],
     relatedSlugs: ["survivorship-bias", "selection-bias", "cherry-picking"],
-    seoTitle: "Publication Bias – Logical Fallacies Guide",
+    seoTitle: "Publication Bias – The Fallacy Guide",
     seoDescription:
       "Publication bias hides null results, inflating apparent effects. Learn to look for missing data before trusting conclusions.",
   },
@@ -3750,7 +3750,7 @@ export const fallacies: Fallacy[] = [
     typeLabel: "Statistical fallacy",
     typicalContexts: ["Policy", "Epidemiology", "Sociology"],
     relatedSlugs: ["fallacy-of-division", "simpsons-paradox", "selection-bias"],
-    seoTitle: "Ecological Fallacy – Logical Fallacies Guide",
+    seoTitle: "Ecological Fallacy – The Fallacy Guide",
     seoDescription:
       "Ecological fallacy maps group data onto individuals. Learn to separate aggregate trends from individual variation.",
   },
@@ -3799,7 +3799,7 @@ export const fallacies: Fallacy[] = [
       "deepity",
       "appeal-to-common-practice",
     ],
-    seoTitle: "Thought-Terminating Cliché – Logical Fallacies Guide",
+    seoTitle: "Thought-Terminating Cliché – The Fallacy Guide",
     seoDescription:
       "Thought-terminating clichés shut down debate without reasons. Learn to move past slogans to substance.",
   },
@@ -3849,7 +3849,7 @@ export const fallacies: Fallacy[] = [
       "thought-terminating-cliche",
       "equivocation",
     ],
-    seoTitle: "Deepity – Logical Fallacies Guide",
+    seoTitle: "Deepity – The Fallacy Guide",
     seoDescription:
       "A deepity sounds profound but is trivial or meaningless on inspection. Learn to unpack and ask for specific claims.",
   },
@@ -3897,7 +3897,7 @@ export const fallacies: Fallacy[] = [
       "virtue-signalling",
       "gaslighting",
     ],
-    seoTitle: "Dogwhistles – Logical Fallacies Guide",
+    seoTitle: "Dogwhistles – The Fallacy Guide",
     seoDescription:
       "Dogwhistles use coded language with hidden signals. Learn to surface meanings and press for plain speech.",
   },
@@ -3946,7 +3946,7 @@ export const fallacies: Fallacy[] = [
       "dogwhistles",
       "appeal-to-popularity",
     ],
-    seoTitle: "Virtue Signalling – Logical Fallacies Guide",
+    seoTitle: "Virtue Signalling – The Fallacy Guide",
     seoDescription:
       "Virtue signalling highlights moral stance without substance. Learn to separate signals from real arguments and actions.",
   },
@@ -3991,7 +3991,7 @@ export const fallacies: Fallacy[] = [
     typeLabel: "Propaganda/Media bias",
     typicalContexts: ["Journalism", "Public debates", "Policy forums"],
     relatedSlugs: ["quote-mining", "glittering-generalities", "selection-bias"],
-    seoTitle: "False Balance – Logical Fallacies Guide",
+    seoTitle: "False Balance – The Fallacy Guide",
     seoDescription:
       "False balance portrays fringe and evidence-backed views as equal. Learn to weigh claims by evidence, not optics.",
   },
@@ -4035,7 +4035,7 @@ export const fallacies: Fallacy[] = [
     typeLabel: "Propaganda tactic",
     typicalContexts: ["Media clips", "Debates", "Online arguments"],
     relatedSlugs: ["half-truth", "card-stacking", "strawman"],
-    seoTitle: "Quote Mining – Logical Fallacies Guide",
+    seoTitle: "Quote Mining – The Fallacy Guide",
     seoDescription:
       "Quote mining strips context to mislead. Learn to check full sources before accepting clipped claims.",
   },
@@ -4084,7 +4084,7 @@ export const fallacies: Fallacy[] = [
       "Toxic workplaces",
     ],
     relatedSlugs: ["poisoning-the-well", "smokescreen", "appeal-to-motive"],
-    seoTitle: "Gaslighting – Logical Fallacies Guide",
+    seoTitle: "Gaslighting – The Fallacy Guide",
     seoDescription:
       "Gaslighting makes targets doubt their reality to gain control. Learn signs and how to anchor back to evidence.",
   },
@@ -4133,7 +4133,7 @@ export const fallacies: Fallacy[] = [
       "fallacy-of-composition",
       "hasty-generalisation",
     ],
-    seoTitle: "Oversimplification – Logical Fallacies Guide",
+    seoTitle: "Oversimplification – The Fallacy Guide",
     seoDescription:
       "Oversimplification reduces complex issues to single causes. Learn to reintroduce nuance and multiple factors.",
   },
@@ -4182,7 +4182,7 @@ export const fallacies: Fallacy[] = [
       "Accountability discussions",
     ],
     relatedSlugs: ["appeal-to-hypocrisy", "red-herring", "smokescreen"],
-    seoTitle: "Whataboutism – Logical Fallacies Guide",
+    seoTitle: "Whataboutism – The Fallacy Guide",
     seoDescription:
       "Whataboutism deflects criticism by pointing elsewhere. Learn to spot the diversion and refocus on the original point.",
   },
@@ -4227,7 +4227,7 @@ export const fallacies: Fallacy[] = [
     typeLabel: "Decision bias",
     typicalContexts: ["Risk arguments", "Policy justification", "Planning"],
     relatedSlugs: ["modal-fallacy", "planning-fallacy", "illusion-of-control"],
-    seoTitle: "Appeal to Probability – Logical Fallacies Guide",
+    seoTitle: "Appeal to Probability – The Fallacy Guide",
     seoDescription:
       "Appeal to probability turns ‘could’ into ‘will’. Learn to quantify risk instead of assuming inevitability.",
   },
@@ -4276,7 +4276,7 @@ export const fallacies: Fallacy[] = [
       "appeal-to-popularity",
       "appeal-to-nature",
     ],
-    seoTitle: "Appeal to Normality – Logical Fallacies Guide",
+    seoTitle: "Appeal to Normality – The Fallacy Guide",
     seoDescription:
       "Appeal to normality says something is fine because it’s common. Learn to separate prevalence from proof.",
   },
@@ -4321,7 +4321,7 @@ export const fallacies: Fallacy[] = [
     typeLabel: "Logical fallacy",
     typicalContexts: ["Debate", "Media", "Everyday conversation"],
     relatedSlugs: ["appeal-to-emotion", "false-dichotomy"],
-    seoTitle: "Slippery Slope – Logical Fallacies Guide",
+    seoTitle: "Slippery Slope – The Fallacy Guide",
     seoDescription:
       "Slippery slope arguments predict extreme consequences from small changes. Learn the pattern and how to respond.",
   },
@@ -4366,7 +4366,7 @@ export const fallacies: Fallacy[] = [
     typeLabel: "Logical fallacy",
     typicalContexts: ["Debate", "Media", "Everyday conversation"],
     relatedSlugs: ["slippery-slope", "appeal-to-popularity"],
-    seoTitle: "False Dichotomy – Logical Fallacies Guide",
+    seoTitle: "False Dichotomy – The Fallacy Guide",
     seoDescription:
       "False dichotomy forces a choice between two options when more exist. See patterns and counters.",
   },
@@ -4411,7 +4411,7 @@ export const fallacies: Fallacy[] = [
     typeLabel: "Logical fallacy",
     typicalContexts: ["Debate", "Media", "Everyday conversation"],
     relatedSlugs: ["appeal-to-ignorance", "affirming-the-consequent"],
-    seoTitle: "Begging the Question – Logical Fallacies Guide",
+    seoTitle: "Begging the Question – The Fallacy Guide",
     seoDescription:
       "Begging the question uses the conclusion as a premise. Spot the circular pattern and learn quick counters.",
   },
@@ -4455,7 +4455,7 @@ export const fallacies: Fallacy[] = [
     typeLabel: "Logical fallacy",
     typicalContexts: ["Debate", "Media", "Everyday conversation"],
     relatedSlugs: ["correlation-is-not-causation", "appeal-to-popularity"],
-    seoTitle: "Hasty Generalisation – Logical Fallacies Guide",
+    seoTitle: "Hasty Generalisation – The Fallacy Guide",
     seoDescription:
       "Hasty generalisation stretches small samples into big claims. Learn the warning signs and responses.",
   },
@@ -4500,7 +4500,7 @@ export const fallacies: Fallacy[] = [
     typeLabel: "Logical fallacy",
     typicalContexts: ["Debate", "Media", "Everyday conversation"],
     relatedSlugs: ["hasty-generalisation", "affirming-the-consequent"],
-    seoTitle: "Correlation Is Not Causation – Logical Fallacies Guide",
+    seoTitle: "Correlation Is Not Causation – The Fallacy Guide",
     seoDescription:
       "Correlation alone cannot prove cause. See the pattern, examples, and questions that expose the gap.",
   },
@@ -4545,7 +4545,7 @@ export const fallacies: Fallacy[] = [
     typeLabel: "Logical fallacy",
     typicalContexts: ["Debate", "Media", "Everyday conversation"],
     relatedSlugs: ["correlation-is-not-causation", "begging-the-question"],
-    seoTitle: "Affirming the Consequent – Logical Fallacies Guide",
+    seoTitle: "Affirming the Consequent – The Fallacy Guide",
     seoDescription:
       "Affirming the consequent mistakes an effect for proof of a single cause. Learn the invalid form and counters.",
   },
@@ -4589,7 +4589,7 @@ export const fallacies: Fallacy[] = [
     typeLabel: "Logical fallacy",
     typicalContexts: ["Debate", "Media", "Everyday conversation"],
     relatedSlugs: ["no-true-scotsman", "loaded-question"],
-    seoTitle: "Equivocation Fallacy – Logical Fallacies Guide",
+    seoTitle: "Equivocation Fallacy – The Fallacy Guide",
     seoDescription:
       "Equivocation swaps meanings mid-argument. Learn how to spot shifting definitions and clarify them.",
   },
@@ -4635,7 +4635,7 @@ export const fallacies: Fallacy[] = [
     typeLabel: "Logical fallacy",
     typicalContexts: ["Debate", "Media", "Everyday conversation"],
     relatedSlugs: ["equivocation", "loaded-question"],
-    seoTitle: "No True Scotsman – Logical Fallacies Guide",
+    seoTitle: "No True Scotsman – The Fallacy Guide",
     seoDescription:
       "No True Scotsman protects a claim by redefining membership. Spot the moving goalposts and respond.",
   },
@@ -4680,7 +4680,7 @@ export const fallacies: Fallacy[] = [
     typeLabel: "Logical fallacy",
     typicalContexts: ["Debate", "Media", "Everyday conversation"],
     relatedSlugs: ["no-true-scotsman", "ad-hominem"],
-    seoTitle: "Loaded Question – Logical Fallacies Guide",
+    seoTitle: "Loaded Question – The Fallacy Guide",
     seoDescription:
       "Loaded questions smuggle assumptions into a conversation. Learn to spot the trap and respond cleanly.",
   },
@@ -4724,7 +4724,7 @@ export const fallacies: Fallacy[] = [
     typeLabel: "Logical fallacy",
     typicalContexts: ["Debate", "Media", "Everyday conversation"],
     relatedSlugs: ["red-herring", "strawman"],
-    seoTitle: "Gish Gallop – Logical Fallacies Guide",
+    seoTitle: "Gish Gallop – The Fallacy Guide",
     seoDescription:
       "The Gish Gallop overwhelms with many weak claims. Learn to recognize the firehose pattern and respond effectively.",
   },

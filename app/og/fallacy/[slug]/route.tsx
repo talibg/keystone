@@ -39,7 +39,7 @@ export async function GET(
           fontWeight: 700,
         }}
       >
-        Logical Fallacies Guide
+      
       </div>
       <div style={{ marginTop: 30, fontSize: 52, fontWeight: 800 }}>
         {fallacy.name}

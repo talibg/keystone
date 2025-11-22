@@ -33,7 +33,7 @@ export async function GET(
       }}
     >
       <div style={{ fontSize: 22, color: "#a5b4fc", fontWeight: 700 }}>
-        Logical Fallacies Guide
+      
       </div>
       <div style={{ marginTop: 24, fontSize: 50, fontWeight: 800 }}>
         {category.name}
