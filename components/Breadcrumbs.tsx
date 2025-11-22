@@ -1,4 +1,13 @@
 import Link from "next/link";
+import { Fragment } from "react";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 
 type Crumb = {
   label: string;
@@ -11,28 +20,26 @@ type BreadcrumbsProps = {
 
 export function Breadcrumbs({ items }: BreadcrumbsProps) {
   return (
-    <nav className="text-sm text-slate-300" aria-label="Breadcrumb">
-      {items.map((item, index) => {
-        const isLast = index === items.length - 1;
-        return (
-          <span
-            key={`${item.label}-${index}`}
-            className="inline-flex items-center"
-          >
-            {item.href && !isLast ? (
-              <Link
-                href={item.href}
-                className="text-sky-200 hover:text-sky-100"
-              >
-                {item.label}
-              </Link>
-            ) : (
-              <span className="text-slate-100">{item.label}</span>
-            )}
-            {!isLast && <span className="mx-2 text-slate-500">›</span>}
-          </span>
-        );
-      })}
-    </nav>
+    <Breadcrumb>
+      <BreadcrumbList>
+        {items.map((item, index) => {
+          const isLast = index === items.length - 1;
+          return (
+            <Fragment key={`${item.label}-${index}`}>
+              <BreadcrumbItem>
+                {item.href && !isLast ? (
+                  <BreadcrumbLink asChild>
+                    <Link href={item.href}>{item.label}</Link>
+                  </BreadcrumbLink>
+                ) : (
+                  <BreadcrumbPage>{item.label}</BreadcrumbPage>
+                )}
+              </BreadcrumbItem>
+              {!isLast ? <BreadcrumbSeparator /> : null}
+            </Fragment>
+          );
+        })}
+      </BreadcrumbList>
+    </Breadcrumb>
   );
 }

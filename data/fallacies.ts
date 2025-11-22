@@ -4281,50 +4281,6 @@ export const fallacies: Fallacy[] = [
       "Appeal to normality says something is fine because it’s common. Learn to separate prevalence from proof.",
   },
   {
-    slug: "appeal-to-emotion",
-    name: "Appeal to Emotion",
-    category: categoryMap["rhetorical-cognitive-bias"],
-    alsoKnownAs: ["Emotional Appeal"],
-    shortDefinition:
-      "Leans on feelings like fear, pity, or pride instead of reasons.",
-    explanation:
-      "Emotion can be relevant, but appeals to emotion replace evidence with feelings. The tactic makes agreement feel virtuous or urgent while bypassing evaluation.",
-    pattern: [
-      "Present a vivid emotional trigger.",
-      "Link accepting the claim with feeling better or avoiding guilt.",
-      "Offer little or no supporting evidence.",
-    ],
-    everydayExample: {
-      setup: "A subscription upsell.",
-      dialogue: [
-        "Sales page: “Imagine losing all your memories. Upgrade now to protect them forever.”",
-      ],
-    },
-    seriousExample:
-      "A politician argues for sweeping surveillance by invoking fear of rare attacks without presenting proportional risk data.",
-    whyItIsFallacious:
-      "Feelings alone cannot establish truth. They can be genuine yet unrelated to whether the claim is supported.",
-    whyPeopleUseIt:
-      "Emotion is fast, memorable, and can short-circuit scrutiny, especially under time pressure.",
-    recognitionPoints: [
-      "Strong emotional language with thin evidence.",
-      "Fear, pride, or pity framed as the main reason to agree.",
-      "Urgency or moral pressure replacing analysis.",
-    ],
-    responseStrategies: [
-      "Acknowledge feelings, then request concrete evidence.",
-      "Ask how the emotional point supports the claim's truth.",
-      "Slow down the pace to separate facts from feelings.",
-    ],
-    severity: "Medium",
-    typeLabel: "Logical fallacy",
-    typicalContexts: ["Debate", "Media", "Everyday conversation"],
-    relatedSlugs: ["appeal-to-popularity", "slippery-slope"],
-    seoTitle: "Appeal to Emotion – Logical Fallacies Guide",
-    seoDescription:
-      "Appeal to emotion substitutes feelings for evidence. Learn the signs, dialogue examples, and ways to respond.",
-  },
-  {
     slug: "slippery-slope",
     name: "Slippery Slope",
     category: categoryMap.presumption,
@@ -4413,51 +4369,6 @@ export const fallacies: Fallacy[] = [
     seoTitle: "False Dichotomy – Logical Fallacies Guide",
     seoDescription:
       "False dichotomy forces a choice between two options when more exist. See patterns and counters.",
-  },
-  {
-    slug: "appeal-to-ignorance",
-    name: "Appeal to Ignorance",
-    category: categoryMap.presumption,
-    alsoKnownAs: ["Argument from Ignorance"],
-    shortDefinition:
-      "Claims something is true because it has not been proven false, or vice versa.",
-    explanation:
-      "A lack of disconfirming evidence is treated as proof. The burden of proof is flipped so that absence of evidence stands in for evidence of absence—or presence.",
-    pattern: [
-      "Note that a claim has not been disproven.",
-      "Treat that absence as proof the claim is true (or false).",
-      "Shift the burden to skeptics to disprove the claim.",
-    ],
-    everydayExample: {
-      setup: "Chat about a new gadget.",
-      dialogue: [
-        "A: “This wearable boosts focus; no one has shown it doesn’t.”",
-        "B: “Lack of disproof isn’t evidence it works. Where’s the data?”",
-      ],
-    },
-    seriousExample:
-      "Officials assert a program is safe because 'no complaints have been filed,' despite limited monitoring and reporting channels.",
-    whyItIsFallacious:
-      "Absence of evidence can mean many things: poor testing, hidden data, or true uncertainty. It is not automatic proof.",
-    whyPeopleUseIt:
-      "It is easier to demand disproof than to provide supporting evidence, and it leverages uncertainty to claim victory.",
-    recognitionPoints: [
-      "Assertions rest on what has not been found or reported.",
-      "The burden of proof is shifted to skeptics unfairly.",
-      "Little effort is made to gather positive evidence.",
-    ],
-    responseStrategies: [
-      "Clarify who bears the burden of proof for the claim.",
-      "Ask for positive evidence supporting the assertion.",
-      "Highlight the difference between unknown and proven true/false.",
-    ],
-    severity: "Medium",
-    typeLabel: "Logical fallacy",
-    typicalContexts: ["Debate", "Media", "Everyday conversation"],
-    relatedSlugs: ["begging-the-question", "false-dichotomy"],
-    seoTitle: "Appeal to Ignorance – Logical Fallacies Guide",
-    seoDescription:
-      "Appeal to ignorance treats lack of disproof as proof. Learn the pattern and how to respond.",
   },
   {
     slug: "begging-the-question",

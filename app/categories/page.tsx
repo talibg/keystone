@@ -1,11 +1,19 @@
-import type { Metadata } from "next";
+import { LayersIcon } from "lucide-react";
 import Link from "next/link";
-import { getAllCategories, getCategoryClasses } from "@/lib/fallacies";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { getAllCategories } from "@/lib/fallacies";
 
-export const metadata: Metadata = {
-  title: "Fallacy Categories – Logical Fallacies Guide",
+export const metadata = {
+  title: "Categories – Logical Fallacies Guide",
   description:
-    "Browse logical fallacy categories with concise descriptions and links to explore each set of fallacies.",
+    "Explore logical fallacies by category to understand how they group together.",
 };
 
 export default function CategoriesPage() {
@@ -13,48 +21,39 @@ export default function CategoriesPage() {
 
   return (
     <div className="space-y-6">
+      <Breadcrumbs
+        items={[{ label: "Home", href: "/" }, { label: "Categories" }]}
+      />
       <header className="space-y-2">
-        <p className="text-sm uppercase tracking-[0.2em] text-slate-400">
-          Categories
-        </p>
-        <h1 className="text-3xl font-semibold text-slate-50">
-          Fallacy Categories
-        </h1>
-        <p className="text-slate-300">
-          Each category captures a common pattern of reasoning gone wrong.
-          Explore them to see how the mistakes repeat across different
-          arguments.
+        <h1 className="text-3xl font-semibold text-foreground">Categories</h1>
+        <p className="text-muted-foreground">
+          Fallacies are grouped by the type of error they represent.
         </p>
       </header>
 
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {categories.map((category) => (
-          <div
+          <Link
             key={category.slug}
-            className="flex h-full flex-col rounded-lg border border-slate-800 bg-slate-900/70 p-5 shadow-sm"
+            href={`/categories/${category.slug}`}
+            className="block h-full"
           >
-            <div className="flex items-center justify-between">
-              <h2 className="text-xl font-semibold text-slate-50">
-                {category.name}
-              </h2>
-              <span
-                className={`text-xs uppercase tracking-wide rounded-full border px-2 py-1 font-semibold ${getCategoryClasses(category.colorKey)}`}
-              >
-                {category.slug}
-              </span>
-            </div>
-            <p className="mt-2 text-sm text-slate-300">
-              {category.description}
-            </p>
-            <div className="mt-4">
-              <Link
-                href={`/categories/${category.slug}`}
-                className="text-sm font-medium text-sky-200 hover:text-sky-100"
-              >
-                View fallacies in this category →
-              </Link>
-            </div>
-          </div>
+            <Card className="h-full transition-all hover:border-primary/50 hover:shadow-md group">
+              <CardHeader>
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors mb-2">
+                  <LayersIcon className="h-5 w-5" />
+                </div>
+                <CardTitle className="group-hover:text-primary transition-colors">
+                  {category.name}
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="line-clamp-2 text-muted-foreground text-sm">
+                  {category.description}
+                </CardDescription>
+              </CardContent>
+            </Card>
+          </Link>
         ))}
       </div>
     </div>

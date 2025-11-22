@@ -65,21 +65,23 @@ export const categoryColorMap: Record<FallacyCategorySlug, string> = {
 
 export const getCategoryClasses = (colorKey: string) => {
   switch (colorKey) {
-    case "rose":
-      return "border-rose-500/20 bg-rose-500/10 text-rose-200";
-    case "indigo":
-      return "border-indigo-500/20 bg-indigo-500/10 text-indigo-200";
-    case "amber":
-      return "border-amber-500/30 bg-amber-500/10 text-amber-200";
-    case "emerald":
-      return "border-emerald-500/20 bg-emerald-500/10 text-emerald-100";
-    case "purple":
-      return "border-purple-500/20 bg-purple-500/10 text-purple-200";
-    case "cyan":
-      return "border-cyan-500/20 bg-cyan-500/10 text-cyan-200";
-    case "sky":
-      return "border-sky-500/20 bg-sky-500/10 text-sky-200";
+    case "rose": // relevance
+      return "border-[--chart-1]/20 bg-[--chart-1]/10 text-[--chart-1]";
+    case "indigo": // ambiguity-language
+      return "border-[--chart-2]/20 bg-[--chart-2]/10 text-[--chart-2]";
+    case "amber": // presumption
+      return "border-[--chart-3]/30 bg-[--chart-3]/10 text-[--chart-3]";
+    case "emerald": // statistical-scientific
+      return "border-[--chart-4]/20 bg-[--chart-4]/10 text-[--chart-4]";
+    case "purple": // formal
+      return "border-[--chart-5]/20 bg-[--chart-5]/10 text-[--chart-5]";
+    case "cyan": // informal-dialogue
+      return "border-[--chart-6]/20 bg-[--chart-6]/10 text-[--chart-6]";
+    case "sky": // rhetorical-cognitive-bias
+      return "border-[--chart-7]/20 bg-[--chart-7]/10 text-[--chart-7]";
+    case "slate": // debate-tactics
+      return "border-[--chart-8]/20 bg-[--chart-8]/10 text-[--chart-8]";
     default:
-      return "border-slate-500/20 bg-slate-500/10 text-slate-200";
+      return "border-muted-foreground/20 bg-muted-foreground/10 text-muted-foreground";
   }
 };

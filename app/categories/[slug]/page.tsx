@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import type { FallacyCategorySlug } from "@/data/fallacies";
 import {
   getAllCategories,
@@ -93,42 +95,52 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         ]}
       />
       <header className="space-y-2">
-        <p className="text-sm uppercase tracking-[0.2em] text-slate-400">
+        <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground">
           Category
         </p>
-        <h1 className="text-3xl font-semibold text-slate-50">
+        <h1 className="text-3xl font-semibold text-foreground">
           {category.name}
         </h1>
-        <p className="text-slate-300">{category.description}</p>
+        <p className="text-muted-foreground">{category.description}</p>
       </header>
 
       <section className="space-y-3">
-        <h2 className="text-xl font-semibold text-slate-50">
+        <h2 className="text-xl font-semibold text-foreground">
           Fallacies in this category
         </h2>
-        <div className="space-y-3">
+        <div className="grid gap-4 sm:grid-cols-2">
           {fallacies.map((fallacy) => (
-            <div
+            <Link
               key={fallacy.slug}
-              className="rounded-lg border border-slate-800 bg-slate-900/70 p-5 shadow-sm"
+              href={`/fallacies/${fallacy.slug}`}
+              className="block h-full"
             >
-              <div className="flex items-center justify-between gap-4">
-                <Link
-                  href={`/fallacies/${fallacy.slug}`}
-                  className="text-lg font-semibold text-sky-200 hover:text-sky-100"
-                >
-                  {fallacy.name}
-                </Link>
-                <span className="text-xs uppercase tracking-wide text-slate-400">
-                  <span
-                    className={`inline-flex items-center rounded-full border px-2 py-1 font-semibold ${getCategoryClasses(fallacy.category.colorKey)}`}
-                  >
-                    {fallacy.category.name}
-                  </span>
-                </span>
-              </div>
-              <p className="mt-2 text-slate-300">{fallacy.shortDefinition}</p>
-            </div>
+              <Card className="h-full transition-all hover:border-primary/50 hover:shadow-md group flex flex-col justify-between">
+                <CardHeader className="pb-3">
+                  <div className="flex items-start justify-between gap-2">
+                    <CardTitle className="group-hover:text-primary transition-colors">
+                      {fallacy.name}
+                    </CardTitle>
+                    <Badge
+                      variant="outline"
+                      className={`shrink-0 text-[10px] uppercase tracking-wider ${getCategoryClasses(
+                        fallacy.category.colorKey,
+                      )}`}
+                    >
+                      {fallacy.category.name}
+                    </Badge>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground line-clamp-3">
+                    {fallacy.shortDefinition}
+                  </p>
+                </CardContent>
+                <div className="px-6 pb-6 mt-auto flex items-center text-xs font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100">
+                  View details →
+                </div>
+              </Card>
+            </Link>
           ))}
         </div>
       </section>

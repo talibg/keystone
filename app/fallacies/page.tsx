@@ -1,38 +1,30 @@
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { getAllFallacies, getCategoryClasses } from "@/lib/fallacies";
 
 export const metadata = {
-  title: "List of Logical Fallacies – Logical Fallacies Guide",
+  title: "All Fallacies – Logical Fallacies Guide",
   description:
-    "Browse every fallacy in one place with quick definitions and category context.",
+    "A comprehensive directory of logical fallacies, categorized and explained.",
 };
 
-export default function FallaciesHubPage() {
+export default function FallaciesPage() {
   const fallacies = getAllFallacies();
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6">
       <Breadcrumbs
-        items={[{ label: "Home", href: "/" }, { label: "All fallacies" }]}
+        items={[{ label: "Home", href: "/" }, { label: "All Fallacies" }]}
       />
       <header className="space-y-2">
         <h1 className="text-3xl font-semibold text-foreground">
-          List of Logical Fallacies
+          All Fallacies
         </h1>
         <p className="text-muted-foreground">
-          A single hub for every fallacy in the guide. Skim, scan, and dive
-          deeper via the links below.
+          Browse the complete list of logical fallacies.
         </p>
-        <div className="flex flex-wrap gap-2 text-sm text-primary">
-          <Link href="/fallacies/master-list" className="hover:underline">
-            Master list (extended)
-          </Link>
-          <span className="text-muted-foreground">•</span>
-          <Link href="/fallacies/types" className="hover:underline">
-            Types of fallacies
-          </Link>
-        </div>
       </header>
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -40,28 +32,33 @@ export default function FallaciesHubPage() {
           <Link
             key={fallacy.slug}
             href={`/fallacies/${fallacy.slug}`}
-            className="group flex flex-col justify-between rounded-xl border border-border bg-card p-5 shadow-sm transition-all hover:border-primary/50 hover:shadow-md"
+            className="block h-full"
           >
-            <div className="space-y-3">
-              <div className="flex items-start justify-between gap-2">
-                <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors">
-                  {fallacy.name}
-                </h3>
-                <span
-                  className={`shrink-0 rounded-full border px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider ${getCategoryClasses(
-                    fallacy.category.colorKey,
-                  )}`}
-                >
-                  {fallacy.category.name}
-                </span>
+            <Card className="h-full transition-all hover:border-primary/50 hover:shadow-md group flex flex-col justify-between">
+              <CardHeader className="pb-3">
+                <div className="flex items-start justify-between gap-2">
+                  <CardTitle className="group-hover:text-primary transition-colors">
+                    {fallacy.name}
+                  </CardTitle>
+                  <Badge
+                    variant="outline"
+                    className={`shrink-0 text-[10px] uppercase tracking-wider ${getCategoryClasses(
+                      fallacy.category.colorKey,
+                    )}`}
+                  >
+                    {fallacy.category.name}
+                  </Badge>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground line-clamp-3">
+                  {fallacy.shortDefinition}
+                </p>
+              </CardContent>
+              <div className="px-6 pb-6 mt-auto flex items-center text-xs font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100">
+                View details →
               </div>
-              <p className="text-sm text-muted-foreground line-clamp-2">
-                {fallacy.shortDefinition}
-              </p>
-            </div>
-            <div className="mt-4 flex items-center text-xs font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100">
-              Learn more →
-            </div>
+            </Card>
           </Link>
         ))}
       </div>

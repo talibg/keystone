@@ -1,58 +1,55 @@
 "use client";
 
+import { Moon, Sun } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
 import { useTheme } from "./ThemeProvider";
 
 export default function ThemeToggle() {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const currentTheme = resolvedTheme ?? theme ?? "system";
+  const isDark = currentTheme === "dark";
 
   const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
+    setTheme(isDark ? "light" : "dark");
   };
 
   return (
-    <button
+    <Button
       type="button"
+      variant="ghost"
+      size="icon"
       onClick={toggleTheme}
-      className="rounded p-2 text-foreground hover:bg-accent hover:text-accent-foreground focus:outline-none focus:ring-2 focus:ring-ring"
-      aria-label="Toggle theme"
+      className="relative rounded-full border border-border/70 bg-card/70 shadow-sm transition hover:-translate-y-0.5 hover:border-primary/50 hover:bg-accent hover:text-accent-foreground"
+      aria-label={mounted ? `Switch to ${isDark ? "light" : "dark"} theme` : "Toggle theme"}
     >
-      {theme === "dark" ? (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          role="img"
-          aria-label="Switch to light theme"
-        >
-          <title>Sun</title>
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M12 3v1m0 16v1m9-9h1M3 12H2m15.325-4.275l.707-.707M6.707 6.707l-.707-.707m10.615 10.615l.707.707m-12.025 0l-.707.707"
+      {mounted ? (
+        <>
+          <Sun
+            className={`absolute left-1/2 top-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 transition-all ${isDark
+                ? "rotate-90 scale-0 opacity-0"
+                : "rotate-0 scale-100 opacity-100"
+              }`}
           />
-        </svg>
+          <Moon
+            className={`absolute left-1/2 top-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 transition-all ${isDark
+                ? "rotate-0 scale-100 opacity-100"
+                : "-rotate-90 scale-0 opacity-0"
+              }`}
+          />
+        </>
       ) : (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          role="img"
-          aria-label="Switch to dark theme"
-        >
-          <title>Moon</title>
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-          />
-        </svg>
+        <Sun className="h-5 w-5" />
       )}
-    </button>
+      <span className="sr-only">
+        {mounted ? `Switch to ${isDark ? "light" : "dark"} theme` : "Toggle theme"}
+      </span>
+    </Button>
   );
 }

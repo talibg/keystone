@@ -1,4 +1,4 @@
-import { BookOpen, Layers } from "lucide-react";
+import { BookOpen, Layers, List, Search } from "lucide-react";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
@@ -49,7 +49,7 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60">
-            <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-6">
+            <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
               <div className="flex items-center gap-8">
                 <Link
                   href="/"
@@ -66,9 +66,10 @@ export default function RootLayout({
                   className="hidden md:flex items-center gap-6 text-sm font-medium text-muted-foreground"
                 >
                   <Link
-                    href="/"
+                    href="/fallacies"
                     className="transition-colors hover:text-foreground flex items-center gap-2"
                   >
+                    <List className="h-4 w-4" />
                     All Fallacies
                   </Link>
                   <Link
@@ -82,6 +83,7 @@ export default function RootLayout({
                     href="/search"
                     className="transition-colors hover:text-foreground flex items-center gap-2"
                   >
+                    <Search className="h-4 w-4" />
                     Search
                   </Link>
                 </nav>
@@ -95,11 +97,11 @@ export default function RootLayout({
           </header>
 
           <main className="flex-1">
-            <div className="mx-auto max-w-5xl px-6 py-12">{children}</div>
+            <div className="mx-auto max-w-7xl px-6 py-12">{children}</div>
           </main>
 
           <footer className="border-t border-border/40 bg-muted/30">
-            <div className="mx-auto max-w-5xl px-6 py-12">
+            <div className="mx-auto max-w-7xl px-6 py-12">
               <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
                 <div className="space-y-4">
                   <h3 className="text-lg font-semibold text-foreground">
@@ -114,12 +116,20 @@ export default function RootLayout({
 
                 <div className="space-y-4">
                   <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider">
-                    Resources
+                    Browse
                   </h3>
                   <ul className="space-y-2 text-sm text-muted-foreground">
                     <li>
                       <Link
                         href="/"
+                        className="hover:text-primary transition-colors"
+                      >
+                        Home
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/fallacies"
                         className="hover:text-primary transition-colors"
                       >
                         All Fallacies
@@ -135,10 +145,74 @@ export default function RootLayout({
                     </li>
                     <li>
                       <Link
+                        href="/search"
+                        className="hover:text-primary transition-colors"
+                      >
+                        Search
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="space-y-4">
+                  <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider">
+                    Explore
+                  </h3>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li>
+                      <Link
+                        href="/fallacies/types"
+                        className="hover:text-primary transition-colors"
+                      >
+                        Types of Fallacies
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/fallacies/everyday"
+                        className="hover:text-primary transition-colors"
+                      >
+                        Everyday Arguments
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/fallacies/politics"
+                        className="hover:text-primary transition-colors"
+                      >
+                        Politics
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/fallacies/media"
+                        className="hover:text-primary transition-colors"
+                      >
+                        Media & Social Media
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/fallacies/master-list"
+                        className="hover:text-primary transition-colors"
+                      >
+                        Master List
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="space-y-4">
+                  <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider">
+                    About
+                  </h3>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li>
+                      <Link
                         href="/about"
                         className="hover:text-primary transition-colors"
                       >
-                        About
+                        About This Guide
                       </Link>
                     </li>
                   </ul>

@@ -13,6 +13,9 @@ import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FallacySummaryCard } from "@/components/FallacySummaryCard";
 import ShareButton from "@/components/ShareButton";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import type { Fallacy } from "@/data/fallacies";
 import {
   getAllFallacies,
@@ -235,10 +238,10 @@ export default async function FallacyPage({ params }: FallacyPageProps) {
           ]}
         />
         <div className="flex items-center justify-between text-sm text-muted-foreground gap-3">
-          <div className="inline-flex items-center gap-2 rounded-full bg-muted px-3 py-1">
+          <Badge variant="secondary" className="gap-2 bg-muted px-3 py-1">
             <Clock className="h-4 w-4" />
             <span>{readingTime}</span>
-          </div>
+          </Badge>
           <ShareButton
             title={fallacy.name}
             text={fallacy.shortDefinition}
@@ -250,15 +253,17 @@ export default async function FallacyPage({ params }: FallacyPageProps) {
       <div className="grid gap-10 lg:grid-cols-[1fr_300px]">
         {/* Main Content */}
         <div className="space-y-10">
-          <div className="flex flex-wrap gap-2 rounded-xl border border-border bg-card p-4 text-sm text-muted-foreground">
+          <div className="flex flex-wrap gap-2 rounded-xl border border-border bg-card/90 p-4 text-sm text-muted-foreground">
             {toc.map((item) => (
-              <Link
+              <Button
                 key={item.href}
-                href={item.href}
-                className="rounded-full border border-border px-3 py-1 font-medium text-foreground hover:text-primary hover:border-primary"
+                asChild
+                variant="outline"
+                size="sm"
+                className="rounded-full border-border font-medium text-foreground hover:text-primary"
               >
-                {item.label}
-              </Link>
+                <Link href={item.href}>{item.label}</Link>
+              </Button>
             ))}
           </div>
           {/* Header */}
@@ -266,11 +271,13 @@ export default async function FallacyPage({ params }: FallacyPageProps) {
             <div className="space-y-2">
               <div className="flex items-center gap-3">
                 {category && (
-                  <Link
-                    href={`/categories/${category.slug}`}
-                    className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors hover:opacity-90 ${getCategoryClasses(category.colorKey)}`}
-                  >
-                    {category.name}
+                  <Link href={`/categories/${category.slug}`}>
+                    <Badge
+                      variant="outline"
+                      className={`transition-colors hover:opacity-90 ${getCategoryClasses(category.colorKey)}`}
+                    >
+                      {category.name}
+                    </Badge>
                   </Link>
                 )}
                 {fallacy.alsoKnownAs.length > 0 && (
@@ -289,19 +296,22 @@ export default async function FallacyPage({ params }: FallacyPageProps) {
           </header>
 
           {/* Quick Summary Box */}
-          <section
-            id="summary"
-            className="rounded-2xl border border-border bg-card p-6 shadow-sm space-y-2"
-          >
-            <h2 className="text-xl font-bold text-foreground">Quick summary</h2>
-            <ul className="space-y-2 text-muted-foreground">
-              {summaryPoints.map((point) => (
-                <li key={point} className="flex gap-2">
-                  <span className="text-primary">•</span>
-                  <span>{point}</span>
-                </li>
-              ))}
-            </ul>
+          <section id="summary">
+            <Card>
+              <CardHeader>
+                <CardTitle>Quick summary</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2 text-muted-foreground">
+                  {summaryPoints.map((point) => (
+                    <li key={point} className="flex gap-2">
+                      <span className="text-primary">•</span>
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
           </section>
 
           {/* Explanation */}
@@ -319,24 +329,30 @@ export default async function FallacyPage({ params }: FallacyPageProps) {
           </section>
 
           {/* Pattern */}
-          <section
-            id="pattern"
-            className="rounded-2xl border border-border bg-card p-6 shadow-sm"
-          >
-            <h2 className="flex items-center gap-2 text-xl font-bold text-foreground mb-4">
-              <Info className="h-5 w-5 text-blue-500" />
-              The Pattern
-            </h2>
-            <ul className="space-y-3">
-              {fallacy.pattern.map((step, i) => (
-                <li key={step} className="flex gap-3 text-muted-foreground">
-                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-blue-500/10 text-xs font-bold text-blue-500">
-                    {i + 1}
-                  </span>
-                  <span>{step}</span>
-                </li>
-              ))}
-            </ul>
+          <section id="pattern">
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Info className="h-5 w-5 text-blue-500" />
+                  The Pattern
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3">
+                  {fallacy.pattern.map((step, i) => (
+                    <li key={step} className="flex gap-3 text-muted-foreground">
+                      <Badge
+                        variant="secondary"
+                        className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-blue-500/10 text-xs font-bold text-blue-500 p-0"
+                      >
+                        {i + 1}
+                      </Badge>
+                      <span>{step}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
           </section>
 
           {/* Examples */}
@@ -348,41 +364,54 @@ export default async function FallacyPage({ params }: FallacyPageProps) {
 
             <div className="grid gap-6 sm:grid-cols-2">
               {/* Everyday Example */}
-              <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
-                <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-                  Everyday Scenario
-                </h3>
-                <div className="mb-4 rounded-lg bg-muted/50 p-3 text-sm italic text-muted-foreground">
-                  "{fallacy.everydayExample.setup}"
-                </div>
-                <div className="space-y-3">
-                  {fallacy.everydayExample.dialogue.map((line) => {
-                    const [label, ...rest] = line.split(":");
-                    const content = rest.join(":").trim().replace(/^"|"$/g, "");
-                    return (
-                      <div
-                        key={`${label}-${content}`}
-                        className="flex gap-2 text-sm"
-                      >
-                        <span className="font-bold text-foreground shrink-0">
-                          {label}:
-                        </span>
-                        <span className="text-muted-foreground">{content}</span>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
+                    Everyday Scenario
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="mb-4 rounded-lg bg-muted/50 p-3 text-sm italic text-muted-foreground">
+                    "{fallacy.everydayExample.setup}"
+                  </div>
+                  <div className="space-y-3">
+                    {fallacy.everydayExample.dialogue.map((line) => {
+                      const [label, ...rest] = line.split(":");
+                      const content = rest
+                        .join(":")
+                        .trim()
+                        .replace(/^"|"$/g, "");
+                      return (
+                        <div
+                          key={`${label}-${content}`}
+                          className="flex gap-2 text-sm"
+                        >
+                          <span className="font-bold text-foreground shrink-0">
+                            {label}:
+                          </span>
+                          <span className="text-muted-foreground">
+                            {content}
+                          </span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </CardContent>
+              </Card>
 
               {/* Serious Example */}
-              <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
-                <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-                  Serious Context
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {fallacy.seriousExample}
-                </p>
-              </div>
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
+                    Serious Context
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {fallacy.seriousExample}
+                  </p>
+                </CardContent>
+              </Card>
             </div>
           </section>
 
@@ -407,116 +436,126 @@ export default async function FallacyPage({ params }: FallacyPageProps) {
           </div>
 
           {/* Defense */}
-          <section
-            id="counter"
-            className="rounded-2xl border border-orange-500/20 bg-orange-500/5 p-6 dark:bg-orange-500/10"
-          >
-            <h2 className="flex items-center gap-2 text-xl font-bold text-foreground mb-4">
-              <Shield className="h-5 w-5 text-orange-500" />
-              How to Counter It
-            </h2>
-            <div className="grid gap-6 sm:grid-cols-2">
-              <div>
-                <h3 className="mb-2 text-sm font-semibold text-foreground">
-                  Recognition
-                </h3>
-                <ul className="list-disc pl-4 space-y-1 text-sm text-muted-foreground marker:text-orange-500">
-                  {(fallacy.recognitionPoints || []).map((tip) => (
-                    <li key={tip}>{tip}</li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <h3 className="mb-2 text-sm font-semibold text-foreground">
-                  Response
-                </h3>
-                <ul className="list-disc pl-4 space-y-1 text-sm text-muted-foreground marker:text-orange-500">
-                  {(fallacy.responseStrategies || []).map((tip) => (
-                    <li key={tip}>{tip}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+          <section id="counter">
+            <Card className="border-orange-500/20 bg-orange-500/5 dark:bg-orange-500/10">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2 text-xl font-bold text-foreground">
+                  <Shield className="h-5 w-5 text-orange-500" />
+                  How to Counter It
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="grid gap-6 sm:grid-cols-2">
+                  <div>
+                    <h3 className="mb-2 text-sm font-semibold text-foreground">
+                      Recognition
+                    </h3>
+                    <ul className="list-disc pl-4 space-y-1 text-sm text-muted-foreground marker:text-orange-500">
+                      {(fallacy.recognitionPoints || []).map((tip) => (
+                        <li key={tip}>{tip}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="mb-2 text-sm font-semibold text-foreground">
+                      Response
+                    </h3>
+                    <ul className="list-disc pl-4 space-y-1 text-sm text-muted-foreground marker:text-orange-500">
+                      {(fallacy.responseStrategies || []).map((tip) => (
+                        <li key={tip}>{tip}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </section>
 
           {/* Common phrases */}
-          <section className="rounded-2xl border border-border bg-card p-6 shadow-sm">
-            <h2 className="text-xl font-bold text-foreground mb-3">
-              Common phrases that signal this fallacy
-            </h2>
-            <ul className="list-disc pl-4 space-y-2 text-muted-foreground">
-              {commonPhrases.map((phrase) => (
-                <li key={phrase}>{phrase}</li>
-              ))}
-            </ul>
-          </section>
+          <Card>
+            <CardHeader>
+              <CardTitle>Common phrases that signal this fallacy</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ul className="list-disc pl-4 space-y-2 text-muted-foreground">
+                {commonPhrases.map((phrase) => (
+                  <li key={phrase}>{phrase}</li>
+                ))}
+              </ul>
+            </CardContent>
+          </Card>
 
           {/* Repair */}
-          <section className="rounded-2xl border border-emerald-500/30 bg-emerald-500/10 p-6 shadow-sm">
-            <h2 className="text-xl font-bold text-foreground mb-3">
-              Better reasoning / Repair the argument
-            </h2>
-            <p className="text-muted-foreground">
-              {fallacy.responseStrategies[0] ||
-                "Rebuild the claim with clear premises, relevant evidence, and step-by-step support."}
-            </p>
-          </section>
+          <Card className="border-emerald-500/30 bg-emerald-500/10">
+            <CardHeader>
+              <CardTitle>Better reasoning / Repair the argument</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground">
+                {fallacy.responseStrategies[0] ||
+                  "Rebuild the claim with clear premises, relevant evidence, and step-by-step support."}
+              </p>
+            </CardContent>
+          </Card>
 
           {/* Often confused with */}
           {confusedWith || relatedDisplay.length > 0 ? (
-            <section
-              id="confused-with"
-              className="rounded-2xl border border-border bg-card p-6 shadow-sm"
-            >
-              <h2 className="text-xl font-bold text-foreground mb-3">
-                Often confused with
-              </h2>
-              <p className="text-muted-foreground">
-                {confusedWith ? (
-                  <>
-                    {fallacy.name} is often mistaken for{" "}
-                    <Link
-                      href={`/fallacies/${confusedWith.slug}`}
-                      className="text-primary hover:underline"
-                    >
-                      {confusedWith.name}
-                    </Link>
-                    , but the patterns differ. Compare the steps above to see
-                    why this fallacy misleads in its own way.
-                  </>
-                ) : (
-                  <>
-                    {fallacy.name} can resemble other issues in the{" "}
-                    {category?.name} family. Cross-check the pattern to be sure
-                    you are diagnosing the right flaw.
-                  </>
-                )}
-              </p>
+            <section id="confused-with">
+              <Card>
+                <CardHeader>
+                  <CardTitle>Often confused with</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    {confusedWith ? (
+                      <>
+                        {fallacy.name} is often mistaken for{" "}
+                        <Link
+                          href={`/fallacies/${confusedWith.slug}`}
+                          className="text-primary hover:underline"
+                        >
+                          {confusedWith.name}
+                        </Link>
+                        , but the patterns differ. Compare the steps above to
+                        see why this fallacy misleads in its own way.
+                      </>
+                    ) : (
+                      <>
+                        {fallacy.name} can resemble other issues in the{" "}
+                        {category?.name} family. Cross-check the pattern to be
+                        sure you are diagnosing the right flaw.
+                      </>
+                    )}
+                  </p>
+                </CardContent>
+              </Card>
             </section>
           ) : null}
 
           {/* Variants */}
           {variants.length > 0 && (
-            <section className="rounded-2xl border border-border bg-card p-6 shadow-sm">
-              <h2 className="text-xl font-bold text-foreground mb-3">
-                Variants
-              </h2>
-              <p className="text-muted-foreground text-sm mb-2">
-                Close variations that are easy to confuse with {fallacy.name}.
-              </p>
-              <ul className="list-disc pl-4 space-y-1 text-muted-foreground">
-                {variants.map((variant) => (
-                  <li key={variant.slug}>
-                    <Link
-                      href={`/fallacies/${variant.slug}`}
-                      className="text-primary hover:underline"
-                    >
-                      {variant.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </section>
+            <Card>
+              <CardHeader>
+                <CardTitle>Variants</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground text-sm mb-2">
+                  Close variations that are easy to confuse with {fallacy.name}.
+                </p>
+                <ul className="list-disc pl-4 space-y-1 text-muted-foreground">
+                  {variants.map((variant) => (
+                    <li key={variant.slug}>
+                      <Link
+                        href={`/fallacies/${variant.slug}`}
+                        className="text-primary hover:underline"
+                      >
+                        {variant.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
           )}
 
           {/* FAQ */}
@@ -526,62 +565,65 @@ export default async function FallacyPage({ params }: FallacyPageProps) {
             </h2>
             <div className="space-y-3">
               {faqEntries.map((entry) => (
-                <div
-                  key={entry.question}
-                  className="rounded-xl border border-border bg-card p-4 shadow-sm"
-                >
-                  <h3 className="font-semibold text-foreground">
-                    {entry.question}
-                  </h3>
-                  <p className="text-sm text-muted-foreground mt-1">
-                    {entry.answer}
-                  </p>
-                </div>
+                <Card key={entry.question}>
+                  <CardHeader>
+                    <CardTitle className="text-base">
+                      {entry.question}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground">
+                      {entry.answer}
+                    </p>
+                  </CardContent>
+                </Card>
               ))}
             </div>
           </section>
 
           {/* Pillar links */}
-          <section className="rounded-2xl border border-border bg-card p-6 shadow-sm">
-            <h2 className="text-xl font-bold text-foreground mb-3">
-              Keep exploring
-            </h2>
-            <ul className="space-y-2 text-primary text-sm">
-              <li>
-                <Link href="/fallacies" className="hover:underline">
-                  List of Logical Fallacies (main hub)
-                </Link>
-              </li>
-              <li>
-                <Link href="/fallacies/types" className="hover:underline">
-                  Types of Logical Fallacies
-                </Link>
-              </li>
-              <li>
-                <Link href="/fallacies/everyday" className="hover:underline">
-                  Fallacies in Everyday Argument
-                </Link>
-              </li>
-              <li>
-                <Link href="/fallacies/politics" className="hover:underline">
-                  Fallacies in Politics
-                </Link>
-              </li>
-              <li>
-                <Link href="/fallacies/media" className="hover:underline">
-                  Fallacies in Media & Social Media
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href={`/categories/${fallacy.category.slug}`}
-                  className="hover:underline"
-                >
-                  See all fallacies in {fallacy.category.name}
-                </Link>
-              </li>
-            </ul>
-          </section>
+          <Card>
+            <CardHeader>
+              <CardTitle>Keep exploring</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-2 text-primary text-sm">
+                <li>
+                  <Link href="/fallacies" className="hover:underline">
+                    List of Logical Fallacies (main hub)
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/fallacies/types" className="hover:underline">
+                    Types of Logical Fallacies
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/fallacies/everyday" className="hover:underline">
+                    Fallacies in Everyday Argument
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/fallacies/politics" className="hover:underline">
+                    Fallacies in Politics
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/fallacies/media" className="hover:underline">
+                    Fallacies in Media & Social Media
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href={`/categories/${fallacy.category.slug}`}
+                    className="hover:underline"
+                  >
+                    See all fallacies in {fallacy.category.name}
+                  </Link>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
 
           {/* References */}
           <section id="further-reading" className="space-y-3">
@@ -659,29 +701,33 @@ export default async function FallacyPage({ params }: FallacyPageProps) {
         {/* Sidebar */}
         <aside className="space-y-6 lg:sticky lg:top-24 lg:h-fit">
           <FallacySummaryCard fallacy={fallacy} />
-          <div className="rounded-xl border border-border bg-card p-5 shadow-sm space-y-2 text-sm text-muted-foreground">
-            <div>
-              <span className="font-semibold text-foreground">Severity:</span>{" "}
-              {fallacy.severity}
-            </div>
-            {fallacy.typicalContexts && fallacy.typicalContexts.length > 0 ? (
+          <Card className="text-sm text-muted-foreground">
+            <CardContent className="space-y-2 pt-6">
               <div>
-                <span className="font-semibold text-foreground">Contexts:</span>{" "}
-                {fallacy.typicalContexts.join(", ")}
+                <span className="font-semibold text-foreground">Severity:</span>{" "}
+                {fallacy.severity}
               </div>
-            ) : null}
-            <div>
-              <span className="font-semibold text-foreground">
-                How it misleads:
-              </span>{" "}
-              {fallacy.whyItIsFallacious}
-            </div>
-            <div>
-              <Link href="#counter" className="text-primary hover:underline">
-                How to counter it →
-              </Link>
-            </div>
-          </div>
+              {fallacy.typicalContexts && fallacy.typicalContexts.length > 0 ? (
+                <div>
+                  <span className="font-semibold text-foreground">
+                    Contexts:
+                  </span>{" "}
+                  {fallacy.typicalContexts.join(", ")}
+                </div>
+              ) : null}
+              <div>
+                <span className="font-semibold text-foreground">
+                  How it misleads:
+                </span>{" "}
+                {fallacy.whyItIsFallacious}
+              </div>
+              <div>
+                <Link href="#counter" className="text-primary hover:underline">
+                  How to counter it →
+                </Link>
+              </div>
+            </CardContent>
+          </Card>
 
           {/* Related Fallacies */}
           {relatedDisplay.length > 0 && (

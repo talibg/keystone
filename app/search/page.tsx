@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { getAllFallacies, getCategoryClasses } from "@/lib/fallacies";
 
 export const metadata: Metadata = {
@@ -56,12 +59,9 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
             placeholder="e.g. ad hominem, slippery slope, appeal"
             className="w-full rounded-lg border border-border bg-card px-4 py-3 text-sm text-foreground shadow-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/40"
           />
-          <button
-            type="submit"
-            className="inline-flex items-center justify-center rounded-lg bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
-          >
+          <Button type="submit" size="lg" className="px-6">
             Search
-          </button>
+          </Button>
         </form>
         <div className="text-sm text-muted-foreground">
           {filtered.length} result{filtered.length === 1 ? "" : "s"}
@@ -83,28 +83,33 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
             <Link
               key={fallacy.slug}
               href={`/fallacies/${fallacy.slug}`}
-              className="group flex flex-col justify-between rounded-xl border border-border bg-card p-5 shadow-sm transition-all hover:border-primary/50 hover:shadow-md"
+              className="block h-full"
             >
-              <div className="space-y-3">
-                <div className="flex items-start justify-between gap-2">
-                  <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors">
-                    {fallacy.name}
-                  </h3>
-                  <span
-                    className={`shrink-0 rounded-full border px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider ${getCategoryClasses(
-                      fallacy.category.colorKey,
-                    )}`}
-                  >
-                    {fallacy.category.name}
-                  </span>
+              <Card className="h-full transition-all hover:border-primary/50 hover:shadow-md group flex flex-col justify-between">
+                <CardHeader className="pb-3">
+                  <div className="flex items-start justify-between gap-2">
+                    <CardTitle className="group-hover:text-primary transition-colors">
+                      {fallacy.name}
+                    </CardTitle>
+                    <Badge
+                      variant="outline"
+                      className={`shrink-0 text-[10px] uppercase tracking-wider ${getCategoryClasses(
+                        fallacy.category.colorKey,
+                      )}`}
+                    >
+                      {fallacy.category.name}
+                    </Badge>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground line-clamp-3">
+                    {fallacy.shortDefinition}
+                  </p>
+                </CardContent>
+                <div className="px-6 pb-6 mt-auto flex items-center text-xs font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100">
+                  View details →
                 </div>
-                <p className="text-sm text-muted-foreground line-clamp-3">
-                  {fallacy.shortDefinition}
-                </p>
-              </div>
-              <div className="mt-4 flex items-center text-xs font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100">
-                View details →
-              </div>
+              </Card>
             </Link>
           ))}
         </div>
