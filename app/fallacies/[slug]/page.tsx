@@ -57,22 +57,37 @@ export async function generateMetadata({
 
   const canonical = `${siteUrl}/fallacies/${fallacy.slug}`;
   const ogImage = `${siteUrl}/og/fallacy/${fallacy.slug}`;
+  const nameIncludesFallacy = fallacy.name.toLowerCase().includes("fallacy");
+  const pageTitle = nameIncludesFallacy
+    ? `${fallacy.name}: Definition, Examples & How to Fix It`
+    : `${fallacy.name} Fallacy: Definition, Examples & How to Fix It`;
+  const datePublished = "2024-12-01";
+  const dateModified = new Date().toISOString();
+  const ogImageEntry = {
+    url: ogImage,
+    width: 1200,
+    height: 630,
+    alt: `${fallacy.name} — ${fallacy.shortDefinition}`,
+  };
 
   return {
-    title: fallacy.seoTitle,
+    title: { absolute: pageTitle },
     description: fallacy.seoDescription,
     alternates: {
       canonical,
     },
     openGraph: {
-      title: fallacy.seoTitle,
+      type: "article",
+      title: pageTitle,
       description: fallacy.seoDescription,
       url: canonical,
-      images: [ogImage || defaultOgImage],
+      images: [ogImageEntry],
+      publishedTime: datePublished,
+      modifiedTime: dateModified,
     },
     twitter: {
       card: "summary_large_image",
-      title: fallacy.seoTitle,
+      title: pageTitle,
       description: fallacy.seoDescription,
       images: [ogImage || defaultOgImage],
     },
@@ -108,6 +123,12 @@ export default async function FallacyPage({ params }: FallacyPageProps) {
     0,
     5,
   );
+  const nameIncludesFallacy = fallacy.name.toLowerCase().includes("fallacy");
+  const pageTitle = nameIncludesFallacy
+    ? `${fallacy.name}: Definition, Examples & How to Fix It`
+    : `${fallacy.name} Fallacy: Definition, Examples & How to Fix It`;
+  const datePublished = "2024-12-01";
+  const dateModified = new Date().toISOString();
   const readingTime = estimateReadingTime(
     [
       fallacy.explanation,
@@ -118,6 +139,13 @@ export default async function FallacyPage({ params }: FallacyPageProps) {
       fallacy.recognitionPoints.join(" "),
     ].join(" "),
   );
+  const fallacyHeading = nameIncludesFallacy
+    ? fallacy.name
+    : `The ${fallacy.name} Fallacy`;
+  const explanationHeading = nameIncludesFallacy
+    ? `What is the ${fallacy.name}?`
+    : `What is the ${fallacy.name} fallacy?`;
+  const examplesHeading = `Examples of ${fallacy.name} in Everyday Life`;
   const summaryPoints = [
     `Definition: ${fallacy.shortDefinition}`,
     `Impact: ${fallacy.name} distorts reasoning by ${fallacy.whyItIsFallacious}`,
@@ -135,6 +163,7 @@ export default async function FallacyPage({ params }: FallacyPageProps) {
     { label: "Summary", href: "#summary" },
     { label: "Explanation", href: "#explanation" },
     { label: "Pattern", href: "#pattern" },
+    { label: "Why it matters", href: "#why-it-matters" },
     { label: "Examples", href: "#examples" },
     { label: "Often Confused With", href: "#confused-with" },
     { label: "FAQ", href: "#faq" },
@@ -144,13 +173,31 @@ export default async function FallacyPage({ params }: FallacyPageProps) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: fallacy.seoTitle,
+    headline: pageTitle,
     description: fallacy.seoDescription,
     url: `${siteUrl}/fallacies/${fallacy.slug}`,
     inLanguage: "en",
-    datePublished: "2024-12-01",
+    datePublished,
+    dateModified,
     about: [fallacy.name, "Logical fallacy", "Critical Thinking"],
     timeRequired: readingTime,
+    isPartOf: category
+      ? {
+          "@type": "CollectionPage",
+          name: category.name,
+          url: `${siteUrl}/categories/${category.slug}`,
+        }
+      : undefined,
+    author: {
+      "@type": "Organization",
+      name: "The Fallacy Guide Editorial Team",
+      url: siteUrl,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "The Fallacy Guide",
+      url: siteUrl,
+    },
   };
 
   const breadcrumbList = {
@@ -285,7 +332,7 @@ export default async function FallacyPage({ params }: FallacyPageProps) {
                 )}
               </div>
               <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl">
-                {fallacy.name}
+                {fallacyHeading}
               </h1>
             </div>
             <p className="text-xl leading-relaxed text-muted-foreground text-balance">
@@ -317,10 +364,13 @@ export default async function FallacyPage({ params }: FallacyPageProps) {
           >
             <h2 className="flex items-center gap-2 text-2xl font-bold text-foreground">
               <BookOpen className="h-6 w-6 text-primary" />
-              Explanation
+              {explanationHeading}
             </h2>
             <p className="text-lg leading-relaxed text-muted-foreground">
               {fallacy.explanation}
+            </p>
+            <p className="text-lg leading-relaxed text-muted-foreground">
+              People lean on this pattern because {fallacy.whyPeopleUseIt}
             </p>
           </section>
 
@@ -350,10 +400,24 @@ export default async function FallacyPage({ params }: FallacyPageProps) {
             </Card>
           </section>
 
+          <section id="why-it-matters" className="space-y-3">
+            <h2 className="text-2xl font-bold text-foreground">
+              Why the {fallacy.name} fallacy matters
+            </h2>
+            <p className="text-muted-foreground text-lg leading-relaxed">
+              This fallacy distorts reasoning by {fallacy.whyItIsFallacious}. It
+              often shows up in contexts like{" "}
+              {fallacy.typicalContexts && fallacy.typicalContexts.length > 0
+                ? fallacy.typicalContexts.join(", ")
+                : "debates, headlines, and everyday claims"}
+              , where quick takes and ambiguity can hide weak arguments.
+            </p>
+          </section>
+
           <section id="examples" className="space-y-6">
             <h2 className="flex items-center gap-2 text-2xl font-bold text-foreground">
               <MessageSquare className="h-6 w-6 text-green-500" />
-              Examples
+              {examplesHeading}
             </h2>
 
             <div className="grid gap-6 sm:grid-cols-2">
