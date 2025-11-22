@@ -52,34 +52,23 @@ export const getPrevNextFallacies = (
   };
 };
 
-export const categoryColorMap: Record<FallacyCategorySlug, string> = {
-  relevance: "rose",
-  "ambiguity-language": "indigo",
-  presumption: "amber",
-  "statistical-scientific": "emerald",
-  formal: "purple",
-  "informal-dialogue": "cyan",
-  "rhetorical-cognitive-bias": "sky",
-  "debate-tactics": "slate",
-};
-
 export const getCategoryClasses = (colorKey: string) => {
   switch (colorKey) {
-    case "rose": // relevance
+    case "rose":
       return "border-[--chart-1]/20 bg-[--chart-1]/10 text-[--chart-1]";
-    case "indigo": // ambiguity-language
+    case "indigo":
       return "border-[--chart-2]/20 bg-[--chart-2]/10 text-[--chart-2]";
-    case "amber": // presumption
+    case "amber":
       return "border-[--chart-3]/30 bg-[--chart-3]/10 text-[--chart-3]";
-    case "emerald": // statistical-scientific
+    case "emerald":
       return "border-[--chart-4]/20 bg-[--chart-4]/10 text-[--chart-4]";
-    case "purple": // formal
+    case "purple":
       return "border-[--chart-5]/20 bg-[--chart-5]/10 text-[--chart-5]";
-    case "cyan": // informal-dialogue
+    case "cyan":
       return "border-[--chart-6]/20 bg-[--chart-6]/10 text-[--chart-6]";
-    case "sky": // rhetorical-cognitive-bias
+    case "sky":
       return "border-[--chart-7]/20 bg-[--chart-7]/10 text-[--chart-7]";
-    case "slate": // debate-tactics
+    case "slate":
       return "border-[--chart-8]/20 bg-[--chart-8]/10 text-[--chart-8]";
     default:
       return "border-muted-foreground/20 bg-muted-foreground/10 text-muted-foreground";

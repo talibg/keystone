@@ -48,7 +48,6 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-background text-foreground flex flex-col`}
       >
-        {/* Skip Navigation for Accessibility */}
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-md focus:shadow-lg"
@@ -112,7 +111,6 @@ export default function RootLayout({
           <footer className="border-t border-border/40 bg-muted/30">
             <div className="mx-auto max-w-7xl px-6 py-12">
               <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-
                 <div className="space-y-4">
                   <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider">
                     About
@@ -224,8 +222,6 @@ export default function RootLayout({
                     </li>
                   </ul>
                 </div>
-
-
               </div>
 
               <div className="mt-12 border-t border-border/40 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">

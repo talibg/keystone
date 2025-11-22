@@ -1,9 +1,9 @@
-export type MasterListEntry = {
+type MasterListEntry = {
   name: string;
   summary: string;
 };
 
-export type MasterListCategory = {
+type MasterListCategory = {
   title: string;
   description: string;
   entries: MasterListEntry[];

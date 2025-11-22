@@ -38,9 +38,7 @@ export async function GET(
           fontSize: 24,
           fontWeight: 700,
         }}
-      >
-      
-      </div>
+      ></div>
       <div style={{ marginTop: 30, fontSize: 52, fontWeight: 800 }}>
         {fallacy.name}
       </div>

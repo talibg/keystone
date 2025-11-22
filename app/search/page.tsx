@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { Badge } from "@/components/ui/badge";
+import { FallacyCard } from "@/components/FallacyCard";
+import { PageHeader } from "@/components/PageHeader";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { getAllFallacies, getCategoryClasses } from "@/lib/fallacies";
+import { getAllFallacies } from "@/lib/fallacies";
 
 export const metadata: Metadata = {
   title: "Search",
@@ -39,15 +38,13 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
 
   return (
     <div className="space-y-8">
-      <Breadcrumbs
-        items={[{ label: "Home", href: "/" }, { label: "Search" }]}
+      <PageHeader
+        title="Search"
+        description="Type a fallacy name, pattern, or cue to find the right entry."
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Search" }]}
       />
 
       <header className="space-y-2">
-        <h1 className="text-3xl font-semibold text-foreground">Search</h1>
-        <p className="text-muted-foreground">
-          Type a fallacy name, pattern, or cue to find the right entry.
-        </p>
         <form
           action="/search"
           className="mt-3 flex flex-col gap-2 sm:flex-row sm:items-center"
@@ -80,37 +77,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
       ) : (
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {filtered.map((fallacy) => (
-            <Link
-              key={fallacy.slug}
-              href={`/fallacies/${fallacy.slug}`}
-              className="block h-full"
-            >
-              <Card className="h-full transition-all hover:border-primary/50 hover:shadow-md group flex flex-col justify-between">
-                <CardHeader className="pb-3">
-                  <div className="flex items-start justify-between gap-2">
-                    <CardTitle className="group-hover:text-primary transition-colors">
-                      {fallacy.name}
-                    </CardTitle>
-                    <Badge
-                      variant="outline"
-                      className={`shrink-0 text-[10px] uppercase tracking-wider ${getCategoryClasses(
-                        fallacy.category.colorKey,
-                      )}`}
-                    >
-                      {fallacy.category.name}
-                    </Badge>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground line-clamp-3">
-                    {fallacy.shortDefinition}
-                  </p>
-                </CardContent>
-                <div className="px-6 pb-6 mt-auto flex items-center text-xs font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100">
-                  View details →
-                </div>
-              </Card>
-            </Link>
+            <FallacyCard key={fallacy.slug} fallacy={fallacy} />
           ))}
         </div>
       )}

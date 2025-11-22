@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { CategoryBadge } from "@/components/CategoryBadge";
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
@@ -9,11 +10,11 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import type { Fallacy } from "@/data/fallacies";
-import { getCategoryClasses } from "@/lib/fallacies";
 
 type Props = {
   fallacy: Fallacy;
   badge?: ReactNode;
+  showDetails?: boolean;
 };
 
 const severityColors: Record<Fallacy["severity"], string> = {
@@ -23,16 +24,16 @@ const severityColors: Record<Fallacy["severity"], string> = {
   Low: "bg-emerald-500/20 text-emerald-700 dark:text-emerald-100 border-emerald-500/30 hover:bg-emerald-500/30",
 };
 
-export function FallacySummaryCard({ fallacy, badge }: Props) {
-  const categoryClasses = getCategoryClasses(fallacy.category.colorKey);
-
+export function FallacySummaryCard({
+  fallacy,
+  badge,
+  showDetails = false,
+}: Props) {
   return (
     <Card className="flex flex-col justify-between">
       <CardHeader className="pb-3">
         <div className="flex items-center gap-2 mb-2">
-          <Badge variant="outline" className={categoryClasses}>
-            {fallacy.category.name}
-          </Badge>
+          <CategoryBadge category={fallacy.category} />
           <Badge variant="outline" className={severityColors[fallacy.severity]}>
             {fallacy.severity} severity
           </Badge>
@@ -51,7 +52,31 @@ export function FallacySummaryCard({ fallacy, badge }: Props) {
             {fallacy.typeLabel}
           </div>
         ) : null}
-        {fallacy.typicalContexts && fallacy.typicalContexts.length > 0 ? (
+        {showDetails ? (
+          <div className="space-y-3 text-sm text-muted-foreground">
+            <div>
+              <span className="font-semibold text-foreground">Severity:</span>{" "}
+              {fallacy.severity}
+            </div>
+            {fallacy.typicalContexts && fallacy.typicalContexts.length > 0 ? (
+              <div>
+                <span className="font-semibold text-foreground">Contexts:</span>{" "}
+                {fallacy.typicalContexts.join(", ")}
+              </div>
+            ) : null}
+            <div>
+              <span className="font-semibold text-foreground">
+                How it misleads:
+              </span>{" "}
+              {fallacy.whyItIsFallacious}
+            </div>
+            <div>
+              <a href="#counter" className="text-primary hover:underline">
+                How to counter it →
+              </a>
+            </div>
+          </div>
+        ) : fallacy.typicalContexts && fallacy.typicalContexts.length > 0 ? (
           <div className="flex flex-wrap gap-2">
             {fallacy.typicalContexts.map((ctx) => (
               <Badge key={ctx} variant="secondary" className="text-[11px]">

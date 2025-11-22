@@ -8,7 +8,7 @@ export type FallacyCategorySlug =
   | "rhetorical-cognitive-bias"
   | "debate-tactics";
 
-export type CategoryColorKey =
+type CategoryColorKey =
   | "sky"
   | "indigo"
   | "amber"

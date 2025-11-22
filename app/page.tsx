@@ -1,27 +1,16 @@
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { FallacyCard } from "@/components/FallacyCard";
 import { CategoriesGrid } from "@/components/home/CategoriesGrid";
 import { HeroSection } from "@/components/home/HeroSection";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import {
-  getAllCategories,
-  getAllFallacies,
-  getCategoryClasses,
-} from "@/lib/fallacies";
+import { getAllCategories, getAllFallacies } from "@/lib/fallacies";
 
 export default function Home() {
   const categories = getAllCategories();
   const fallacies = getAllFallacies();
   const featuredFallacies = fallacies.slice(0, 9);
 
-  // JSON-LD Structured Data for SEO
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebSite",
@@ -33,8 +22,7 @@ export default function Home() {
       "@type": "SearchAction",
       target: {
         "@type": "EntryPoint",
-        urlTemplate:
-          "https://fallacyguide.com/search?q={search_term_string}",
+        urlTemplate: "https://fallacyguide.com/search?q={search_term_string}",
       },
       "query-input": "required name=search_term_string",
     },
@@ -42,17 +30,11 @@ export default function Home() {
 
   return (
     <>
-      {/* JSON-LD Structured Data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
 
       <div className="space-y-20">
-        {/* Hero Section */}
         <HeroSection />
 
-        {/* Categories Section */}
         <section className="space-y-8">
           <div className="flex items-end justify-between">
             <div className="space-y-1">
@@ -75,21 +57,18 @@ export default function Home() {
           <CategoriesGrid categories={categories} />
         </section>
 
-        {/* All Fallacies Section */}
         <section id="all-fallacies" className="space-y-8">
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
             <div className="space-y-1">
-              <h2 className="text-2xl font-bold tracking-tight">All Fallacies</h2>
+              <h2 className="text-2xl font-bold tracking-tight">
+                All Fallacies
+              </h2>
               <p className="text-muted-foreground">
                 Preview featured entries. Visit the full directory to explore
                 everything.
               </p>
             </div>
-            <Button
-              asChild
-              variant="outline"
-              className="rounded-full px-4"
-            >
+            <Button asChild variant="outline" className="rounded-full px-4">
               <Link href="/fallacies">
                 View all fallacies
                 <ArrowRight className="h-4 w-4" />
@@ -99,37 +78,7 @@ export default function Home() {
 
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {featuredFallacies.map((fallacy) => (
-              <Link
-                key={fallacy.slug}
-                href={`/fallacies/${fallacy.slug}`}
-                className="block h-full"
-              >
-                <Card className="h-full transition-all hover:border-primary/50 hover:shadow-md group flex flex-col justify-between">
-                  <CardHeader className="pb-3">
-                    <div className="flex items-start justify-between gap-2">
-                      <CardTitle className="group-hover:text-primary transition-colors">
-                        {fallacy.name}
-                      </CardTitle>
-                      <Badge
-                        variant="outline"
-                        className={`shrink-0 text-[10px] uppercase tracking-wider ${getCategoryClasses(
-                          fallacy.category.colorKey,
-                        )}`}
-                      >
-                        {fallacy.category.name}
-                      </Badge>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground line-clamp-3">
-                      {fallacy.shortDefinition}
-                    </p>
-                  </CardContent>
-                  <div className="px-6 pb-6 mt-auto flex items-center text-xs font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100">
-                    View details →
-                  </div>
-                </Card>
-              </Link>
+              <FallacyCard key={fallacy.slug} fallacy={fallacy} />
             ))}
           </div>
         </section>

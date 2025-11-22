@@ -11,9 +11,9 @@ export default function AboutPage() {
         About The Fallacy Guide
       </h1>
       <p className="text-muted-foreground">
-        The Fallacy Guide is a concise reference to common reasoning
-        errors. It is maintained in-repo with static data so it can be reviewed,
-        improved, and extended without external dependencies.
+        The Fallacy Guide is a concise reference to common reasoning errors. It
+        is maintained in-repo with static data so it can be reviewed, improved,
+        and extended without external dependencies.
       </p>
       <section className="space-y-2">
         <h2 className="text-xl font-semibold text-foreground">

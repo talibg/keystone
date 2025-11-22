@@ -32,9 +32,7 @@ export async function GET(
           "linear-gradient(135deg, #0b1224 0%, #0f172a 40%, #020617 100%)",
       }}
     >
-      <div style={{ fontSize: 22, color: "#a5b4fc", fontWeight: 700 }}>
-      
-      </div>
+      <div style={{ fontSize: 22, color: "#a5b4fc", fontWeight: 700 }}></div>
       <div style={{ marginTop: 24, fontSize: 50, fontWeight: 800 }}>
         {category.name}
       </div>

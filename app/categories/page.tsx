@@ -1,6 +1,6 @@
 import { LayersIcon } from "lucide-react";
 import Link from "next/link";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { PageHeader } from "@/components/PageHeader";
 import {
   Card,
   CardContent,
@@ -21,15 +21,11 @@ export default function CategoriesPage() {
 
   return (
     <div className="space-y-6">
-      <Breadcrumbs
-        items={[{ label: "Home", href: "/" }, { label: "Categories" }]}
+      <PageHeader
+        title="Categories"
+        description="Fallacies are grouped by the type of error they represent."
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Categories" }]}
       />
-      <header className="space-y-2">
-        <h1 className="text-3xl font-semibold text-foreground">Categories</h1>
-        <p className="text-muted-foreground">
-          Fallacies are grouped by the type of error they represent.
-        </p>
-      </header>
 
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {categories.map((category) => (

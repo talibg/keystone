@@ -251,7 +251,6 @@ export default async function FallacyPage({ params }: FallacyPageProps) {
       </div>
 
       <div className="grid gap-10 lg:grid-cols-[1fr_300px]">
-        {/* Main Content */}
         <div className="space-y-10">
           <div className="flex flex-wrap gap-2 rounded-xl border border-border bg-card/90 p-4 text-sm text-muted-foreground">
             {toc.map((item) => (
@@ -266,7 +265,6 @@ export default async function FallacyPage({ params }: FallacyPageProps) {
               </Button>
             ))}
           </div>
-          {/* Header */}
           <header className="space-y-4">
             <div className="space-y-2">
               <div className="flex items-center gap-3">
@@ -295,7 +293,6 @@ export default async function FallacyPage({ params }: FallacyPageProps) {
             </p>
           </header>
 
-          {/* Quick Summary Box */}
           <section id="summary">
             <Card>
               <CardHeader>
@@ -314,7 +311,6 @@ export default async function FallacyPage({ params }: FallacyPageProps) {
             </Card>
           </section>
 
-          {/* Explanation */}
           <section
             id="explanation"
             className="prose prose-slate dark:prose-invert max-w-none"
@@ -328,7 +324,6 @@ export default async function FallacyPage({ params }: FallacyPageProps) {
             </p>
           </section>
 
-          {/* Pattern */}
           <section id="pattern">
             <Card>
               <CardHeader>
@@ -355,7 +350,6 @@ export default async function FallacyPage({ params }: FallacyPageProps) {
             </Card>
           </section>
 
-          {/* Examples */}
           <section id="examples" className="space-y-6">
             <h2 className="flex items-center gap-2 text-2xl font-bold text-foreground">
               <MessageSquare className="h-6 w-6 text-green-500" />
@@ -363,7 +357,6 @@ export default async function FallacyPage({ params }: FallacyPageProps) {
             </h2>
 
             <div className="grid gap-6 sm:grid-cols-2">
-              {/* Everyday Example */}
               <Card>
                 <CardHeader>
                   <CardTitle className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
@@ -399,7 +392,6 @@ export default async function FallacyPage({ params }: FallacyPageProps) {
                 </CardContent>
               </Card>
 
-              {/* Serious Example */}
               <Card>
                 <CardHeader>
                   <CardTitle className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
@@ -415,7 +407,6 @@ export default async function FallacyPage({ params }: FallacyPageProps) {
             </div>
           </section>
 
-          {/* Why it's fallacious & Why used */}
           <div className="grid gap-6 sm:grid-cols-2">
             <section className="space-y-3">
               <h3 className="font-semibold text-foreground">
@@ -435,7 +426,6 @@ export default async function FallacyPage({ params }: FallacyPageProps) {
             </section>
           </div>
 
-          {/* Defense */}
           <section id="counter">
             <Card className="border-orange-500/20 bg-orange-500/5 dark:bg-orange-500/10">
               <CardHeader>
@@ -471,7 +461,6 @@ export default async function FallacyPage({ params }: FallacyPageProps) {
             </Card>
           </section>
 
-          {/* Common phrases */}
           <Card>
             <CardHeader>
               <CardTitle>Common phrases that signal this fallacy</CardTitle>
@@ -485,7 +474,6 @@ export default async function FallacyPage({ params }: FallacyPageProps) {
             </CardContent>
           </Card>
 
-          {/* Repair */}
           <Card className="border-emerald-500/30 bg-emerald-500/10">
             <CardHeader>
               <CardTitle>Better reasoning / Repair the argument</CardTitle>
@@ -498,7 +486,6 @@ export default async function FallacyPage({ params }: FallacyPageProps) {
             </CardContent>
           </Card>
 
-          {/* Often confused with */}
           {confusedWith || relatedDisplay.length > 0 ? (
             <section id="confused-with">
               <Card>
@@ -532,7 +519,6 @@ export default async function FallacyPage({ params }: FallacyPageProps) {
             </section>
           ) : null}
 
-          {/* Variants */}
           {variants.length > 0 && (
             <Card>
               <CardHeader>
@@ -558,7 +544,6 @@ export default async function FallacyPage({ params }: FallacyPageProps) {
             </Card>
           )}
 
-          {/* FAQ */}
           <section id="faq" className="space-y-4">
             <h2 className="text-2xl font-bold text-foreground">
               Frequently Asked Questions
@@ -581,7 +566,6 @@ export default async function FallacyPage({ params }: FallacyPageProps) {
             </div>
           </section>
 
-          {/* Pillar links */}
           <Card>
             <CardHeader>
               <CardTitle>Keep exploring</CardTitle>
@@ -625,7 +609,6 @@ export default async function FallacyPage({ params }: FallacyPageProps) {
             </CardContent>
           </Card>
 
-          {/* References */}
           <section id="further-reading" className="space-y-3">
             <h2 className="text-xl font-bold text-foreground">
               Further reading
@@ -664,7 +647,6 @@ export default async function FallacyPage({ params }: FallacyPageProps) {
             </ul>
           </section>
 
-          {/* Navigation */}
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-border pt-8">
             {previous ? (
               <Link
@@ -698,38 +680,9 @@ export default async function FallacyPage({ params }: FallacyPageProps) {
           </div>
         </div>
 
-        {/* Sidebar */}
         <aside className="space-y-6 lg:sticky lg:top-24 lg:h-fit">
-          <FallacySummaryCard fallacy={fallacy} />
-          <Card className="text-sm text-muted-foreground">
-            <CardContent className="space-y-2 pt-6">
-              <div>
-                <span className="font-semibold text-foreground">Severity:</span>{" "}
-                {fallacy.severity}
-              </div>
-              {fallacy.typicalContexts && fallacy.typicalContexts.length > 0 ? (
-                <div>
-                  <span className="font-semibold text-foreground">
-                    Contexts:
-                  </span>{" "}
-                  {fallacy.typicalContexts.join(", ")}
-                </div>
-              ) : null}
-              <div>
-                <span className="font-semibold text-foreground">
-                  How it misleads:
-                </span>{" "}
-                {fallacy.whyItIsFallacious}
-              </div>
-              <div>
-                <Link href="#counter" className="text-primary hover:underline">
-                  How to counter it →
-                </Link>
-              </div>
-            </CardContent>
-          </Card>
+          <FallacySummaryCard fallacy={fallacy} showDetails />
 
-          {/* Related Fallacies */}
           {relatedDisplay.length > 0 && (
             <div className="space-y-3">
               <h3 className="font-semibold text-foreground text-sm uppercase tracking-wider">
