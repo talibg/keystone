@@ -1,8 +1,14 @@
-export const metadata = {
+import type { Metadata } from "next"
+import { canonicalPath } from "@/lib/seo"
+
+export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
     "Privacy policy for The Fallacy Guide - how we handle your data and protect your privacy.",
-};
+  alternates: {
+    canonical: canonicalPath("/privacy")
+  }
+}
 
 export default function PrivacyPage() {
   return (
@@ -16,7 +22,7 @@ export default function PrivacyPage() {
           {new Date().toLocaleDateString("en-US", {
             month: "long",
             day: "numeric",
-            year: "numeric",
+            year: "numeric"
           })}
         </p>
       </header>
@@ -113,5 +119,5 @@ export default function PrivacyPage() {
         </p>
       </section>
     </div>
-  );
+  )
 }

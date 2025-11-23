@@ -1,21 +1,21 @@
-"use client";
+"use client"
 
-import { AlertTriangle, ArrowLeft, ArrowRight, RefreshCw } from "lucide-react";
-import Link from "next/link";
-import { useEffect } from "react";
+import { AlertTriangle, ArrowLeft, ArrowRight, RefreshCw } from "lucide-react"
+import Link from "next/link"
+import { useEffect } from "react"
 
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 type ErrorPageProps = {
-  error: Error & { digest?: string };
-  reset: () => void;
-};
+  error: Error & { digest?: string }
+  reset: () => void
+}
 
 export default function GlobalError({ error, reset }: ErrorPageProps) {
   useEffect(() => {
-    console.error(error);
-  }, [error]);
+    console.error(error)
+  }, [error])
 
   return (
     <div className="space-y-10">
@@ -78,18 +78,18 @@ export default function GlobalError({ error, reset }: ErrorPageProps) {
           {
             title: "Search the guide",
             href: "/search",
-            description: "Find fallacies, examples, and responses.",
+            description: "Find fallacies, examples, and responses."
           },
           {
             title: "All fallacies",
             href: "/fallacies",
-            description: "Browse the full directory and categories.",
+            description: "Browse the full directory and categories."
           },
           {
             title: "Report the issue",
             href: "/contact",
-            description: "Let the editor know what went wrong.",
-          },
+            description: "Let the editor know what went wrong."
+          }
         ].map((item) => (
           <Card
             key={item.title}
@@ -114,5 +114,5 @@ export default function GlobalError({ error, reset }: ErrorPageProps) {
         ))}
       </section>
     </div>
-  );
+  )
 }

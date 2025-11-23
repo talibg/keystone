@@ -1,30 +1,30 @@
-"use client";
+"use client"
 
-import { Shuffle } from "lucide-react";
-import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { Shuffle } from "lucide-react"
+import { useRouter } from "next/navigation"
+import { useEffect, useState } from "react"
 
 type RandomFallacyButtonProps = {
-  slugs: string[];
-};
+  slugs: string[]
+}
 
 export default function RandomFallacyButton({
-  slugs,
+  slugs
 }: RandomFallacyButtonProps) {
-  const router = useRouter();
-  const [isMounted, setIsMounted] = useState(false);
+  const router = useRouter()
+  const [isMounted, setIsMounted] = useState(false)
 
   useEffect(() => {
-    setIsMounted(true);
-  }, []);
+    setIsMounted(true)
+  }, [])
 
   const handleRandom = () => {
-    if (slugs.length === 0) return;
-    const randomSlug = slugs[Math.floor(Math.random() * slugs.length)];
-    router.push(`/fallacies/${randomSlug}`);
-  };
+    if (slugs.length === 0) return
+    const randomSlug = slugs[Math.floor(Math.random() * slugs.length)]
+    router.push(`/fallacies/${randomSlug}`)
+  }
 
-  if (!isMounted) return null;
+  if (!isMounted) return null
 
   return (
     <button
@@ -36,5 +36,5 @@ export default function RandomFallacyButton({
       <Shuffle className="h-4 w-4 transition-transform group-hover:rotate-180" />
       <span className="hidden sm:inline">Random</span>
     </button>
-  );
+  )
 }

@@ -1,12 +1,17 @@
-import Link from "next/link";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { categories } from "@/data/fallacies";
+import type { Metadata } from "next"
+import Link from "next/link"
+import { Breadcrumbs } from "@/components/Breadcrumbs"
+import { categories } from "@/data/fallacies"
+import { canonicalPath } from "@/lib/seo"
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Fallacies in Everyday Argument",
   description:
     "Explore fallacies grouped by type and category for faster scanning.",
-};
+  alternates: {
+    canonical: canonicalPath("/fallacies/types")
+  }
+}
 
 export default function FallacyTypesPage() {
   return (
@@ -41,5 +46,5 @@ export default function FallacyTypesPage() {
         ))}
       </div>
     </div>
-  );
+  )
 }

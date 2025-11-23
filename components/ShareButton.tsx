@@ -1,18 +1,18 @@
-"use client";
+"use client"
 
-import { Check, Share2 } from "lucide-react";
-import { useState } from "react";
+import { Check, Share2 } from "lucide-react"
+import { useState } from "react"
 
 export default function ShareButton({
   title,
   text,
-  url,
+  url
 }: {
-  title: string;
-  text: string;
-  url: string;
+  title: string
+  text: string
+  url: string
 }) {
-  const [copied, setCopied] = useState(false);
+  const [copied, setCopied] = useState(false)
 
   const handleShare = async () => {
     if (navigator.share) {
@@ -20,22 +20,22 @@ export default function ShareButton({
         await navigator.share({
           title,
           text,
-          url,
-        });
-        return;
+          url
+        })
+        return
       } catch (err) {
-        console.error("Error sharing:", err);
+        console.error("Error sharing:", err)
       }
     }
 
     try {
-      await navigator.clipboard.writeText(url);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
+      await navigator.clipboard.writeText(url)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
     } catch (err) {
-      console.error("Failed to copy:", err);
+      console.error("Failed to copy:", err)
     }
-  };
+  }
 
   return (
     <button
@@ -50,5 +50,5 @@ export default function ShareButton({
       )}
       {copied ? "Copied" : "Share"}
     </button>
-  );
+  )
 }

@@ -1,10 +1,15 @@
-import { Github } from "lucide-react";
+import { Github } from "lucide-react"
+import type { Metadata } from "next"
+import { canonicalPath } from "@/lib/seo"
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Contact",
   description:
     "Get in touch with The Fallacy Guide - connect via GitHub or X (Twitter).",
-};
+  alternates: {
+    canonical: canonicalPath("/contact")
+  }
+}
 
 export default function ContactPage() {
   return (
@@ -81,5 +86,5 @@ export default function ContactPage() {
         </p>
       </section>
     </div>
-  );
+  )
 }

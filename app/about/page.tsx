@@ -1,8 +1,14 @@
-export const metadata = {
+import type { Metadata } from "next"
+import { canonicalPath } from "@/lib/seo"
+
+export const metadata: Metadata = {
   title: "About",
   description:
     "Why this guide exists, how it is maintained, and how to use it responsibly.",
-};
+  alternates: {
+    canonical: canonicalPath("/about")
+  }
+}
 
 export default function AboutPage() {
   return (
@@ -47,5 +53,5 @@ export default function AboutPage() {
         </p>
       </section>
     </div>
-  );
+  )
 }

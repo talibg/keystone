@@ -1,33 +1,33 @@
-import Link from "next/link";
-import type { ReactNode } from "react";
-import { CategoryBadge } from "@/components/CategoryBadge";
-import { Badge } from "@/components/ui/badge";
+import Link from "next/link"
+import type { ReactNode } from "react"
+import { CategoryBadge } from "@/components/CategoryBadge"
+import { Badge } from "@/components/ui/badge"
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import type { Fallacy } from "@/data/fallacies";
+  CardTitle
+} from "@/components/ui/card"
+import type { Fallacy } from "@/data/fallacies"
 
 type Props = {
-  fallacy: Fallacy;
-  badge?: ReactNode;
-  showDetails?: boolean;
-};
+  fallacy: Fallacy
+  badge?: ReactNode
+  showDetails?: boolean
+}
 
 const severityColors: Record<Fallacy["severity"], string> = {
   High: "bg-rose-500/20 text-rose-700 dark:text-rose-100 border-rose-500/30 hover:bg-rose-500/30",
   Medium:
     "bg-amber-500/20 text-amber-700 dark:text-amber-100 border-amber-500/30 hover:bg-amber-500/30",
-  Low: "bg-emerald-500/20 text-emerald-700 dark:text-emerald-100 border-emerald-500/30 hover:bg-emerald-500/30",
-};
+  Low: "bg-emerald-500/20 text-emerald-700 dark:text-emerald-100 border-emerald-500/30 hover:bg-emerald-500/30"
+}
 
 export function FallacySummaryCard({
   fallacy,
   badge,
-  showDetails = false,
+  showDetails = false
 }: Props) {
   return (
     <Card className="flex flex-col justify-between">
@@ -96,5 +96,5 @@ export function FallacySummaryCard({
         {badge}
       </CardFooter>
     </Card>
-  );
+  )
 }

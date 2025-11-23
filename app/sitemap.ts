@@ -1,106 +1,105 @@
-import type { MetadataRoute } from "next";
-import { getAllCategories, getAllFallacies } from "@/lib/fallacies";
-
-const baseUrl = "https://fallacyguide.com";
+import type { MetadataRoute } from "next"
+import { getAllCategories, getAllFallacies } from "@/lib/fallacies"
+import { absoluteUrl } from "@/lib/seo"
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const fallacies = getAllFallacies();
-  const categories = getAllCategories();
+  const fallacies = getAllFallacies()
+  const categories = getAllCategories()
 
   const fallacyUrls = fallacies.map((fallacy) => ({
-    url: `${baseUrl}/fallacies/${fallacy.slug}`,
+    url: absoluteUrl(`/fallacies/${fallacy.slug}`),
     lastModified: new Date(),
     changeFrequency: "monthly" as const,
-    priority: 0.9,
-  }));
+    priority: 0.9
+  }))
 
   const categoryUrls = categories.map((category) => ({
-    url: `${baseUrl}/categories/${category.slug}`,
+    url: absoluteUrl(`/categories/${category.slug}`),
     lastModified: new Date(),
     changeFrequency: "monthly" as const,
-    priority: 0.8,
-  }));
+    priority: 0.8
+  }))
 
   return [
     {
-      url: baseUrl,
+      url: absoluteUrl("/"),
       lastModified: new Date(),
       changeFrequency: "weekly",
-      priority: 1,
+      priority: 1
     },
     {
-      url: `${baseUrl}/fallacies`,
+      url: absoluteUrl("/fallacies"),
       lastModified: new Date(),
       changeFrequency: "weekly",
-      priority: 0.85,
+      priority: 0.85
     },
     {
-      url: `${baseUrl}/fallacies/master-list`,
+      url: absoluteUrl("/fallacies/master-list"),
       lastModified: new Date(),
       changeFrequency: "weekly",
-      priority: 0.9,
+      priority: 0.9
     },
     {
-      url: `${baseUrl}/fallacies/types`,
+      url: absoluteUrl("/fallacies/types"),
       lastModified: new Date(),
       changeFrequency: "monthly",
-      priority: 0.75,
+      priority: 0.75
     },
     {
-      url: `${baseUrl}/fallacies/everyday`,
+      url: absoluteUrl("/fallacies/everyday"),
       lastModified: new Date(),
       changeFrequency: "monthly",
-      priority: 0.7,
+      priority: 0.7
     },
     {
-      url: `${baseUrl}/fallacies/politics`,
+      url: absoluteUrl("/fallacies/politics"),
       lastModified: new Date(),
       changeFrequency: "monthly",
-      priority: 0.7,
+      priority: 0.7
     },
     {
-      url: `${baseUrl}/fallacies/media`,
+      url: absoluteUrl("/fallacies/media"),
       lastModified: new Date(),
       changeFrequency: "monthly",
-      priority: 0.7,
+      priority: 0.7
     },
     {
-      url: `${baseUrl}/categories`,
+      url: absoluteUrl("/categories"),
       lastModified: new Date(),
       changeFrequency: "weekly",
-      priority: 0.8,
+      priority: 0.8
     },
     {
-      url: `${baseUrl}/search`,
+      url: absoluteUrl("/search"),
       lastModified: new Date(),
       changeFrequency: "weekly",
-      priority: 0.85,
+      priority: 0.85
     },
     {
-      url: `${baseUrl}/about`,
+      url: absoluteUrl("/about"),
       lastModified: new Date(),
       changeFrequency: "yearly",
-      priority: 0.5,
+      priority: 0.5
     },
     {
-      url: `${baseUrl}/contact`,
+      url: absoluteUrl("/contact"),
       lastModified: new Date(),
       changeFrequency: "yearly",
-      priority: 0.5,
+      priority: 0.5
     },
     {
-      url: `${baseUrl}/privacy`,
+      url: absoluteUrl("/privacy"),
       lastModified: new Date(),
       changeFrequency: "yearly",
-      priority: 0.3,
+      priority: 0.3
     },
     {
-      url: `${baseUrl}/terms`,
+      url: absoluteUrl("/terms"),
       lastModified: new Date(),
       changeFrequency: "yearly",
-      priority: 0.3,
+      priority: 0.3
     },
     ...fallacyUrls,
-    ...categoryUrls,
-  ];
+    ...categoryUrls
+  ]
 }

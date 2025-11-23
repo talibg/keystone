@@ -1,40 +1,44 @@
-import type { Metadata } from "next";
-import Link from "next/link";
-import { FallacyCard } from "@/components/FallacyCard";
-import { PageHeader } from "@/components/PageHeader";
-import { Button } from "@/components/ui/button";
-import { getAllFallacies } from "@/lib/fallacies";
+import type { Metadata } from "next"
+import Link from "next/link"
+import { FallacyCard } from "@/components/FallacyCard"
+import { PageHeader } from "@/components/PageHeader"
+import { Button } from "@/components/ui/button"
+import { getAllFallacies } from "@/lib/fallacies"
+import { canonicalPath } from "@/lib/seo"
 
 export const metadata: Metadata = {
   title: "Search",
   description:
     "Find logical fallacies by name, pattern, description, or recognition cues.",
-};
+  alternates: {
+    canonical: canonicalPath("/search")
+  }
+}
 
 type SearchPageProps = {
-  searchParams: Promise<{ q?: string }>;
-};
+  searchParams: Promise<{ q?: string }>
+}
 
 export default async function SearchPage({ searchParams }: SearchPageProps) {
-  const { q } = await searchParams;
-  const query = q?.trim() ?? "";
-  const searchTerm = query.toLowerCase();
-  const allFallacies = getAllFallacies();
+  const { q } = await searchParams
+  const query = q?.trim() ?? ""
+  const searchTerm = query.toLowerCase()
+  const allFallacies = getAllFallacies()
 
   const filtered = allFallacies.filter((fallacy) => {
-    if (!searchTerm) return true;
+    if (!searchTerm) return true
     const haystack = [
       fallacy.name,
       fallacy.shortDefinition,
       fallacy.explanation,
       fallacy.pattern.join(" "),
       fallacy.recognitionPoints.join(" "),
-      fallacy.responseStrategies.join(" "),
+      fallacy.responseStrategies.join(" ")
     ]
       .join(" ")
-      .toLowerCase();
-    return haystack.includes(searchTerm);
-  });
+      .toLowerCase()
+    return haystack.includes(searchTerm)
+  })
 
   return (
     <div className="space-y-8">
@@ -82,5 +86,5 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
         </div>
       )}
     </div>
-  );
+  )
 }

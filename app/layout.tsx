@@ -1,48 +1,52 @@
-import { BookOpen, Layers, List, Search } from "lucide-react";
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import Link from "next/link";
-import "./globals.css";
-import { Analytics } from "@vercel/analytics/next";
-import RandomFallacyButton from "@/components/RandomFallacyButton";
-import { ThemeProvider } from "@/components/ThemeProvider";
-import ThemeToggle from "@/components/ThemeToggle";
-import { getAllFallacies } from "@/lib/fallacies";
+import { BookOpen, Layers, List, Search } from "lucide-react"
+import type { Metadata } from "next"
+import { Geist, Geist_Mono } from "next/font/google"
+import Link from "next/link"
+import "./globals.css"
+import { Analytics } from "@vercel/analytics/next"
+import RandomFallacyButton from "@/components/RandomFallacyButton"
+import { ThemeProvider } from "@/components/ThemeProvider"
+import ThemeToggle from "@/components/ThemeToggle"
+import { getAllFallacies } from "@/lib/fallacies"
+import { canonicalPath, metadataBase } from "@/lib/seo"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
+  weight: ["400", "500", "600", "700"]
+})
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+  subsets: ["latin"]
+})
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://fallacyguide.com"),
+  metadataBase,
   title: {
     template: "%s | The Fallacy Guide",
-    default: "The Fallacy Guide – Master Critical Thinking",
+    default: "The Fallacy Guide – Master Critical Thinking"
   },
   description:
     "The most comprehensive and modern guide to logical fallacies. Learn to spot, understand, and counter common errors in reasoning.",
+  alternates: {
+    canonical: canonicalPath("/")
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://fallacyguide.com",
-    siteName: "The Fallacy Guide",
-  },
-};
+    url: canonicalPath("/"),
+    siteName: "The Fallacy Guide"
+  }
+}
 
 export default function RootLayout({
-  children,
+  children
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
-  const fallacies = getAllFallacies();
-  const slugs = fallacies.map((f) => f.slug);
+  const fallacies = getAllFallacies()
+  const slugs = fallacies.map((f) => f.slug)
 
   return (
     <html lang="en" suppressHydrationWarning>
@@ -259,5 +263,5 @@ export default function RootLayout({
         <Analytics />
       </body>
     </html>
-  );
+  )
 }

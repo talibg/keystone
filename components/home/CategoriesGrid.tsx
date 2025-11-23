@@ -1,19 +1,19 @@
-"use client";
+"use client"
 
-import { motion } from "framer-motion";
-import Link from "next/link";
+import { motion } from "framer-motion"
+import Link from "next/link"
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import type { FallacyCategory } from "@/data/fallacies";
+  CardTitle
+} from "@/components/ui/card"
+import type { FallacyCategory } from "@/data/fallacies"
 
 type CategoriesGridProps = {
-  categories: FallacyCategory[];
-};
+  categories: FallacyCategory[]
+}
 
 function LayersIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -36,7 +36,7 @@ function LayersIcon(props: React.SVGProps<SVGSVGElement>) {
       <path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65" />
       <path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65" />
     </svg>
-  );
+  )
 }
 
 export function CategoriesGrid({ categories }: CategoriesGridProps) {
@@ -45,15 +45,15 @@ export function CategoriesGrid({ categories }: CategoriesGridProps) {
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
+        staggerChildren: 0.1
+      }
+    }
+  }
 
   const item = {
     hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0 },
-  };
+    show: { opacity: 1, y: 0 }
+  }
 
   return (
     <motion.div
@@ -85,5 +85,5 @@ export function CategoriesGrid({ categories }: CategoriesGridProps) {
         </motion.div>
       ))}
     </motion.div>
-  );
+  )
 }

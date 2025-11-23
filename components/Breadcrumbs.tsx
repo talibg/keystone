@@ -1,29 +1,29 @@
-import Link from "next/link";
-import { Fragment } from "react";
+import Link from "next/link"
+import { Fragment } from "react"
 import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
+  BreadcrumbSeparator
+} from "@/components/ui/breadcrumb"
 
 type Crumb = {
-  label: string;
-  href?: string;
-};
+  label: string
+  href?: string
+}
 
 type BreadcrumbsProps = {
-  items: Crumb[];
-};
+  items: Crumb[]
+}
 
 export function Breadcrumbs({ items }: BreadcrumbsProps) {
   return (
     <Breadcrumb>
       <BreadcrumbList>
         {items.map((item, index) => {
-          const isLast = index === items.length - 1;
+          const isLast = index === items.length - 1
           return (
             <Fragment key={`${item.label}-${index}`}>
               <BreadcrumbItem>
@@ -37,9 +37,9 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
               </BreadcrumbItem>
               {!isLast ? <BreadcrumbSeparator /> : null}
             </Fragment>
-          );
+          )
         })}
       </BreadcrumbList>
     </Breadcrumb>
-  );
+  )
 }

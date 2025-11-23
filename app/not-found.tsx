@@ -1,29 +1,29 @@
-import { ArrowRight, Compass, Home, Layers, Search } from "lucide-react";
-import Link from "next/link";
+import { ArrowRight, Compass, Home, Layers, Search } from "lucide-react"
+import Link from "next/link"
 
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 const quickLinks = [
   {
     title: "Search the guide",
     description: "Look up a fallacy by name, description, or related topic.",
     href: "/search",
-    icon: Search,
+    icon: Search
   },
   {
     title: "Browse categories",
     description: "Jump into curated groups of fallacies and patterns.",
     href: "/categories",
-    icon: Layers,
+    icon: Layers
   },
   {
     title: "See all fallacies",
     description: "Scan the full directory for a quick overview.",
     href: "/fallacies",
-    icon: Compass,
-  },
-];
+    icon: Compass
+  }
+]
 
 export default function NotFound() {
   return (
@@ -113,5 +113,5 @@ export default function NotFound() {
         </div>
       </section>
     </div>
-  );
+  )
 }

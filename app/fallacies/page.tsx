@@ -1,15 +1,20 @@
-import { FallacyCard } from "@/components/FallacyCard";
-import { PageHeader } from "@/components/PageHeader";
-import { getAllFallacies } from "@/lib/fallacies";
+import type { Metadata } from "next"
+import { FallacyCard } from "@/components/FallacyCard"
+import { PageHeader } from "@/components/PageHeader"
+import { getAllFallacies } from "@/lib/fallacies"
+import { canonicalPath } from "@/lib/seo"
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "All Fallacies",
   description:
     "A comprehensive directory of logical fallacies, categorized and explained.",
-};
+  alternates: {
+    canonical: canonicalPath("/fallacies")
+  }
+}
 
 export default function FallaciesPage() {
-  const fallacies = getAllFallacies();
+  const fallacies = getAllFallacies()
 
   return (
     <div className="space-y-6">
@@ -25,5 +30,5 @@ export default function FallaciesPage() {
         ))}
       </div>
     </div>
-  );
+  )
 }

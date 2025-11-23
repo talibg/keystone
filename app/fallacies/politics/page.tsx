@@ -1,15 +1,20 @@
-import { FallacyCard } from "@/components/FallacyCard";
-import { PageHeader } from "@/components/PageHeader";
-import { getAllFallacies } from "@/lib/fallacies";
+import type { Metadata } from "next"
+import { FallacyCard } from "@/components/FallacyCard"
+import { PageHeader } from "@/components/PageHeader"
+import { getAllFallacies } from "@/lib/fallacies"
+import { canonicalPath } from "@/lib/seo"
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Fallacies in Politics – The Fallacy Guide",
   description:
     "Examples and explanations of logical fallacies that surface in political debate.",
-};
+  alternates: {
+    canonical: canonicalPath("/fallacies/politics")
+  }
+}
 
 export default function PoliticsFallaciesPage() {
-  const fallacies = getAllFallacies().slice(0, 9);
+  const fallacies = getAllFallacies().slice(0, 9)
 
   return (
     <div className="space-y-6">
@@ -18,7 +23,7 @@ export default function PoliticsFallaciesPage() {
         description="Familiar patterns you will hear in campaigns, debates, and policy discussions."
         breadcrumbs={[
           { label: "Home", href: "/" },
-          { label: "Politics", href: "/fallacies/politics" },
+          { label: "Politics", href: "/fallacies/politics" }
         ]}
       />
 
@@ -28,5 +33,5 @@ export default function PoliticsFallaciesPage() {
         ))}
       </div>
     </div>
-  );
+  )
 }

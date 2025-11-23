@@ -1,22 +1,22 @@
-import { ImageResponse } from "next/og";
-import type { NextRequest } from "next/server";
-import type { FallacyCategorySlug } from "@/data/fallacies";
-import { getCategoryBySlug, getFallaciesByCategory } from "@/lib/fallacies";
+import { ImageResponse } from "next/og"
+import type { NextRequest } from "next/server"
+import type { FallacyCategorySlug } from "@/data/fallacies"
+import { getCategoryBySlug, getFallaciesByCategory } from "@/lib/fallacies"
 
-export const runtime = "edge";
+export const runtime = "edge"
 
 export async function GET(
   _request: NextRequest,
-  context: { params: Promise<{ slug: string }> },
+  context: { params: Promise<{ slug: string }> }
 ) {
-  const { slug } = await context.params;
-  const category = getCategoryBySlug(slug as FallacyCategorySlug);
+  const { slug } = await context.params
+  const category = getCategoryBySlug(slug as FallacyCategorySlug)
 
   if (!category) {
-    return new Response("Not found", { status: 404 });
+    return new Response("Not found", { status: 404 })
   }
 
-  const fallacies = getFallaciesByCategory(category.slug).slice(0, 3);
+  const fallacies = getFallaciesByCategory(category.slug).slice(0, 3)
 
   return new ImageResponse(
     <div
@@ -29,7 +29,7 @@ export async function GET(
         padding: "60px",
         color: "#e2e8f0",
         background:
-          "linear-gradient(135deg, #0b1224 0%, #0f172a 40%, #020617 100%)",
+          "linear-gradient(135deg, #0b1224 0%, #0f172a 40%, #020617 100%)"
       }}
     >
       <div style={{ fontSize: 22, color: "#a5b4fc", fontWeight: 700 }}></div>
@@ -42,7 +42,7 @@ export async function GET(
           fontSize: 26,
           color: "#cbd5e1",
           maxWidth: "940px",
-          lineHeight: 1.4,
+          lineHeight: 1.4
         }}
       >
         {category.description}
@@ -58,7 +58,7 @@ export async function GET(
               padding: "14px",
               borderRadius: "12px",
               background: "rgba(255,255,255,0.04)",
-              width: "300px",
+              width: "300px"
             }}
           >
             <div style={{ fontSize: 22, fontWeight: 700 }}>{f.name}</div>
@@ -71,7 +71,7 @@ export async function GET(
     </div>,
     {
       width: 1200,
-      height: 630,
-    },
-  );
+      height: 630
+    }
+  )
 }

@@ -1,61 +1,70 @@
-import type { Metadata } from "next";
-import { notFound } from "next/navigation";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { FallacyCard } from "@/components/FallacyCard";
-import type { FallacyCategorySlug } from "@/data/fallacies";
+import type { Metadata } from "next"
+import { notFound } from "next/navigation"
+import { Breadcrumbs } from "@/components/Breadcrumbs"
+import { FallacyCard } from "@/components/FallacyCard"
+import type { FallacyCategorySlug } from "@/data/fallacies"
 import {
   getAllCategories,
   getCategoryBySlug,
-  getFallaciesByCategory,
-} from "@/lib/fallacies";
+  getFallaciesByCategory
+} from "@/lib/fallacies"
+import { absoluteUrl, canonicalPath } from "@/lib/seo"
 
 type CategoryPageProps = {
-  params: Promise<{ slug: FallacyCategorySlug }>;
-};
+  params: Promise<{ slug: FallacyCategorySlug }>
+}
 
 export function generateStaticParams() {
-  return getAllCategories().map((category) => ({ slug: category.slug }));
+  return getAllCategories().map((category) => ({ slug: category.slug }))
 }
 
 export async function generateMetadata({
-  params,
+  params
 }: CategoryPageProps): Promise<Metadata> {
-  const { slug } = await params;
-  const category = getCategoryBySlug(slug);
+  const { slug } = await params
+  const category = getCategoryBySlug(slug)
 
   if (!category) {
     return {
-      title: "Category not found – The Fallacy Guide",
-    };
+      title: "Category not found – The Fallacy Guide"
+    }
   }
+
+  const canonical = canonicalPath(`/categories/${category.slug}`)
+  const ogImage = canonicalPath(`/og/category/${category.slug}`)
 
   return {
     title: `${category.name} – The Fallacy Guide`,
     description: `${category.description} Explore the common mistakes in this group and how to spot them quickly.`,
+    alternates: {
+      canonical
+    },
     openGraph: {
       title: `${category.name} – The Fallacy Guide`,
       description: category.description,
-      url: `https://fallacyguide.com/categories/${category.slug}`,
-      images: [`https://fallacyguide.com/og/category/${category.slug}`],
+      url: canonical,
+      images: [ogImage]
     },
     twitter: {
       card: "summary_large_image",
       title: `${category.name} – The Fallacy Guide`,
       description: category.description,
-      images: [`https://fallacyguide.com/og/category/${category.slug}`],
-    },
-  };
+      images: [ogImage]
+    }
+  }
 }
 
 export default async function CategoryPage({ params }: CategoryPageProps) {
-  const { slug } = await params;
-  const category = getCategoryBySlug(slug);
+  const { slug } = await params
+  const category = getCategoryBySlug(slug)
 
   if (!category) {
-    notFound();
+    notFound()
   }
 
-  const fallacies = getFallaciesByCategory(slug);
+  const fallacies = getFallaciesByCategory(slug)
+  const canonical = canonicalPath(`/categories/${category.slug}`)
+  const categoryUrl = absoluteUrl(canonical)
   const breadcrumbLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -64,22 +73,22 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://fallacyguide.com",
+        item: absoluteUrl("/")
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Categories",
-        item: "https://fallacyguide.com/categories",
+        item: absoluteUrl("/categories")
       },
       {
         "@type": "ListItem",
         position: 3,
         name: category.name,
-        item: `https://fallacyguide.com/categories/${category.slug}`,
-      },
-    ],
-  };
+        item: categoryUrl
+      }
+    ]
+  }
 
   return (
     <div className="space-y-6">
@@ -88,7 +97,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         items={[
           { label: "Home", href: "/" },
           { label: "Categories", href: "/categories" },
-          { label: category.name },
+          { label: category.name }
         ]}
       />
       <header className="space-y-2">
@@ -112,5 +121,5 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         </div>
       </section>
     </div>
-  );
+  )
 }

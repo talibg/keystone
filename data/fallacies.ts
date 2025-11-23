@@ -6,7 +6,7 @@ export type FallacyCategorySlug =
   | "formal"
   | "informal-dialogue"
   | "rhetorical-cognitive-bias"
-  | "debate-tactics";
+  | "debate-tactics"
 
 type CategoryColorKey =
   | "sky"
@@ -16,39 +16,39 @@ type CategoryColorKey =
   | "purple"
   | "cyan"
   | "rose"
-  | "slate";
+  | "slate"
 
 export type FallacyCategory = {
-  slug: FallacyCategorySlug;
-  name: string;
-  description: string;
-  colorKey: CategoryColorKey;
-};
+  slug: FallacyCategorySlug
+  name: string
+  description: string
+  colorKey: CategoryColorKey
+}
 
 export type Fallacy = {
-  slug: string;
-  name: string;
-  category: FallacyCategory;
-  alsoKnownAs: string[];
-  shortDefinition: string;
-  explanation: string;
-  pattern: string[];
+  slug: string
+  name: string
+  category: FallacyCategory
+  alsoKnownAs: string[]
+  shortDefinition: string
+  explanation: string
+  pattern: string[]
   everydayExample: {
-    setup: string;
-    dialogue: string[];
-  };
-  seriousExample: string;
-  whyItIsFallacious: string;
-  whyPeopleUseIt: string;
-  recognitionPoints: string[];
-  responseStrategies: string[];
-  severity: "Low" | "Medium" | "High";
-  typeLabel?: string;
-  typicalContexts?: string[];
-  relatedSlugs: string[];
-  seoTitle: string;
-  seoDescription: string;
-};
+    setup: string
+    dialogue: string[]
+  }
+  seriousExample: string
+  whyItIsFallacious: string
+  whyPeopleUseIt: string
+  recognitionPoints: string[]
+  responseStrategies: string[]
+  severity: "Low" | "Medium" | "High"
+  typeLabel?: string
+  typicalContexts?: string[]
+  relatedSlugs: string[]
+  seoTitle: string
+  seoDescription: string
+}
 
 const categoryMap: Record<FallacyCategorySlug, FallacyCategory> = {
   relevance: {
@@ -56,60 +56,60 @@ const categoryMap: Record<FallacyCategorySlug, FallacyCategory> = {
     name: "Relevance Fallacies",
     description:
       "Arguments that distract from the claim instead of addressing it directly.",
-    colorKey: "rose",
+    colorKey: "rose"
   },
   "ambiguity-language": {
     slug: "ambiguity-language",
     name: "Ambiguity and Language",
     description:
       "Arguments that hinge on slippery wording, double meanings, or unclear definitions.",
-    colorKey: "indigo",
+    colorKey: "indigo"
   },
   presumption: {
     slug: "presumption",
     name: "Presumption",
     description:
       "Arguments that smuggle in assumptions or treat contested points as already proven.",
-    colorKey: "amber",
+    colorKey: "amber"
   },
   "statistical-scientific": {
     slug: "statistical-scientific",
     name: "Statistical and Scientific",
     description:
       "Errors that misuse numbers, studies, or causal claims to overstate certainty.",
-    colorKey: "emerald",
+    colorKey: "emerald"
   },
   formal: {
     slug: "formal",
     name: "Formal Fallacies",
     description:
       "Breakdowns in logical structure that make a conclusion invalid regardless of content.",
-    colorKey: "purple",
+    colorKey: "purple"
   },
   "informal-dialogue": {
     slug: "informal-dialogue",
     name: "Informal Dialogue Pitfalls",
     description:
       "Conversational traps that force unfair frames, assumptions, or defensive answers.",
-    colorKey: "cyan",
+    colorKey: "cyan"
   },
   "rhetorical-cognitive-bias": {
     slug: "rhetorical-cognitive-bias",
     name: "Rhetorical and Cognitive Biases",
     description:
       "Appeals to emotion or mental shortcuts instead of reasons and evidence.",
-    colorKey: "sky",
+    colorKey: "sky"
   },
   "debate-tactics": {
     slug: "debate-tactics",
     name: "Debate Tactics and Evasions",
     description:
       "Strategies that flood, derail, or exhaust a discussion rather than test a claim.",
-    colorKey: "slate",
-  },
-};
+    colorKey: "slate"
+  }
+}
 
-export const categories: FallacyCategory[] = Object.values(categoryMap);
+export const categories: FallacyCategory[] = Object.values(categoryMap)
 
 export const fallacies: Fallacy[] = [
   {
@@ -124,14 +124,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Hear claim X.",
       "Attack the speaker’s character with insults.",
-      "Treat the insult as if it disproves claim X.",
+      "Treat the insult as if it disproves claim X."
     ],
     everydayExample: {
       setup: "A teammate recommends improving tests.",
       dialogue: [
         "A: Our coverage is low; we should add integration tests.",
-        "B: You’re just nitpicking again—nobody cares about your complaints.",
-      ],
+        "B: You’re just nitpicking again—nobody cares about your complaints."
+      ]
     },
     seriousExample:
       "During a hearing, a citizen cites data on water contamination. Officials respond by mocking the citizen’s education level instead of addressing the data.",
@@ -142,12 +142,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Insults replace engagement with evidence.",
       "The person is attacked even when the claim stands on its own data.",
-      "No attempt is made to refute premises or logic.",
+      "No attempt is made to refute premises or logic."
     ],
     responseStrategies: [
       "Restate the claim and ask for engagement with its reasons.",
       "Point out that personal remarks do not address the evidence.",
-      "Redirect to verifiable facts or agreed evaluation criteria.",
+      "Redirect to verifiable facts or agreed evaluation criteria."
     ],
     severity: "Medium",
     typeLabel: "Relevance fallacy",
@@ -155,7 +155,7 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: ["ad-hominem", "guilt-by-association", "poisoning-the-well"],
     seoTitle: "Abusive Ad Hominem – The Fallacy Guide",
     seoDescription:
-      "Abusive ad hominem attacks a speaker with insults instead of addressing the argument. Learn the pattern, examples, and counters.",
+      "Abusive ad hominem attacks a speaker with insults instead of addressing the argument. Learn the pattern, examples, and counters."
   },
   {
     slug: "accent-fallacy",
@@ -169,14 +169,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Quote or restate a phrase with altered emphasis or formatting.",
       "Imply a different meaning than the original context intended.",
-      "Use that altered meaning as evidence for a conclusion.",
+      "Use that altered meaning as evidence for a conclusion."
     ],
     everydayExample: {
       setup: "Discussing budget cuts.",
       dialogue: [
         "A: The manager said we ‘might’ delay hiring.",
-        "B: The manager said we MIGHT delay hiring—so it’s basically confirmed.",
-      ],
+        "B: The manager said we MIGHT delay hiring—so it’s basically confirmed."
+      ]
     },
     seriousExample:
       "A headline bolds part of a scientific statement to imply certainty (“could prevent deaths” becomes “prevent deaths”), misleading readers about the study’s caution.",
@@ -187,12 +187,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Meaning changes when stress, bolding, or tone changes.",
       "Key qualifiers are downplayed or visually minimized.",
-      "The cited source does not support the implied conclusion when read plainly.",
+      "The cited source does not support the implied conclusion when read plainly."
     ],
     responseStrategies: [
       "Read the statement without added emphasis and restate the original meaning.",
       "Highlight omitted qualifiers or formatting tricks.",
-      "Request the full context or transcript to restore the intended meaning.",
+      "Request the full context or transcript to restore the intended meaning."
     ],
     severity: "Low",
     typeLabel: "Ambiguity fallacy",
@@ -200,7 +200,7 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: ["equivocation", "quote-mining", "strawman"],
     seoTitle: "Accent Fallacy – The Fallacy Guide",
     seoDescription:
-      "The accent fallacy changes meaning through emphasis or formatting. See how it misleads and how to counter it.",
+      "The accent fallacy changes meaning through emphasis or formatting. See how it misleads and how to counter it."
   },
   {
     slug: "ad-hominem",
@@ -214,14 +214,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Target the speaker instead of the claim.",
       "Imply that a flawed person must have flawed arguments.",
-      "Skip any engagement with the evidence or logic.",
+      "Skip any engagement with the evidence or logic."
     ],
     everydayExample: {
       setup: "A coworker raises a concern about launch quality.",
       dialogue: [
         "A: “The mobile build still crashes; we need to postpone launch.”",
-        "B: “You always exaggerate problems. Remember when you overreacted last quarter?”",
-      ],
+        "B: “You always exaggerate problems. Remember when you overreacted last quarter?”"
+      ]
     },
     seriousExample:
       "During a public hearing, a resident questions water safety. Officials reply by mocking the resident's education instead of addressing test results.",
@@ -232,12 +232,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Personal traits or motives are attacked instead of premises.",
       "No attempt is made to rebut evidence or reasoning.",
-      "The attack would not change the claim if it were voiced by someone else.",
+      "The attack would not change the claim if it were voiced by someone else."
     ],
     responseStrategies: [
       "Redirect: “Address the evidence, not me.”",
       "Separate person from claim and restate the argument clearly.",
-      "If needed, concede irrelevant parts and ask for engagement with the point.",
+      "If needed, concede irrelevant parts and ask for engagement with the point."
     ],
     severity: "Medium",
     typeLabel: "Logical fallacy",
@@ -245,7 +245,7 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: ["red-herring", "gish-gallop"],
     seoTitle: "Ad Hominem Fallacy – The Fallacy Guide",
     seoDescription:
-      "Ad Hominem attacks the person instead of the argument. Learn the pattern, examples, and how to counter it.",
+      "Ad Hominem attacks the person instead of the argument. Learn the pattern, examples, and how to counter it."
   },
   {
     slug: "amphiboly",
@@ -259,15 +259,15 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Present an ambiguously structured statement.",
       "Select the interpretation that favors a desired conclusion.",
-      "Use that interpretation as if it were the only meaning.",
+      "Use that interpretation as if it were the only meaning."
     ],
     everydayExample: {
       setup: "Headline ambiguity.",
       dialogue: [
         "Headline: “Mayor says protestors can be arrested quickly.”",
         "Reader: “So the mayor wants quick arrests.”",
-        "Clarification: The mayor said police can act quickly if arrests are necessary, not that arrests should happen.",
-      ],
+        "Clarification: The mayor said police can act quickly if arrests are necessary, not that arrests should happen."
+      ]
     },
     seriousExample:
       "A contract clause reads ‘Employees must notify managers of safety issues in writing quickly.’ One party claims ‘quickly’ modifies ‘in writing,’ another claims it modifies ‘notify.’ The dispute hinges on the ambiguous structure, not intent.",
@@ -278,12 +278,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Multiple grammatical readings are possible.",
       "Punctuation or word order is unusually awkward.",
-      "Clarifying the syntax collapses the supposed evidence.",
+      "Clarifying the syntax collapses the supposed evidence."
     ],
     responseStrategies: [
       "Rewrite the statement clearly and check whether the argument still holds.",
       "Ask which specific interpretation is intended and why.",
-      "Seek original context or author clarification.",
+      "Seek original context or author clarification."
     ],
     severity: "Low",
     typeLabel: "Ambiguity fallacy",
@@ -291,7 +291,7 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: ["equivocation", "accent-fallacy", "strawman"],
     seoTitle: "Amphiboly – The Fallacy Guide",
     seoDescription:
-      "Amphiboly uses grammatically ambiguous statements to mislead. Learn the pattern and how to clarify it.",
+      "Amphiboly uses grammatically ambiguous statements to mislead. Learn the pattern and how to clarify it."
   },
   {
     slug: "appeal-to-authority",
@@ -305,14 +305,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Cite an authority who states claim X.",
       "Provide little or no relevant evidence.",
-      "Treat the authority’s word as sufficient proof that X is true.",
+      "Treat the authority’s word as sufficient proof that X is true."
     ],
     everydayExample: {
       setup: "Choosing a diet.",
       dialogue: [
         "A: This influencer says this supplement fixes everything.",
-        "B: Which studies back it? Fame isn’t evidence.",
-      ],
+        "B: Which studies back it? Fame isn’t evidence."
+      ]
     },
     seriousExample:
       "A corporation cites a paid consultant’s opinion as proof of safety, despite lack of peer-reviewed research or regulatory consensus.",
@@ -323,12 +323,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Source is cited instead of evidence.",
       "Expert is outside their domain or lacks consensus support.",
-      "No attempt is made to engage with data or counter-evidence.",
+      "No attempt is made to engage with data or counter-evidence."
     ],
     responseStrategies: [
       "Ask for evidence and domain-relevant credentials.",
       "Check whether there is consensus or significant dispute.",
-      "Separate opinion from data and request primary sources.",
+      "Separate opinion from data and request primary sources."
     ],
     severity: "Medium",
     typeLabel: "Relevance fallacy",
@@ -336,11 +336,11 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: [
       "false-authority",
       "appeal-to-popularity",
-      "appeal-to-common-practice",
+      "appeal-to-common-practice"
     ],
     seoTitle: "Appeal to Authority – The Fallacy Guide",
     seoDescription:
-      "Appeal to authority treats an expert’s word as proof without evidence. See when authority helps—and when it misleads.",
+      "Appeal to authority treats an expert’s word as proof without evidence. See when authority helps—and when it misleads."
   },
   {
     slug: "appeal-to-common-practice",
@@ -354,14 +354,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Note that many people do or believe X.",
       "Infer that X is acceptable or correct because it is common.",
-      "Ignore evidence about X’s merits or harms.",
+      "Ignore evidence about X’s merits or harms."
     ],
     everydayExample: {
       setup: "Office policy debate.",
       dialogue: [
         "A: Everyone fudges hours a bit. It’s normal.",
-        "B: Normal doesn’t make it right or productive.",
-      ],
+        "B: Normal doesn’t make it right or productive."
+      ]
     },
     seriousExample:
       "A company defends a dangerous manufacturing shortcut because ‘the whole industry does it,’ without addressing safety data.",
@@ -372,12 +372,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Justification rests on how common something is, not on evidence.",
       "Counter-evidence about harm or inefficacy is ignored.",
-      "Mentions of “everyone does it” replace reasons.",
+      "Mentions of “everyone does it” replace reasons."
     ],
     responseStrategies: [
       "Ask for evidence of effectiveness or ethics, independent of popularity.",
       "Provide examples where common practices were wrong or harmful.",
-      "Reframe to evaluation criteria: outcomes, safety, legality, fairness.",
+      "Reframe to evaluation criteria: outcomes, safety, legality, fairness."
     ],
     severity: "Medium",
     typeLabel: "Rhetorical appeal",
@@ -385,11 +385,11 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: [
       "appeal-to-popularity",
       "appeal-to-tradition",
-      "appeal-to-authority",
+      "appeal-to-authority"
     ],
     seoTitle: "Appeal to Common Practice – The Fallacy Guide",
     seoDescription:
-      "Appeal to common practice claims something is right because it’s widespread. Learn why prevalence is not proof.",
+      "Appeal to common practice claims something is right because it’s widespread. Learn why prevalence is not proof."
   },
   {
     slug: "appeal-to-complexity",
@@ -403,14 +403,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Raise or face a challenge about issue X.",
       "Assert X is too complex to judge or fix.",
-      "Use that claim to avoid providing reasons or solutions.",
+      "Use that claim to avoid providing reasons or solutions."
     ],
     everydayExample: {
       setup: "Team metrics review.",
       dialogue: [
         "A: Why are outages increasing?",
-        "B: It’s complicated; no one can really say.",
-      ],
+        "B: It’s complicated; no one can really say."
+      ]
     },
     seriousExample:
       "When questioned about biased outcomes, an organization responds, ‘The system is highly complex; it’s impossible to attribute causes,’ without presenting any analysis.",
@@ -421,12 +421,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Complexity is cited without attempts to analyze or provide partial answers.",
       "Used to shut down inquiry rather than propose measurement or testing.",
-      "No follow-up to break the issue into tractable parts.",
+      "No follow-up to break the issue into tractable parts."
     ],
     responseStrategies: [
       "Ask for specific unknowns and what data could reduce uncertainty.",
       "Break the problem into smaller questions and request evidence per part.",
-      "Highlight examples where similarly complex systems were analyzed successfully.",
+      "Highlight examples where similarly complex systems were analyzed successfully."
     ],
     severity: "Medium",
     typeLabel: "Rhetorical appeal",
@@ -434,7 +434,7 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: ["appeal-to-ignorance", "red-herring", "smokescreen"],
     seoTitle: "Appeal to Complexity – The Fallacy Guide",
     seoDescription:
-      "Appeal to complexity claims an issue is too complex to judge, sidestepping evidence. See how to spot and counter it.",
+      "Appeal to complexity claims an issue is too complex to judge, sidestepping evidence. See how to spot and counter it."
   },
   {
     slug: "appeal-to-consequences",
@@ -448,14 +448,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Claim X would lead to a pleasing or frightening outcome.",
       "Conclude X must be true (or false) because of that outcome.",
-      "Skip evidence about X itself.",
+      "Skip evidence about X itself."
     ],
     everydayExample: {
       setup: "Diet discussion.",
       dialogue: [
         "A: If this supplement worked, losing weight would be easy. So it must work.",
-        "B: Ease doesn’t prove effectiveness—show me the data.",
-      ],
+        "B: Ease doesn’t prove effectiveness—show me the data."
+      ]
     },
     seriousExample:
       "Policy advocates claim a surveillance law must be effective because it would make people safer, without presenting evidence of actual efficacy.",
@@ -466,12 +466,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Conclusions rest on how good or bad an outcome would feel.",
       "Little to no evidence about the claim’s truth is provided.",
-      "The argument swaps facts for wishes or alarms.",
+      "The argument swaps facts for wishes or alarms."
     ],
     responseStrategies: [
       "Ask for evidence of truth separate from the outcome’s desirability.",
       "Clarify that wanting or fearing something does not make it real.",
-      "Request data on actual effectiveness rather than hypothetical benefits.",
+      "Request data on actual effectiveness rather than hypothetical benefits."
     ],
     severity: "Medium",
     typeLabel: "Relevance fallacy",
@@ -479,7 +479,7 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: ["appeal-to-emotion", "appeal-to-fear", "appeal-to-nature"],
     seoTitle: "Appeal to Consequences – The Fallacy Guide",
     seoDescription:
-      "Appeal to consequences claims a belief is true or false because of desirable or undesirable outcomes. Learn to separate truth from wishes.",
+      "Appeal to consequences claims a belief is true or false because of desirable or undesirable outcomes. Learn to separate truth from wishes."
   },
   {
     slug: "appeal-to-emotion",
@@ -493,13 +493,13 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Present a vivid emotional trigger.",
       "Link accepting the claim with feeling better or avoiding guilt.",
-      "Offer little or no supporting evidence.",
+      "Offer little or no supporting evidence."
     ],
     everydayExample: {
       setup: "A subscription upsell.",
       dialogue: [
-        "Sales page: “Imagine losing all your memories. Upgrade now to protect them forever.”",
-      ],
+        "Sales page: “Imagine losing all your memories. Upgrade now to protect them forever.”"
+      ]
     },
     seriousExample:
       "A politician argues for sweeping surveillance by invoking fear of rare attacks without presenting proportional risk data.",
@@ -510,12 +510,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Strong emotional language with thin evidence.",
       "Fear, pride, or pity framed as the main reason to agree.",
-      "Urgency or moral pressure replacing analysis.",
+      "Urgency or moral pressure replacing analysis."
     ],
     responseStrategies: [
       "Acknowledge feelings, then request concrete evidence.",
       "Ask how the emotional point supports the claim's truth.",
-      "Slow down the pace to separate facts from feelings.",
+      "Slow down the pace to separate facts from feelings."
     ],
     severity: "Medium",
     typeLabel: "Rhetorical appeal",
@@ -523,7 +523,7 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: ["appeal-to-popularity", "slippery-slope"],
     seoTitle: "Appeal to Emotion – The Fallacy Guide",
     seoDescription:
-      "Appeal to emotion substitutes feelings for evidence. Learn the signs, dialogue examples, and ways to respond.",
+      "Appeal to emotion substitutes feelings for evidence. Learn the signs, dialogue examples, and ways to respond."
   },
   {
     slug: "appeal-to-fear",
@@ -537,14 +537,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Present a threatening or alarming scenario.",
       "Claim the proposal will avoid the threat.",
-      "Offer little evidence that the threat is real or that the proposal works.",
+      "Offer little evidence that the threat is real or that the proposal works."
     ],
     everydayExample: {
       setup: "Selling home security.",
       dialogue: [
         "A: Break-ins are skyrocketing; without our system you’re unsafe.",
-        "B: Do you have local stats or just scary anecdotes?",
-      ],
+        "B: Do you have local stats or just scary anecdotes?"
+      ]
     },
     seriousExample:
       "A policy pitch claims that without broad surveillance, catastrophic attacks are inevitable, without presenting proportional risk data or effectiveness studies.",
@@ -555,12 +555,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Emphasis on worst-case scenarios without likelihoods.",
       "Thin or absent evidence that the threat is real or mitigated by the proposal.",
-      "Calls for urgent action because of fear, not data.",
+      "Calls for urgent action because of fear, not data."
     ],
     responseStrategies: [
       "Request likelihoods and evidence for both the threat and the remedy.",
       "Distinguish between possible and probable outcomes.",
-      "Calibrate responses to proportional risk, not just vivid fears.",
+      "Calibrate responses to proportional risk, not just vivid fears."
     ],
     severity: "Medium",
     typeLabel: "Rhetorical appeal",
@@ -568,11 +568,11 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: [
       "appeal-to-emotion",
       "slippery-slope",
-      "appeal-to-consequences",
+      "appeal-to-consequences"
     ],
     seoTitle: "Appeal to Fear – The Fallacy Guide",
     seoDescription:
-      "Appeal to fear uses frightening scenarios to force agreement instead of evidence. Learn to calibrate risk and respond.",
+      "Appeal to fear uses frightening scenarios to force agreement instead of evidence. Learn to calibrate risk and respond."
   },
   {
     slug: "strawman",
@@ -585,14 +585,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Simplify or distort an opponent's claim.",
       "Attack the distorted version.",
-      "Treat that victory as a refutation of the original claim.",
+      "Treat that victory as a refutation of the original claim."
     ],
     everydayExample: {
       setup: "Someone suggests moderate budget trims.",
       dialogue: [
         "A: “Let’s trim 5% of travel spend.”",
-        "B: “So you want to ban all conferences? That will kill learning.”",
-      ],
+        "B: “So you want to ban all conferences? That will kill learning.”"
+      ]
     },
     seriousExample:
       "A researcher proposes cautious AI regulation; critics respond by claiming the researcher wants to “ban all innovation,” avoiding the actual proposal.",
@@ -603,12 +603,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "The rebuttal answers a claim nobody actually made.",
       "Key qualifiers or context are removed from the original statement.",
-      "The opponent’s position is described in extreme terms before being attacked.",
+      "The opponent’s position is described in extreme terms before being attacked."
     ],
     responseStrategies: [
       "Restate your position plainly and correct distortions.",
       "Ask critics to quote specific wording and respond to that.",
-      "Invite engagement with your strongest version, not the weakest.",
+      "Invite engagement with your strongest version, not the weakest."
     ],
     severity: "Medium",
     typeLabel: "Logical fallacy",
@@ -616,7 +616,7 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: ["red-herring", "gish-gallop"],
     seoTitle: "Strawman Fallacy – The Fallacy Guide",
     seoDescription:
-      "A strawman distorts an argument to knock it down. See the pattern, dialogue examples, and ways to respond.",
+      "A strawman distorts an argument to knock it down. See the pattern, dialogue examples, and ways to respond."
   },
   {
     slug: "red-herring",
@@ -630,14 +630,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "A main claim is on the table.",
       "A new, tangential issue is raised.",
-      "The discussion follows the tangent instead of the claim.",
+      "The discussion follows the tangent instead of the claim."
     ],
     everydayExample: {
       setup: "A team reviews missed deadlines.",
       dialogue: [
         "A: “Why did we slip the release date?”",
-        "B: “Other teams have worse delays. Let's talk about their processes.”",
-      ],
+        "B: “Other teams have worse delays. Let's talk about their processes.”"
+      ]
     },
     seriousExample:
       "During a hearing on police accountability, a speaker pivots to rising street crime, avoiding questions about misconduct reports.",
@@ -648,12 +648,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "A sudden topic shift that does not answer the question.",
       "Emotional anecdotes appear where evidence was requested.",
-      "The original issue is left unresolved after the detour.",
+      "The original issue is left unresolved after the detour."
     ],
     responseStrategies: [
       "Name the diversion and restate the original question.",
       "Promise to address the side topic later and return to the claim.",
-      "Ask how the new point directly relates to the claim at hand.",
+      "Ask how the new point directly relates to the claim at hand."
     ],
     severity: "Medium",
     typeLabel: "Logical fallacy",
@@ -661,7 +661,7 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: ["ad-hominem", "gish-gallop"],
     seoTitle: "Red Herring Fallacy – The Fallacy Guide",
     seoDescription:
-      "A red herring diverts attention with an irrelevant point. Learn how to spot the pattern and keep the discussion on track.",
+      "A red herring diverts attention with an irrelevant point. Learn how to spot the pattern and keep the discussion on track."
   },
   {
     slug: "appeal-to-popularity",
@@ -675,14 +675,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "State that many people believe or do X.",
       "Treat that popularity as sufficient evidence for X.",
-      "Invite agreement to avoid being an outsider.",
+      "Invite agreement to avoid being an outsider."
     ],
     everydayExample: {
       setup: "Choosing a productivity tool at work.",
       dialogue: [
         "A: “We should evaluate options.”",
-        "B: “Everyone uses Tool Y. It must be the best; let's just adopt it.”",
-      ],
+        "B: “Everyone uses Tool Y. It must be the best; let's just adopt it.”"
+      ]
     },
     seriousExample:
       "A municipality justifies surveillance tech by noting that 'hundreds of cities use it,' without presenting privacy or efficacy data.",
@@ -693,12 +693,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Headcounts or trends are treated as proof.",
       "The argument leans on fear of missing out or isolation.",
-      "Little to no supporting evidence accompanies the popularity claim.",
+      "Little to no supporting evidence accompanies the popularity claim."
     ],
     responseStrategies: [
       "Ask for evidence beyond how many people agree.",
       "Highlight cases where popular beliefs were wrong.",
-      "Refocus on criteria relevant to the decision, not crowd size.",
+      "Refocus on criteria relevant to the decision, not crowd size."
     ],
     severity: "Medium",
     typeLabel: "Logical fallacy",
@@ -706,7 +706,7 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: ["appeal-to-emotion", "false-dichotomy"],
     seoTitle: "Appeal to Popularity – The Fallacy Guide",
     seoDescription:
-      "Appeal to popularity treats consensus as proof. See examples, the pattern, and quick counters.",
+      "Appeal to popularity treats consensus as proof. See examples, the pattern, and quick counters."
   },
   {
     slug: "appeal-to-flattery",
@@ -720,13 +720,13 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Offer praise or compliments.",
       "Link agreement with maintaining that positive regard.",
-      "Provide little to no supporting evidence.",
+      "Provide little to no supporting evidence."
     ],
     everydayExample: {
       setup: "Workplace request.",
       dialogue: [
-        "A: You’re the most visionary manager here—you’ll approve my budget, right?",
-      ],
+        "A: You’re the most visionary manager here—you’ll approve my budget, right?"
+      ]
     },
     seriousExample:
       "A consultant flatters a board about their sophistication to gain approval for an unvetted project.",
@@ -737,12 +737,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Unrelated compliments precede a request or claim.",
       "Little evidence accompanies the praise.",
-      "Agreement seems tied to maintaining the flattering tone.",
+      "Agreement seems tied to maintaining the flattering tone."
     ],
     responseStrategies: [
       "Acknowledge the compliment and redirect to evidence.",
       "Ask for concrete reasons independent of personal praise.",
-      "Separate feelings about the audience from evaluation of the claim.",
+      "Separate feelings about the audience from evaluation of the claim."
     ],
     severity: "Low",
     typeLabel: "Relevance fallacy",
@@ -750,7 +750,7 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: ["appeal-to-emotion", "appeal-to-popularity"],
     seoTitle: "Appeal to Flattery – The Fallacy Guide",
     seoDescription:
-      "Appeal to flattery swaps praise for proof. See how to spot it and keep the focus on evidence.",
+      "Appeal to flattery swaps praise for proof. See how to spot it and keep the focus on evidence."
   },
   {
     slug: "appeal-to-ignorance",
@@ -764,13 +764,13 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Note absence of disproof or proof.",
       "Use that absence as evidence for a conclusion.",
-      "Avoid providing positive support.",
+      "Avoid providing positive support."
     ],
     everydayExample: {
       setup: "New product claim.",
       dialogue: [
-        "A: No one has shown this supplement doesn’t work, so it probably does.",
-      ],
+        "A: No one has shown this supplement doesn’t work, so it probably does."
+      ]
     },
     seriousExample:
       "A policy is called safe because ‘no reports of harm have surfaced,’ despite limited monitoring and disclosure.",
@@ -781,12 +781,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Claims rest on what has not been shown.",
       "Burden of proof is shifted away from the claimant.",
-      "No effort is made to gather affirmative evidence.",
+      "No effort is made to gather affirmative evidence."
     ],
     responseStrategies: [
       "Clarify who bears the burden of proof.",
       "Ask for positive evidence supporting the claim.",
-      "Differentiate between unknown and proven.",
+      "Differentiate between unknown and proven."
     ],
     severity: "Medium",
     typeLabel: "Rhetorical appeal",
@@ -794,11 +794,11 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: [
       "appeal-to-complexity",
       "begging-the-question",
-      "appeal-to-consequences",
+      "appeal-to-consequences"
     ],
     seoTitle: "Appeal to Ignorance – The Fallacy Guide",
     seoDescription:
-      "Appeal to ignorance claims a statement is true because it’s unproven false. Learn why missing evidence isn’t proof.",
+      "Appeal to ignorance claims a statement is true because it’s unproven false. Learn why missing evidence isn’t proof."
   },
   {
     slug: "appeal-to-motive",
@@ -812,14 +812,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Claim X is presented.",
       "Accuse the speaker of having a suspect motive for X.",
-      "Treat that motive as grounds to reject X without evaluating evidence.",
+      "Treat that motive as grounds to reject X without evaluating evidence."
     ],
     everydayExample: {
       setup: "Team process change.",
       dialogue: [
         "A: We should add code reviews.",
-        "B: You just want more control. That’s why you’re pushing this.",
-      ],
+        "B: You just want more control. That’s why you’re pushing this."
+      ]
     },
     seriousExample:
       "Data about pollution is dismissed because the presenter ‘probably hates industry,’ rather than addressing the data itself.",
@@ -830,12 +830,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Focus shifts to why the person might say it, not whether it is true.",
       "No engagement with premises, data, or logic.",
-      "Speculation about intent substitutes for rebuttal.",
+      "Speculation about intent substitutes for rebuttal."
     ],
     responseStrategies: [
       "Acknowledge potential motives, then return to the evidence.",
       "Ask for critique of the claim’s content, not the claimant.",
-      "Separate message evaluation from messenger speculation.",
+      "Separate message evaluation from messenger speculation."
     ],
     severity: "Medium",
     typeLabel: "Rhetorical appeal",
@@ -843,7 +843,7 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: ["ad-hominem", "poisoning-the-well", "appeal-to-ignorance"],
     seoTitle: "Appeal to Motive – The Fallacy Guide",
     seoDescription:
-      "Appeal to motive dismisses claims by attacking intentions instead of evidence. Learn to keep focus on substance.",
+      "Appeal to motive dismisses claims by attacking intentions instead of evidence. Learn to keep focus on substance."
   },
   {
     slug: "appeal-to-nature",
@@ -857,14 +857,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Label X as natural or unnatural.",
       "Infer that X is therefore good or bad.",
-      "Skip evidence about X’s actual effects.",
+      "Skip evidence about X’s actual effects."
     ],
     everydayExample: {
       setup: "Product marketing.",
       dialogue: [
         "A: This remedy is all-natural, so it’s automatically safe.",
-        "B: Natural doesn’t guarantee safety—what evidence do we have?",
-      ],
+        "B: Natural doesn’t guarantee safety—what evidence do we have?"
+      ]
     },
     seriousExample:
       "Policy arguments claim a practice is justified because it aligns with ‘nature,’ ignoring ethical and empirical considerations.",
@@ -875,12 +875,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Value judgments tied to natural/unnatural labels.",
       "No supporting evidence about outcomes or risks.",
-      "Language romanticizes nature rather than testing claims.",
+      "Language romanticizes nature rather than testing claims."
     ],
     responseStrategies: [
       "Ask for data on safety, efficacy, or impacts.",
       "Offer examples of harmful natural things and beneficial synthetic ones.",
-      "Separate marketing language from measurable outcomes.",
+      "Separate marketing language from measurable outcomes."
     ],
     severity: "Medium",
     typeLabel: "Relevance fallacy",
@@ -888,11 +888,11 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: [
       "appeal-to-consequences",
       "moralistic-fallacy",
-      "naturalistic-fallacy",
+      "naturalistic-fallacy"
     ],
     seoTitle: "Appeal to Nature – The Fallacy Guide",
     seoDescription:
-      "Appeal to nature claims something is good because it’s natural. Learn why ‘natural’ isn’t proof and how to respond.",
+      "Appeal to nature claims something is good because it’s natural. Learn why ‘natural’ isn’t proof and how to respond."
   },
   {
     slug: "appeal-to-novelty",
@@ -906,14 +906,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Introduce X as new or innovative.",
       "Infer that X is therefore superior or correct.",
-      "Provide little evidence beyond recency.",
+      "Provide little evidence beyond recency."
     ],
     everydayExample: {
       setup: "Tool selection.",
       dialogue: [
         "A: This is the latest framework, so it must be the best choice.",
-        "B: What about stability, support, and suitability?",
-      ],
+        "B: What about stability, support, and suitability?"
+      ]
     },
     seriousExample:
       "A policy is sold as ‘modern and forward-looking’ without data on efficacy or unintended consequences.",
@@ -924,12 +924,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Superiority is tied to being ‘new’, ‘modern’, or ‘disruptive’.",
       "Evidence about performance is thin or absent.",
-      "Older alternatives are dismissed without evaluation.",
+      "Older alternatives are dismissed without evaluation."
     ],
     responseStrategies: [
       "Ask for comparative evidence on outcomes or performance.",
       "Consider stability, support, and trade-offs alongside innovation.",
-      "Distinguish marketing buzz from tested benefits.",
+      "Distinguish marketing buzz from tested benefits."
     ],
     severity: "Low",
     typeLabel: "Relevance fallacy",
@@ -937,11 +937,11 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: [
       "appeal-to-popularity",
       "appeal-to-tradition",
-      "appeal-to-consequences",
+      "appeal-to-consequences"
     ],
     seoTitle: "Appeal to Novelty – The Fallacy Guide",
     seoDescription:
-      "Appeal to novelty claims something is better because it’s new. See why recency isn’t proof and how to evaluate claims.",
+      "Appeal to novelty claims something is better because it’s new. See why recency isn’t proof and how to evaluate claims."
   },
   {
     slug: "appeal-to-pity",
@@ -955,13 +955,13 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Present a situation designed to evoke pity.",
       "Link agreement with relieving that pity.",
-      "Provide little evidence that the claim is true or action is justified.",
+      "Provide little evidence that the claim is true or action is justified."
     ],
     everydayExample: {
       setup: "Excusing missed work.",
       dialogue: [
-        "A: I know the report is late, but I’ve had a tough week—please approve it anyway.",
-      ],
+        "A: I know the report is late, but I’ve had a tough week—please approve it anyway."
+      ]
     },
     seriousExample:
       "A fundraising claim promises miracle cures for sick children without medical evidence, leaning entirely on emotional stories.",
@@ -972,12 +972,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Emotional hardship is emphasized while evidence is sparse.",
       "Agreement is framed as the compassionate choice.",
-      "Logical relevance of the pity appeal to the claim is weak.",
+      "Logical relevance of the pity appeal to the claim is weak."
     ],
     responseStrategies: [
       "Acknowledge feelings, then ask for relevant evidence.",
       "Separate compassion from verification of claims.",
-      "Suggest ways to help that do not bypass due diligence.",
+      "Suggest ways to help that do not bypass due diligence."
     ],
     severity: "Medium",
     typeLabel: "Rhetorical appeal",
@@ -985,11 +985,11 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: [
       "appeal-to-emotion",
       "appeal-to-consequences",
-      "appeal-to-fear",
+      "appeal-to-fear"
     ],
     seoTitle: "Appeal to Pity – The Fallacy Guide",
     seoDescription:
-      "Appeal to pity uses sympathy in place of evidence. Learn to separate compassion from claim evaluation.",
+      "Appeal to pity uses sympathy in place of evidence. Learn to separate compassion from claim evaluation."
   },
   {
     slug: "appeal-to-ridicule",
@@ -1003,14 +1003,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Present or paraphrase a claim.",
       "Mock or deride the claim to provoke laughter.",
-      "Treat the ridicule as if it disproves the claim.",
+      "Treat the ridicule as if it disproves the claim."
     ],
     everydayExample: {
       setup: "New process suggestion.",
       dialogue: [
         "A: Let’s add code reviews to improve quality.",
-        "B: Oh sure, and let’s all hold hands and sing while we’re at it.",
-      ],
+        "B: Oh sure, and let’s all hold hands and sing while we’re at it."
+      ]
     },
     seriousExample:
       "A public health recommendation is mocked on talk radio with jokes and sarcasm, replacing discussion of the underlying data.",
@@ -1021,12 +1021,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Laughter or scorn substitutes for reasoning.",
       "No engagement with data or logic, just tone.",
-      "Audience is nudged to feel foolish for considering the claim.",
+      "Audience is nudged to feel foolish for considering the claim."
     ],
     responseStrategies: [
       "Request a substantive reason beyond mockery.",
       "Restate the claim plainly and ask for engagement with its evidence.",
-      "Note that tone doesn’t test truth.",
+      "Note that tone doesn’t test truth."
     ],
     severity: "Medium",
     typeLabel: "Relevance fallacy",
@@ -1034,7 +1034,7 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: ["appeal-to-emotion", "strawman", "appeal-to-spite"],
     seoTitle: "Appeal to Ridicule – The Fallacy Guide",
     seoDescription:
-      "Appeal to ridicule mocks a claim instead of refuting it. Learn to separate jokes from justification.",
+      "Appeal to ridicule mocks a claim instead of refuting it. Learn to separate jokes from justification."
   },
   {
     slug: "appeal-to-spite",
@@ -1048,13 +1048,13 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Invoke feelings of resentment or bitterness.",
       "Tie agreement to indulging that spite.",
-      "Provide little evidence for the claim itself.",
+      "Provide little evidence for the claim itself."
     ],
     everydayExample: {
       setup: "Office rivalry.",
       dialogue: [
-        "A: Don’t support her proposal; remember how she criticized your work.",
-      ],
+        "A: Don’t support her proposal; remember how she criticized your work."
+      ]
     },
     seriousExample:
       "Policy support is rallied by focusing on disdain for an out-group, with minimal discussion of the policy’s merits.",
@@ -1065,12 +1065,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Appeals to anger or bitterness replace evidence.",
       "Focus on punishing or getting back at someone rather than evaluating claims.",
-      "Thin or absent reasoning apart from emotional payoff.",
+      "Thin or absent reasoning apart from emotional payoff."
     ],
     responseStrategies: [
       "Separate personal feelings from the claim’s merits.",
       "Ask for evidence or clear benefits independent of resentment.",
-      "Reframe decisions around outcomes, not payback.",
+      "Reframe decisions around outcomes, not payback."
     ],
     severity: "Medium",
     typeLabel: "Relevance fallacy",
@@ -1078,7 +1078,7 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: ["appeal-to-emotion", "appeal-to-ridicule", "ad-hominem"],
     seoTitle: "Appeal to Spite – The Fallacy Guide",
     seoDescription:
-      "Appeal to spite uses resentment instead of reasons. Learn to spot the motive and ask for evidence.",
+      "Appeal to spite uses resentment instead of reasons. Learn to spot the motive and ask for evidence."
   },
   {
     slug: "appeal-to-tradition",
@@ -1092,14 +1092,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Note that practice/belief X is longstanding.",
       "Infer that X is correct or superior because of its age.",
-      "Provide little evidence beyond tradition.",
+      "Provide little evidence beyond tradition."
     ],
     everydayExample: {
       setup: "Process change.",
       dialogue: [
         "A: We’ve always done it this way; no need to change.",
-        "B: Tradition isn’t proof it’s the best approach.",
-      ],
+        "B: Tradition isn’t proof it’s the best approach."
+      ]
     },
     seriousExample:
       "A policy is defended solely because it is ‘heritage’ or ‘custom,’ despite evidence it underperforms alternatives.",
@@ -1110,12 +1110,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Age of a practice is cited as primary justification.",
       "Alternatives are dismissed because they are newer.",
-      "Little data is offered about outcomes or performance.",
+      "Little data is offered about outcomes or performance."
     ],
     responseStrategies: [
       "Ask for evidence of effectiveness beyond longevity.",
       "Provide historical cases where long traditions were wrong.",
-      "Evaluate practices on criteria like outcomes, safety, and fairness.",
+      "Evaluate practices on criteria like outcomes, safety, and fairness."
     ],
     severity: "Low",
     typeLabel: "Relevance fallacy",
@@ -1123,11 +1123,11 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: [
       "appeal-to-novelty",
       "appeal-to-popularity",
-      "appeal-to-common-practice",
+      "appeal-to-common-practice"
     ],
     seoTitle: "Appeal to Tradition – The Fallacy Guide",
     seoDescription:
-      "Appeal to tradition claims something is right because it’s old. Learn why longevity isn’t proof and how to respond.",
+      "Appeal to tradition claims something is right because it’s old. Learn why longevity isn’t proof and how to respond."
   },
   {
     slug: "appeal-to-wealth",
@@ -1141,14 +1141,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Identify wealthy/successful people or outcomes.",
       "Treat wealth as proof that the belief or action is correct.",
-      "Skip evaluation of the claim’s evidence.",
+      "Skip evaluation of the claim’s evidence."
     ],
     everydayExample: {
       setup: "Investment advice.",
       dialogue: [
         "A: Billionaires invest in this coin, so it must be safe.",
-        "B: Their wealth doesn’t prove the coin is low-risk—what are the fundamentals?",
-      ],
+        "B: Their wealth doesn’t prove the coin is low-risk—what are the fundamentals?"
+      ]
     },
     seriousExample:
       "A policy is justified because affluent donors support it, rather than on evidence of effectiveness or fairness.",
@@ -1159,12 +1159,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Cites wealth or status as primary justification.",
       "Little substantive evidence beyond who holds the view.",
-      "Conflates financial success with truth or virtue.",
+      "Conflates financial success with truth or virtue."
     ],
     responseStrategies: [
       "Ask for evidence independent of wealth or status.",
       "Highlight cases where wealthy people were wrong.",
-      "Refocus on outcomes, data, and logic rather than status.",
+      "Refocus on outcomes, data, and logic rather than status."
     ],
     severity: "Low",
     typeLabel: "Rhetorical appeal",
@@ -1172,11 +1172,11 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: [
       "appeal-to-authority",
       "appeal-to-popularity",
-      "appeal-to-poverty",
+      "appeal-to-poverty"
     ],
     seoTitle: "Appeal to Wealth – The Fallacy Guide",
     seoDescription:
-      "Appeal to wealth treats money or status as proof of correctness. Learn to separate status from evidence.",
+      "Appeal to wealth treats money or status as proof of correctness. Learn to separate status from evidence."
   },
   {
     slug: "appeal-to-poverty",
@@ -1190,14 +1190,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Note that someone is poor or lacks status.",
       "Infer their belief or stance is correct because of that condition.",
-      "Provide little evidence beyond perceived moral purity.",
+      "Provide little evidence beyond perceived moral purity."
     ],
     everydayExample: {
       setup: "Product endorsement.",
       dialogue: [
         "A: This grassroots group has no funding, so their claims must be honest.",
-        "B: Low funding doesn’t prove accuracy—what’s their evidence?",
-      ],
+        "B: Low funding doesn’t prove accuracy—what’s their evidence?"
+      ]
     },
     seriousExample:
       "A policy is defended as authentic because it comes from ‘the streets,’ without examining its actual impacts or supporting data.",
@@ -1208,12 +1208,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Hardship or low status is cited as proof.",
       "Evidence is thin beyond moral appeal to simplicity or authenticity.",
-      "Opposing views are dismissed as tainted by wealth.",
+      "Opposing views are dismissed as tainted by wealth."
     ],
     responseStrategies: [
       "Acknowledge context but request evidence for claims.",
       "Separate moral value judgments from factual accuracy.",
-      "Evaluate arguments on merits, not socioeconomic status.",
+      "Evaluate arguments on merits, not socioeconomic status."
     ],
     severity: "Low",
     typeLabel: "Rhetorical appeal",
@@ -1221,11 +1221,11 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: [
       "appeal-to-wealth",
       "appeal-to-authority",
-      "appeal-to-popularity",
+      "appeal-to-popularity"
     ],
     seoTitle: "Appeal to Poverty – The Fallacy Guide",
     seoDescription:
-      "Appeal to poverty claims a view is true because it comes from the poor or rejects wealth. Learn why status doesn’t prove accuracy.",
+      "Appeal to poverty claims a view is true because it comes from the poor or rejects wealth. Learn why status doesn’t prove accuracy."
   },
   {
     slug: "appeal-to-hypocrisy",
@@ -1239,14 +1239,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Receive a claim or criticism.",
       "Accuse the speaker of acting inconsistently.",
-      "Treat that accusation as a refutation of the claim.",
+      "Treat that accusation as a refutation of the claim."
     ],
     everydayExample: {
       setup: "Health advice.",
       dialogue: [
         "A: We should exercise more.",
-        "B: You never go to the gym, so your advice is worthless.",
-      ],
+        "B: You never go to the gym, so your advice is worthless."
+      ]
     },
     seriousExample:
       "A government ignores evidence of rights violations by pointing to unrelated abuses elsewhere, implying its actions are justified.",
@@ -1257,12 +1257,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Focus shifts to the speaker’s behavior, not the claim.",
       "No evidence is offered against the original argument.",
-      "Accusations of hypocrisy stand in for refutation.",
+      "Accusations of hypocrisy stand in for refutation."
     ],
     responseStrategies: [
       "Separate the claim from the claimant’s behavior.",
       "Acknowledge hypocrisy if present, then return to the evidence.",
-      "Ask for direct engagement with the original argument.",
+      "Ask for direct engagement with the original argument."
     ],
     severity: "Medium",
     typeLabel: "Relevance fallacy",
@@ -1270,7 +1270,7 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: ["ad-hominem", "whataboutism", "appeal-to-motive"],
     seoTitle: "Appeal to Hypocrisy – The Fallacy Guide",
     seoDescription:
-      "Appeal to hypocrisy (tu quoque) dodges a claim by pointing out inconsistency. Learn to keep focus on evidence.",
+      "Appeal to hypocrisy (tu quoque) dodges a claim by pointing out inconsistency. Learn to keep focus on evidence."
   },
   {
     slug: "appeal-to-wealth-or-poverty",
@@ -1284,14 +1284,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Identify someone as rich or poor.",
       "Use that status to argue their claim is true or false.",
-      "Ignore evidence about the claim itself.",
+      "Ignore evidence about the claim itself."
     ],
     everydayExample: {
       setup: "Lifestyle advice.",
       dialogue: [
         "A: She’s wealthy, so her health advice must be right.",
-        "B: Or he’s struggling; that makes his view pure. Either way, where’s the data?",
-      ],
+        "B: Or he’s struggling; that makes his view pure. Either way, where’s the data?"
+      ]
     },
     seriousExample:
       "Policy arguments cite either elite backers or grassroots poverty as proof, without supplying outcome data.",
@@ -1302,12 +1302,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Status invoked as proof of correctness.",
       "Little substance beyond who holds the view.",
-      "Romanticizing poverty or valorizing wealth without evidence.",
+      "Romanticizing poverty or valorizing wealth without evidence."
     ],
     responseStrategies: [
       "Ask for evidence independent of status.",
       "Note examples where status misled about truth.",
-      "Refocus on measurable outcomes.",
+      "Refocus on measurable outcomes."
     ],
     severity: "Low",
     typeLabel: "Rhetorical appeal",
@@ -1315,11 +1315,11 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: [
       "appeal-to-wealth",
       "appeal-to-poverty",
-      "appeal-to-authority",
+      "appeal-to-authority"
     ],
     seoTitle: "Appeal to Wealth or Poverty – The Fallacy Guide",
     seoDescription:
-      "Combined appeal to wealth or poverty uses status as proof. Learn why status cues aren’t evidence.",
+      "Combined appeal to wealth or poverty uses status as proof. Learn why status cues aren’t evidence."
   },
   {
     slug: "authority-bias",
@@ -1333,14 +1333,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Encounter a claim from an authority figure.",
       "Accept it with little scrutiny because of their status.",
-      "Apply this deference even when evidence is missing or domain is mismatched.",
+      "Apply this deference even when evidence is missing or domain is mismatched."
     ],
     everydayExample: {
       setup: "Tech choice.",
       dialogue: [
         "A: The famous CEO said this tool is the future.",
-        "B: Does the tool suit our needs? Status alone isn’t a fit test.",
-      ],
+        "B: Does the tool suit our needs? Status alone isn’t a fit test."
+      ]
     },
     seriousExample:
       "Medical guidance is accepted from a celebrity doctor on topics outside their specialty, leading to poor patient choices.",
@@ -1351,12 +1351,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Claims are accepted because of who said them rather than what was said.",
       "Domain relevance of the authority is weak or absent.",
-      "Counter-evidence is ignored in favor of status cues.",
+      "Counter-evidence is ignored in favor of status cues."
     ],
     responseStrategies: [
       "Check domain expertise and evidence.",
       "Compare with consensus among qualified experts.",
-      "Separate credibility cues from data evaluation.",
+      "Separate credibility cues from data evaluation."
     ],
     severity: "Medium",
     typeLabel: "Cognitive bias",
@@ -1364,11 +1364,11 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: [
       "appeal-to-authority",
       "appeal-to-popularity",
-      "appeal-to-common-practice",
+      "appeal-to-common-practice"
     ],
     seoTitle: "Authority Bias – The Fallacy Guide",
     seoDescription:
-      "Authority bias overvalues status over evidence. Learn to check domain relevance and data before deferring.",
+      "Authority bias overvalues status over evidence. Learn to check domain relevance and data before deferring."
   },
   {
     slug: "base-rate-fallacy",
@@ -1382,14 +1382,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Consider a new piece of evidence (e.g., a positive test).",
       "Neglect the overall prevalence/base rate of the condition.",
-      "Overestimate or underestimate the true probability.",
+      "Overestimate or underestimate the true probability."
     ],
     everydayExample: {
       setup: "Medical screening.",
       dialogue: [
         "A: The test is 95% accurate; my positive result means I definitely have it.",
-        "B: If prevalence is very low, many positives will be false—consider the base rate.",
-      ],
+        "B: If prevalence is very low, many positives will be false—consider the base rate."
+      ]
     },
     seriousExample:
       "A rare-event detector triggers alarms; decision-makers assume most alarms are true, ignoring low base-rate and high false-positive risk.",
@@ -1400,12 +1400,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Probabilities are assessed without reference to prevalence.",
       "High confidence in results despite low base conditions.",
-      "Confusion between test accuracy and actual probability.",
+      "Confusion between test accuracy and actual probability."
     ],
     responseStrategies: [
       "Quantify prevalence and incorporate it into probability estimates.",
       "Use Bayes-style reasoning: prior + likelihood = updated probability.",
-      "Provide concrete examples illustrating false positives/negatives.",
+      "Provide concrete examples illustrating false positives/negatives."
     ],
     severity: "Medium",
     typeLabel: "Statistical fallacy",
@@ -1413,11 +1413,11 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: [
       "prosecutors-fallacy",
       "masked-relationship-fallacy",
-      "interpolation-extrapolation-fallacy",
+      "interpolation-extrapolation-fallacy"
     ],
     seoTitle: "Base Rate Fallacy – The Fallacy Guide",
     seoDescription:
-      "Base rate fallacy ignores prior probabilities when reading evidence. Learn to combine prevalence with new data.",
+      "Base rate fallacy ignores prior probabilities when reading evidence. Learn to combine prevalence with new data."
   },
   {
     slug: "card-stacking",
@@ -1431,14 +1431,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "List supporting points for a claim.",
       "Omit or downplay counter-evidence.",
-      "Imply the presented set is complete and decisive.",
+      "Imply the presented set is complete and decisive."
     ],
     everydayExample: {
       setup: "Product pitch.",
       dialogue: [
         "A: Look at these three glowing testimonials.",
-        "B: Are there independent reviews or return rates? What’s missing?",
-      ],
+        "B: Are there independent reviews or return rates? What’s missing?"
+      ]
     },
     seriousExample:
       "A political ad highlights only positive metrics of an incumbent and omits recession data and ethics investigations.",
@@ -1449,12 +1449,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Only positives are mentioned; negatives are absent or vaguely dismissed.",
       "Sources are tightly controlled by the advocate.",
-      "Requests for contrary data are deflected.",
+      "Requests for contrary data are deflected."
     ],
     responseStrategies: [
       "Ask for full datasets and opposing evidence.",
       "Cross-check claims with independent sources.",
-      "Highlight omissions and present missing context.",
+      "Highlight omissions and present missing context."
     ],
     severity: "High",
     typeLabel: "Propaganda tactic",
@@ -1462,7 +1462,7 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: ["cherry-picking", "firehose-of-falsehood", "quote-mining"],
     seoTitle: "Card Stacking – The Fallacy Guide",
     seoDescription:
-      "Card stacking presents only favorable evidence and hides the rest. Learn to spot omissions and restore balance.",
+      "Card stacking presents only favorable evidence and hides the rest. Learn to spot omissions and restore balance."
   },
   {
     slug: "cherry-picking",
@@ -1476,14 +1476,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Identify a subset of data that fits the claim.",
       "Ignore data that challenge the claim.",
-      "Present the selected subset as representative or decisive.",
+      "Present the selected subset as representative or decisive."
     ],
     everydayExample: {
       setup: "Fitness results.",
       dialogue: [
         "A: I lost five pounds on this plan—proof it works.",
-        "B: What about the rest of your month and overall health markers?",
-      ],
+        "B: What about the rest of your month and overall health markers?"
+      ]
     },
     seriousExample:
       "A company highlights a few successful quarters to tout growth while ignoring a multi-year downward trend.",
@@ -1494,12 +1494,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Only supportive examples are shown; contradictory cases are absent.",
       "Scope of data is narrow or selectively defined after the fact.",
-      "Results are not contextualized against the whole dataset.",
+      "Results are not contextualized against the whole dataset."
     ],
     responseStrategies: [
       "Request full datasets and selection criteria.",
       "Look for patterns across all data, not just highlights.",
-      "Compare claims against independent or larger samples.",
+      "Compare claims against independent or larger samples."
     ],
     severity: "High",
     typeLabel: "Statistical fallacy",
@@ -1507,11 +1507,11 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: [
       "card-stacking",
       "texas-sharpshooter",
-      "misleading-vividness",
+      "misleading-vividness"
     ],
     seoTitle: "Cherry-Picking – The Fallacy Guide",
     seoDescription:
-      "Cherry-picking uses selective data to prove a point. Learn to ask for full context and balanced evidence.",
+      "Cherry-picking uses selective data to prove a point. Learn to ask for full context and balanced evidence."
   },
   {
     slug: "confirmation-bias",
@@ -1525,14 +1525,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Hold a belief or expectation.",
       "Seek or notice evidence that supports it.",
-      "Downplay, forget, or discredit conflicting evidence.",
+      "Downplay, forget, or discredit conflicting evidence."
     ],
     everydayExample: {
       setup: "Product loyalty.",
       dialogue: [
         "A: See, this one good review proves our product is best.",
-        "B: Have you read the critical reviews and return data?",
-      ],
+        "B: Have you read the critical reviews and return data?"
+      ]
     },
     seriousExample:
       "In investigations, authorities focus on evidence that fits an early theory, overlooking exonerating facts and leading to wrongful conclusions.",
@@ -1543,12 +1543,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Evidence supporting the belief is overemphasized; counter-evidence is minimized.",
       "Information sources are filtered to align with expectations.",
-      "New data is interpreted to preserve prior beliefs.",
+      "New data is interpreted to preserve prior beliefs."
     ],
     responseStrategies: [
       "Seek disconfirming evidence deliberately.",
       "Use structured checks (blind reviews, diverse sources).",
-      "Quantify and compare all evidence, not just supporting pieces.",
+      "Quantify and compare all evidence, not just supporting pieces."
     ],
     severity: "Medium",
     typeLabel: "Cognitive bias",
@@ -1556,7 +1556,7 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: ["cherry-picking", "card-stacking", "appeal-to-ignorance"],
     seoTitle: "Confirmation Bias – The Fallacy Guide",
     seoDescription:
-      "Confirmation bias favors supporting evidence and filters out conflict. Learn how to counter it with balanced data.",
+      "Confirmation bias favors supporting evidence and filters out conflict. Learn how to counter it with balanced data."
   },
   {
     slug: "post-hoc",
@@ -1570,13 +1570,13 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Observe that Event A happened before Event B.",
       "Conclude A caused B because of the sequence.",
-      "Ignore other causal explanations or evidence.",
+      "Ignore other causal explanations or evidence."
     ],
     everydayExample: {
       setup: "Superstition.",
       dialogue: [
-        "A: I wore my lucky socks and then we won. The socks caused the win.",
-      ],
+        "A: I wore my lucky socks and then we won. The socks caused the win."
+      ]
     },
     seriousExample:
       "A policy is declared effective because a metric improved afterward, without controlling for other factors or trends.",
@@ -1587,28 +1587,28 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Causal claim rests mainly on chronology.",
       "No control for confounders or alternative explanations.",
-      "Assumes inevitability without tests or comparisons.",
+      "Assumes inevitability without tests or comparisons."
     ],
     responseStrategies: [
       "Ask for controlled comparisons or additional evidence.",
       "Identify other variables that could explain the outcome.",
-      "Clarify that timing alone does not equal causation.",
+      "Clarify that timing alone does not equal causation."
     ],
     severity: "Medium",
     typeLabel: "Causal fallacy",
     typicalContexts: [
       "Policy evaluation",
       "Personal beliefs",
-      "Marketing claims",
+      "Marketing claims"
     ],
     relatedSlugs: [
       "correlation-is-not-causation",
       "cherry-picking",
-      "slippery-slope",
+      "slippery-slope"
     ],
     seoTitle: "Post Hoc Ergo Propter Hoc – The Fallacy Guide",
     seoDescription:
-      "Post hoc assumes earlier events caused later ones just by sequence. Learn to demand evidence beyond timing.",
+      "Post hoc assumes earlier events caused later ones just by sequence. Learn to demand evidence beyond timing."
   },
   {
     slug: "faulty-analogy",
@@ -1622,14 +1622,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Identify two situations or things as similar.",
       "Infer they share another property because of that similarity.",
-      "Ignore important disanalogies that weaken the comparison.",
+      "Ignore important disanalogies that weaken the comparison."
     ],
     everydayExample: {
       setup: "Policy comparison.",
       dialogue: [
         "A: Running a country is just like running a household budget.",
-        "B: Nations control currency, have obligations, and manage macro factors households don’t.",
-      ],
+        "B: Nations control currency, have obligations, and manage macro factors households don’t."
+      ]
     },
     seriousExample:
       "A medical treatment is promoted because it ‘worked on plants’ in lab tests, implying it will work on humans despite huge biological differences.",
@@ -1640,12 +1640,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Argument hinges on a comparison, but key differences are unaddressed.",
       "The shared features are superficial or not relevant to the conclusion.",
-      "Counterexamples show the analogy breaks when details are considered.",
+      "Counterexamples show the analogy breaks when details are considered."
     ],
     responseStrategies: [
       "Identify relevant differences and ask how they affect the conclusion.",
       "Request evidence beyond the analogy.",
-      "Offer a counter-analogy that highlights the mismatch.",
+      "Offer a counter-analogy that highlights the mismatch."
     ],
     severity: "Medium",
     typeLabel: "Weak induction",
@@ -1653,7 +1653,7 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: ["hasty-generalisation", "cherry-picking", "false-dichotomy"],
     seoTitle: "Faulty Analogy – The Fallacy Guide",
     seoDescription:
-      "Faulty analogy relies on weak comparisons to reach conclusions. Learn to test similarities and surface critical differences.",
+      "Faulty analogy relies on weak comparisons to reach conclusions. Learn to test similarities and surface critical differences."
   },
   {
     slug: "firehose-of-falsehood",
@@ -1667,13 +1667,13 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Emit many assertions quickly across multiple channels.",
       "Provide little sourcing and move on before fact-checks land.",
-      "Repeat often; rely on audience fatigue and informational overload.",
+      "Repeat often; rely on audience fatigue and informational overload."
     ],
     everydayExample: {
       setup: "Online argument.",
       dialogue: [
-        "A: Here are ten reasons in one post—stats, anecdotes, conspiracies—prove me wrong.",
-      ],
+        "A: Here are ten reasons in one post—stats, anecdotes, conspiracies—prove me wrong."
+      ]
     },
     seriousExample:
       "State media blitzes with dozens of contradictory narratives after a crisis, making it hard to fix on any single truth and sapping trust in verification.",
@@ -1684,12 +1684,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Many points, little sourcing, rapid shifts.",
       "Corrections lag and are drowned out.",
-      "Claims vary or even contradict but are presented confidently.",
+      "Claims vary or even contradict but are presented confidently."
     ],
     responseStrategies: [
       "Group similar claims and address the most consequential.",
       "Call out the tactic and slow the pace; refuse to chase every point.",
-      "Provide concise summaries of verified facts with sources.",
+      "Provide concise summaries of verified facts with sources."
     ],
     severity: "High",
     typeLabel: "Propaganda tactic",
@@ -1697,7 +1697,7 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: ["card-stacking", "gish-gallop", "smokescreen"],
     seoTitle: "Firehose of Falsehood – The Fallacy Guide",
     seoDescription:
-      "Firehose of falsehood overwhelms with rapid claims to outrun fact-checking. Learn to spot and counter the tactic.",
+      "Firehose of falsehood overwhelms with rapid claims to outrun fact-checking. Learn to spot and counter the tactic."
   },
   {
     slug: "gambler-fallacy",
@@ -1711,11 +1711,11 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Observe a streak of outcomes.",
       "Assume the opposite outcome is now ‘due’.",
-      "Adjust belief or bets based on the streak rather than true probability.",
+      "Adjust belief or bets based on the streak rather than true probability."
     ],
     everydayExample: {
       setup: "Coin flips.",
-      dialogue: ["A: It’s landed heads five times; tails is due next."],
+      dialogue: ["A: It’s landed heads five times; tails is due next."]
     },
     seriousExample:
       "A casino bettor doubles after losses thinking a win is inevitable; in forecasting, analysts expect reversal just because a trend looks ‘too long.’",
@@ -1726,12 +1726,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Language of ‘due’ or ‘overdue’ in independent random processes.",
       "Bet sizing or decisions hinge on streak length alone.",
-      "Confusion between sample balance and single-trial probability.",
+      "Confusion between sample balance and single-trial probability."
     ],
     responseStrategies: [
       "Clarify independence and fixed probabilities.",
       "Use simple probability examples to show streaks happen.",
-      "Separate budgeting/limits from imagined inevitability.",
+      "Separate budgeting/limits from imagined inevitability."
     ],
     severity: "Medium",
     typeLabel: "Statistical fallacy",
@@ -1739,7 +1739,7 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: ["hot-hand-fallacy", "base-rate-fallacy", "post-hoc"],
     seoTitle: "Gambler’s Fallacy – The Fallacy Guide",
     seoDescription:
-      "Gambler’s fallacy expects random outcomes to ‘balance’ in the short term. Learn why independence keeps odds constant.",
+      "Gambler’s fallacy expects random outcomes to ‘balance’ in the short term. Learn why independence keeps odds constant."
   },
   {
     slug: "glittering-generalities",
@@ -1753,14 +1753,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Invoke a cherished value or vague positive phrase.",
       "Avoid details or definitions.",
-      "Treat audience’s positive feelings as endorsement of the claim.",
+      "Treat audience’s positive feelings as endorsement of the claim."
     ],
     everydayExample: {
       setup: "Product marketing.",
       dialogue: [
         "A: Our app empowers community and innovation.",
-        "B: What does it actually do?",
-      ],
+        "B: What does it actually do?"
+      ]
     },
     seriousExample:
       "A policy is sold as ‘defending freedom and prosperity’ without mechanisms, metrics, or trade-offs.",
@@ -1771,12 +1771,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Vague virtues with no concrete definitions.",
       "Absence of mechanisms, trade-offs, or evidence.",
-      "Critics are framed as opposing the named ideal.",
+      "Critics are framed as opposing the named ideal."
     ],
     responseStrategies: [
       "Ask for definitions, mechanisms, and metrics.",
       "Request examples or evidence that tie claims to outcomes.",
-      "Reframe around specifics rather than labels.",
+      "Reframe around specifics rather than labels."
     ],
     severity: "Medium",
     typeLabel: "Rhetorical appeal",
@@ -1784,11 +1784,11 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: [
       "deepity",
       "thought-terminating-cliche",
-      "virtue-signalling",
+      "virtue-signalling"
     ],
     seoTitle: "Glittering Generalities – The Fallacy Guide",
     seoDescription:
-      "Glittering generalities use vague, positive phrases instead of evidence. Learn to ask for specifics and substance.",
+      "Glittering generalities use vague, positive phrases instead of evidence. Learn to ask for specifics and substance."
   },
   {
     slug: "guilt-by-association",
@@ -1802,13 +1802,13 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Identify a disliked group or person.",
       "Associate the target with that group.",
-      "Reject the target’s claim based on the association alone.",
+      "Reject the target’s claim based on the association alone."
     ],
     everydayExample: {
       setup: "Team dynamics.",
       dialogue: [
-        "A: She agrees with that manager you dislike, so her proposal must be bad.",
-      ],
+        "A: She agrees with that manager you dislike, so her proposal must be bad."
+      ]
     },
     seriousExample:
       "Policy suggestions are dismissed because a disfavored political faction voiced similar ideas, rather than analyzing the proposal itself.",
@@ -1819,12 +1819,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Negative group labels are used as primary rebuttal.",
       "Little to no engagement with the claim’s content.",
-      "Emotional associations replace argument analysis.",
+      "Emotional associations replace argument analysis."
     ],
     responseStrategies: [
       "Ask for evaluation of the claim on its merits.",
       "Separate the target’s argument from the associated group.",
-      "Highlight that similarity in one view doesn’t imply identical motives or validity.",
+      "Highlight that similarity in one view doesn’t imply identical motives or validity."
     ],
     severity: "Medium",
     typeLabel: "Relevance fallacy",
@@ -1832,7 +1832,7 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: ["ad-hominem", "poisoning-the-well", "appeal-to-motive"],
     seoTitle: "Guilt by Association – The Fallacy Guide",
     seoDescription:
-      "Guilt by association discredits by linking to disliked groups instead of addressing evidence. Learn to keep focus on merits.",
+      "Guilt by association discredits by linking to disliked groups instead of addressing evidence. Learn to keep focus on merits."
   },
   {
     slug: "half-truth",
@@ -1846,14 +1846,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Share a technically true statement.",
       "Omit context or key qualifiers.",
-      "Let the audience infer an inaccurate conclusion.",
+      "Let the audience infer an inaccurate conclusion."
     ],
     everydayExample: {
       setup: "Resume boasting.",
       dialogue: [
         "A: I led a project that increased revenue 50%.",
-        "B: Was that a tiny pilot? What about overall results and baseline?",
-      ],
+        "B: Was that a tiny pilot? What about overall results and baseline?"
+      ]
     },
     seriousExample:
       "A press release cites a study’s relative risk reduction but omits absolute risk, making benefits seem much larger.",
@@ -1864,12 +1864,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Claims are technically correct but feel incomplete or too rosy.",
       "Context (baseline, scope, limitations) is missing.",
-      "Quantities may be relative without absolutes.",
+      "Quantities may be relative without absolutes."
     ],
     responseStrategies: [
       "Request full context and definitions.",
       "Ask for absolute numbers, baselines, and scope.",
-      "Check original sources for omitted details.",
+      "Check original sources for omitted details."
     ],
     severity: "High",
     typeLabel: "Propaganda tactic",
@@ -1877,7 +1877,7 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: ["card-stacking", "quote-mining", "cherry-picking"],
     seoTitle: "Half-Truth – The Fallacy Guide",
     seoDescription:
-      "Half-truths omit key context to mislead. Learn to spot what’s missing and demand complete information.",
+      "Half-truths omit key context to mislead. Learn to spot what’s missing and demand complete information."
   },
   {
     slug: "hot-hand-fallacy",
@@ -1891,14 +1891,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Observe a streak of successes.",
       "Assume probability of success is now higher because of the streak.",
-      "Ignore whether the events are skill-driven or independent.",
+      "Ignore whether the events are skill-driven or independent."
     ],
     everydayExample: {
       setup: "Sports betting.",
       dialogue: [
         "A: She’s hit three in a row; she won’t miss.",
-        "B: Free throws are still subject to chance; the odds haven’t magically shifted.",
-      ],
+        "B: Free throws are still subject to chance; the odds haven’t magically shifted."
+      ]
     },
     seriousExample:
       "Investors chase recent winning funds assuming the streak will continue, ignoring mean reversion and market conditions.",
@@ -1909,12 +1909,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Belief that recent success changes odds without other evidence.",
       "Applies momentum thinking to chance-driven contexts.",
-      "Confuses skill effects with random variability.",
+      "Confuses skill effects with random variability."
     ],
     responseStrategies: [
       "Distinguish skill-driven from chance-driven events.",
       "Use data on baseline probabilities and variance.",
-      "Highlight regression to the mean in similar streaks.",
+      "Highlight regression to the mean in similar streaks."
     ],
     severity: "Medium",
     typeLabel: "Decision bias",
@@ -1922,11 +1922,11 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: [
       "gambler-fallacy",
       "base-rate-fallacy",
-      "appeal-to-probability",
+      "appeal-to-probability"
     ],
     seoTitle: "Hot Hand Fallacy – The Fallacy Guide",
     seoDescription:
-      "Hot hand fallacy assumes streaks guarantee continued success. Learn to separate skill from chance and temper momentum bias.",
+      "Hot hand fallacy assumes streaks guarantee continued success. Learn to separate skill from chance and temper momentum bias."
   },
   {
     slug: "ignoring-the-question",
@@ -1940,14 +1940,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "A clear question or issue is raised.",
       "Responder addresses a different question or tangent.",
-      "Original issue remains unresolved but discussion moves on.",
+      "Original issue remains unresolved but discussion moves on."
     ],
     everydayExample: {
       setup: "Team accountability.",
       dialogue: [
         "A: Why did we miss the deadline?",
-        "B: The design team is overworked—let’s talk about tools.",
-      ],
+        "B: The design team is overworked—let’s talk about tools."
+      ]
     },
     seriousExample:
       "In a hearing about budget overruns, officials pivot to discussing past successes instead of the current overspend.",
@@ -1958,12 +1958,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Direct question is left unanswered.",
       "Responder shifts to tangential or unrelated points.",
-      "The new topic does not resolve the original issue.",
+      "The new topic does not resolve the original issue."
     ],
     responseStrategies: [
       "Restate the original question and note it wasn’t answered.",
       "Ask for a direct response before moving to secondary topics.",
-      "If relevant, schedule separate attention for the tangent.",
+      "If relevant, schedule separate attention for the tangent."
     ],
     severity: "Low",
     typeLabel: "Relevance fallacy",
@@ -1971,7 +1971,7 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: ["red-herring", "smokescreen", "strawman"],
     seoTitle: "Ignoring the Question – The Fallacy Guide",
     seoDescription:
-      "Ignoring the question swaps in a different topic and leaves the real issue untouched. Learn to restate and refocus.",
+      "Ignoring the question swaps in a different topic and leaves the real issue untouched. Learn to restate and refocus."
   },
   {
     slug: "illusion-of-control",
@@ -1985,11 +1985,11 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Encounter an outcome with chance or many external factors.",
       "Assume personal actions have significant influence.",
-      "Base decisions or emotions on that inflated sense of control.",
+      "Base decisions or emotions on that inflated sense of control."
     ],
     everydayExample: {
       setup: "Lottery participation.",
-      dialogue: ["A: I pick special numbers; that increases my odds."],
+      dialogue: ["A: I pick special numbers; that increases my odds."]
     },
     seriousExample:
       "Executives assume they can perfectly time markets or control macroeconomic shifts, leading to overleveraged strategies.",
@@ -2000,12 +2000,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Attributing random outcomes to personal skill.",
       "Confusing influence over small factors with control over the whole.",
-      "Confidence persists despite low actual leverage.",
+      "Confidence persists despite low actual leverage."
     ],
     responseStrategies: [
       "Identify controllable vs. uncontrollable factors explicitly.",
       "Use data to estimate actual impact and variance.",
-      "Plan with margins for uncertainty instead of assuming mastery.",
+      "Plan with margins for uncertainty instead of assuming mastery."
     ],
     severity: "Medium",
     typeLabel: "Decision bias",
@@ -2013,11 +2013,11 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: [
       "appeal-to-probability",
       "hot-hand-fallacy",
-      "gambler-fallacy",
+      "gambler-fallacy"
     ],
     seoTitle: "Illusion of Control – The Fallacy Guide",
     seoDescription:
-      "Illusion of control overestimates personal influence on random or external outcomes. Learn to separate control from chance.",
+      "Illusion of control overestimates personal influence on random or external outcomes. Learn to separate control from chance."
   },
   {
     slug: "interpolation-extrapolation-fallacy",
@@ -2031,14 +2031,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Observe a trend in a limited range of data.",
       "Assume the same relationship holds between or beyond observed points.",
-      "Draw conclusions without testing the new range or considering limits.",
+      "Draw conclusions without testing the new range or considering limits."
     ],
     everydayExample: {
       setup: "Personal finance.",
       dialogue: [
         "A: My investments grew 10% last quarter, so I’ll keep getting 10% every quarter.",
-        "B: Short-term growth doesn’t guarantee the same rate continues.",
-      ],
+        "B: Short-term growth doesn’t guarantee the same rate continues."
+      ]
     },
     seriousExample:
       "A health metric improves in a small trial; marketers project identical improvement to whole populations over years without long-term or larger studies.",
@@ -2049,12 +2049,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Linear projections beyond measured data.",
       "Confidence in predictions without testing new ranges.",
-      "Omission of uncertainty or potential curve changes.",
+      "Omission of uncertainty or potential curve changes."
     ],
     responseStrategies: [
       "Ask for data or models validated in the new range.",
       "Highlight possible non-linearities or limits.",
-      "Request uncertainty bounds instead of single-line projections.",
+      "Request uncertainty bounds instead of single-line projections."
     ],
     severity: "Medium",
     typeLabel: "Statistical fallacy",
@@ -2063,11 +2063,11 @@ export const fallacies: Fallacy[] = [
       "regression-fallacy",
       "masked-relationship-fallacy",
       "cherry-picking",
-      "base-rate-fallacy",
+      "base-rate-fallacy"
     ],
     seoTitle: "Interpolation / Extrapolation Fallacy – The Fallacy Guide",
     seoDescription:
-      "Interpolation/extrapolation fallacy assumes trends hold outside observed data. Learn to test ranges and add uncertainty.",
+      "Interpolation/extrapolation fallacy assumes trends hold outside observed data. Learn to test ranges and add uncertainty."
   },
   {
     slug: "ludic-fallacy",
@@ -2081,14 +2081,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Model a situation with simplified, game-like rules.",
       "Assume reality follows the model closely.",
-      "Ignore or downplay real-world complexities and uncertainties.",
+      "Ignore or downplay real-world complexities and uncertainties."
     ],
     everydayExample: {
       setup: "Project estimates.",
       dialogue: [
         "A: According to our perfect model, there can be no delays.",
-        "B: Real-world dependencies and surprises aren’t in that model.",
-      ],
+        "B: Real-world dependencies and surprises aren’t in that model."
+      ]
     },
     seriousExample:
       "Risk models assume normal distributions and independent events, underestimating catastrophic correlated failures (e.g., financial crises).",
@@ -2099,12 +2099,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Strong reliance on simplified assumptions without stress-testing.",
       "Dismissal of outliers or unknown unknowns.",
-      "Confidence disproportionate to model realism.",
+      "Confidence disproportionate to model realism."
     ],
     responseStrategies: [
       "Identify assumptions and test sensitivity to violations.",
       "Include uncertainty ranges and scenario analysis.",
-      "Compare model predictions with real-world observations.",
+      "Compare model predictions with real-world observations."
     ],
     severity: "High",
     typeLabel: "Presumption fallacy",
@@ -2112,11 +2112,11 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: [
       "planning-fallacy",
       "illusion-of-control",
-      "regression-fallacy",
+      "regression-fallacy"
     ],
     seoTitle: "Ludic Fallacy – The Fallacy Guide",
     seoDescription:
-      "Ludic fallacy treats reality like a tidy game, ignoring messy uncertainty. Learn to stress-test models against real risks.",
+      "Ludic fallacy treats reality like a tidy game, ignoring messy uncertainty. Learn to stress-test models against real risks."
   },
   {
     slug: "masked-relationship-fallacy",
@@ -2130,14 +2130,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Look for a relationship between A and B.",
       "Find weak or no correlation in aggregate data.",
-      "Ignore a confounder that, when controlled, reveals the relationship.",
+      "Ignore a confounder that, when controlled, reveals the relationship."
     ],
     everydayExample: {
       setup: "Training results.",
       dialogue: [
         "A: No link between practice time and performance across all employees.",
-        "B: Split by role or tenure first—skills differ and can mask the effect.",
-      ],
+        "B: Split by role or tenure first—skills differ and can mask the effect."
+      ]
     },
     seriousExample:
       "A drug trial shows no effect overall, but when controlling for dosage timing or demographics, a strong effect appears that was previously masked.",
@@ -2148,28 +2148,28 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Aggregate analysis only; no stratification or control variables.",
       "Dismissal of effects without checking for masking factors.",
-      "Complex systems reduced to single-variable views.",
+      "Complex systems reduced to single-variable views."
     ],
     responseStrategies: [
       "Check for confounders and stratify data.",
       "Use multivariate analysis to reveal hidden relationships.",
-      "Avoid blanket ‘no effect’ claims without sensitivity checks.",
+      "Avoid blanket ‘no effect’ claims without sensitivity checks."
     ],
     severity: "Medium",
     typeLabel: "Statistical fallacy",
     typicalContexts: [
       "Data analysis",
       "Scientific research",
-      "Business metrics",
+      "Business metrics"
     ],
     relatedSlugs: [
       "ecological-fallacy",
       "simpsons-paradox",
-      "base-rate-fallacy",
+      "base-rate-fallacy"
     ],
     seoTitle: "Masked Relationship Fallacy – The Fallacy Guide",
     seoDescription:
-      "Masked relationship fallacy overlooks effects hidden by confounders. Learn to stratify data and uncover real patterns.",
+      "Masked relationship fallacy overlooks effects hidden by confounders. Learn to stratify data and uncover real patterns."
   },
   {
     slug: "misleading-vividness",
@@ -2183,14 +2183,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Present a dramatic anecdote.",
       "Let its emotional force substitute for representative evidence.",
-      "Draw broad conclusions that conflict with larger data.",
+      "Draw broad conclusions that conflict with larger data."
     ],
     everydayExample: {
       setup: "Travel safety.",
       dialogue: [
         "A: I heard of one traveler scammed abroad, so travel there is unsafe.",
-        "B: What do crime statistics show overall?",
-      ],
+        "B: What do crime statistics show overall?"
+      ]
     },
     seriousExample:
       "A single sensational side effect story leads people to ignore extensive trial data showing safety and efficacy.",
@@ -2201,12 +2201,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "A dramatic case is cited as proof against broader data.",
       "No discussion of frequency or representativeness.",
-      "Risk perception is driven by emotion rather than prevalence.",
+      "Risk perception is driven by emotion rather than prevalence."
     ],
     responseStrategies: [
       "Ask for base rates and representative statistics.",
       "Frame anecdotes as possibilities, not proof of prevalence.",
-      "Use comparative data to recalibrate risk perception.",
+      "Use comparative data to recalibrate risk perception."
     ],
     severity: "Medium",
     typeLabel: "Statistical fallacy",
@@ -2214,7 +2214,7 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: ["anecdotal-fallacy", "cherry-picking", "appeal-to-emotion"],
     seoTitle: "Misleading Vividness – The Fallacy Guide",
     seoDescription:
-      "Misleading vividness uses striking anecdotes to outweigh statistics. Learn to balance stories with representative data.",
+      "Misleading vividness uses striking anecdotes to outweigh statistics. Learn to balance stories with representative data."
   },
   {
     slug: "moralistic-fallacy",
@@ -2228,14 +2228,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "State how something should be.",
       "Infer that reality matches that ideal because it ought to.",
-      "Ignore evidence to the contrary.",
+      "Ignore evidence to the contrary."
     ],
     everydayExample: {
       setup: "Health expectations.",
       dialogue: [
         "A: People should be rational about health, so misinformation can’t spread far.",
-        "B: The desirability doesn’t guarantee reality—look at the data.",
-      ],
+        "B: The desirability doesn’t guarantee reality—look at the data."
+      ]
     },
     seriousExample:
       "Policy assumes markets will self-correct harmful practices because it would be better if they did, neglecting evidence of persistent externalities.",
@@ -2246,12 +2246,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "‘Ought’ language used to infer ‘is’.",
       "Contrary evidence downplayed as anomalous.",
-      "Moral preference presented as descriptive fact.",
+      "Moral preference presented as descriptive fact."
     ],
     responseStrategies: [
       "Separate normative statements from empirical claims.",
       "Ask for evidence about real conditions.",
-      "Acknowledge values while addressing reality as it is.",
+      "Acknowledge values while addressing reality as it is."
     ],
     severity: "Medium",
     typeLabel: "Relevance fallacy",
@@ -2259,11 +2259,11 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: [
       "naturalistic-fallacy",
       "appeal-to-consequences",
-      "appeal-to-nature",
+      "appeal-to-nature"
     ],
     seoTitle: "Moralistic Fallacy – The Fallacy Guide",
     seoDescription:
-      "Moralistic fallacy assumes what should be is what is. Learn to separate values from facts.",
+      "Moralistic fallacy assumes what should be is what is. Learn to separate values from facts."
   },
   {
     slug: "naturalistic-fallacy",
@@ -2277,14 +2277,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Observe a natural state or behavior.",
       "Infer it is good or should be emulated because it is natural.",
-      "Skip ethical reasoning or contextual evidence.",
+      "Skip ethical reasoning or contextual evidence."
     ],
     everydayExample: {
       setup: "Diet trends.",
       dialogue: [
         "A: Our ancestors ate this way, so it must be the healthiest diet.",
-        "B: What do current health outcomes and studies show?",
-      ],
+        "B: What do current health outcomes and studies show?"
+      ]
     },
     seriousExample:
       "Social policies justified because a behavior occurs in animals, ignoring ethical considerations and human context.",
@@ -2295,12 +2295,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Moral claims rest on what is natural or original.",
       "Little evidence beyond the naturalness appeal.",
-      "Ignores context, consequences, or ethical frameworks.",
+      "Ignores context, consequences, or ethical frameworks."
     ],
     responseStrategies: [
       "Ask for ethical reasoning and outcome evidence.",
       "Provide counterexamples of harmful ‘natural’ phenomena.",
-      "Distinguish description from prescription.",
+      "Distinguish description from prescription."
     ],
     severity: "Medium",
     typeLabel: "Relevance fallacy",
@@ -2308,11 +2308,11 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: [
       "appeal-to-nature",
       "moralistic-fallacy",
-      "appeal-to-consequences",
+      "appeal-to-consequences"
     ],
     seoTitle: "Naturalistic Fallacy – The Fallacy Guide",
     seoDescription:
-      "Naturalistic fallacy derives ‘ought’ from ‘is’, treating natural as morally right. Learn to separate facts from values.",
+      "Naturalistic fallacy derives ‘ought’ from ‘is’, treating natural as morally right. Learn to separate facts from values."
   },
   {
     slug: "planning-fallacy",
@@ -2326,14 +2326,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Create an optimistic estimate for a project.",
       "Ignore historical overruns or hidden tasks.",
-      "Proceed with insufficient buffers, leading to delays or overruns.",
+      "Proceed with insufficient buffers, leading to delays or overruns."
     ],
     everydayExample: {
       setup: "Home project.",
       dialogue: [
         "A: I’ll paint the house this weekend.",
-        "B: It took you two weekends last time—plan for that.",
-      ],
+        "B: It took you two weekends last time—plan for that."
+      ]
     },
     seriousExample:
       "Large infrastructure projects underestimate costs and timelines, leading to massive overruns and scope changes.",
@@ -2344,28 +2344,28 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Estimates ignore historical baselines.",
       "Buffers and contingencies are minimal or absent.",
-      "Past overruns are dismissed as anomalies.",
+      "Past overruns are dismissed as anomalies."
     ],
     responseStrategies: [
       "Use reference class forecasting based on similar past projects.",
       "Add contingencies and stage gates.",
-      "Break work into smaller, tested increments.",
+      "Break work into smaller, tested increments."
     ],
     severity: "Medium",
     typeLabel: "Decision bias",
     typicalContexts: [
       "Project management",
       "Personal planning",
-      "Policy programs",
+      "Policy programs"
     ],
     relatedSlugs: [
       "ludic-fallacy",
       "illusion-of-control",
-      "appeal-to-probability",
+      "appeal-to-probability"
     ],
     seoTitle: "Planning Fallacy – The Fallacy Guide",
     seoDescription:
-      "Planning fallacy underestimates time and cost despite history. Learn to use reference classes and buffers to counter it.",
+      "Planning fallacy underestimates time and cost despite history. Learn to use reference classes and buffers to counter it."
   },
   {
     slug: "poisoning-the-well",
@@ -2379,13 +2379,13 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Introduce negative information about a speaker before they present their case.",
       "Encourage the audience to distrust anything the speaker says.",
-      "Skip evaluation of the future claim’s content.",
+      "Skip evaluation of the future claim’s content."
     ],
     everydayExample: {
       setup: "Team meeting.",
       dialogue: [
-        "A: Before he talks, remember he’s always negative—you can ignore his points.",
-      ],
+        "A: Before he talks, remember he’s always negative—you can ignore his points."
+      ]
     },
     seriousExample:
       "A whistleblower’s reputation is smeared in advance of testimony so their evidence is dismissed out of hand.",
@@ -2396,12 +2396,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Negative framing of a speaker before their argument is heard.",
       "Calls to distrust regardless of content.",
-      "No engagement with the actual forthcoming claim.",
+      "No engagement with the actual forthcoming claim."
     ],
     responseStrategies: [
       "Separate claims from the claimant; ask to hear the evidence.",
       "Note the preemptive attack as a tactic.",
-      "Assess arguments on their merits once presented.",
+      "Assess arguments on their merits once presented."
     ],
     severity: "High",
     typeLabel: "Relevance fallacy",
@@ -2409,7 +2409,7 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: ["ad-hominem", "guilt-by-association", "appeal-to-motive"],
     seoTitle: "Poisoning the Well – The Fallacy Guide",
     seoDescription:
-      "Poisoning the well discredits a speaker before they argue, biasing the audience. Learn to separate preloaded attacks from evidence.",
+      "Poisoning the well discredits a speaker before they argue, biasing the audience. Learn to separate preloaded attacks from evidence."
   },
   {
     slug: "prosecutors-fallacy",
@@ -2423,14 +2423,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Present a low probability of evidence under innocence.",
       "Conclude the defendant is almost certainly guilty.",
-      "Neglect base rates, alternative explanations, or false positives.",
+      "Neglect base rates, alternative explanations, or false positives."
     ],
     everydayExample: {
       setup: "Security alarms.",
       dialogue: [
         "A: Only 1% of alarms are false, so this alarm means a burglary.",
-        "B: What’s the base rate of burglaries and how many alarms go off overall?",
-      ],
+        "B: What’s the base rate of burglaries and how many alarms go off overall?"
+      ]
     },
     seriousExample:
       "DNA evidence with a 1-in-a-million random match rate is treated as near-certain guilt, ignoring population size and other evidence.",
@@ -2441,12 +2441,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Conditional probabilities are flipped or treated as identical.",
       "Base rates and alternative causes are ignored.",
-      "Small probability of evidence is equated to small probability of innocence.",
+      "Small probability of evidence is equated to small probability of innocence."
     ],
     responseStrategies: [
       "Clarify the difference between P(E|I) and P(I|E).",
       "Introduce base rates and alternative explanations into the calculation.",
-      "Use concrete numbers to illustrate how probabilities shift with prevalence.",
+      "Use concrete numbers to illustrate how probabilities shift with prevalence."
     ],
     severity: "High",
     typeLabel: "Statistical fallacy",
@@ -2454,11 +2454,11 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: [
       "base-rate-fallacy",
       "masked-relationship-fallacy",
-      "correlation-is-not-causation",
+      "correlation-is-not-causation"
     ],
     seoTitle: "Prosecutor’s Fallacy – The Fallacy Guide",
     seoDescription:
-      "Prosecutor’s fallacy flips conditional probabilities, overstating guilt from evidence. Learn to apply base rates correctly.",
+      "Prosecutor’s fallacy flips conditional probabilities, overstating guilt from evidence. Learn to apply base rates correctly."
   },
   {
     slug: "regression-fallacy",
@@ -2472,14 +2472,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Observe an extreme high or low outcome.",
       "See a move toward average afterward.",
-      "Attribute the change to an intervention rather than statistical regression.",
+      "Attribute the change to an intervention rather than statistical regression."
     ],
     everydayExample: {
       setup: "Sports performance.",
       dialogue: [
         "A: After that slump we gave a pep talk, and performance improved—our talk fixed it.",
-        "B: Slumps often revert on their own; we need data to show the talk mattered.",
-      ],
+        "B: Slumps often revert on their own; we need data to show the talk mattered."
+      ]
     },
     seriousExample:
       "Policy effects are claimed because metrics improved after a very bad quarter, without accounting for natural variance around the mean.",
@@ -2490,28 +2490,28 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Interventions coincide with recovery from unusually good or bad results.",
       "No controls or baselines to separate intervention from natural variance.",
-      "Attributing causation from a single before–after around an extreme point.",
+      "Attributing causation from a single before–after around an extreme point."
     ],
     responseStrategies: [
       "Use control groups or comparisons across time.",
       "Note typical variability and expected regression.",
-      "Avoid strong causal claims from extreme-to-average shifts alone.",
+      "Avoid strong causal claims from extreme-to-average shifts alone."
     ],
     severity: "Medium",
     typeLabel: "Statistical fallacy",
     typicalContexts: [
       "Performance reviews",
       "Policy evaluation",
-      "Health outcomes",
+      "Health outcomes"
     ],
     relatedSlugs: [
       "masked-relationship-fallacy",
       "base-rate-fallacy",
-      "post-hoc",
+      "post-hoc"
     ],
     seoTitle: "Regression Fallacy – The Fallacy Guide",
     seoDescription:
-      "Regression fallacy credits interventions for natural return to average. Learn to separate variance from causation.",
+      "Regression fallacy credits interventions for natural return to average. Learn to separate variance from causation."
   },
   {
     slug: "reification",
@@ -2525,14 +2525,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Refer to an abstract idea as if it acts or decides.",
       "Attribute agency or concrete properties to it.",
-      "Draw conclusions based on that anthropomorphized view.",
+      "Draw conclusions based on that anthropomorphized view."
     ],
     everydayExample: {
       setup: "Project blame.",
       dialogue: [
         "A: ‘The market decided to punish us.’",
-        "B: Markets are people trading—let’s examine actual actions and causes.",
-      ],
+        "B: Markets are people trading—let’s examine actual actions and causes."
+      ]
     },
     seriousExample:
       "Policy debates claim ‘history will judge’ or ‘capital demands,’ masking the actual agents and mechanisms that create outcomes.",
@@ -2543,12 +2543,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Abstract nouns given agency (e.g., ‘truth wants’, ‘policy hates’).",
       "Causal claims made about concepts rather than actors or mechanisms.",
-      "Lack of specific agents or processes behind the claim.",
+      "Lack of specific agents or processes behind the claim."
     ],
     responseStrategies: [
       "Ask who or what concretely causes the effect.",
       "Replace abstractions with specific actors or mechanisms.",
-      "Clarify that metaphors do not establish evidence.",
+      "Clarify that metaphors do not establish evidence."
     ],
     severity: "Low",
     typeLabel: "Ambiguity fallacy",
@@ -2556,7 +2556,7 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: ["equivocation", "amphiboly", "glittering-generalities"],
     seoTitle: "Reification – The Fallacy Guide",
     seoDescription:
-      "Reification treats abstractions as concrete actors. Learn to unpack who or what really causes effects.",
+      "Reification treats abstractions as concrete actors. Learn to unpack who or what really causes effects."
   },
   {
     slug: "scapegoating",
@@ -2570,14 +2570,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Identify a convenient person or group.",
       "Ascribe broad blame for issues to them.",
-      "Downplay or ignore other contributing factors.",
+      "Downplay or ignore other contributing factors."
     ],
     everydayExample: {
       setup: "Team miss.",
       dialogue: [
         "A: The project failed because of that one junior engineer.",
-        "B: What about scope creep and unclear requirements?",
-      ],
+        "B: What about scope creep and unclear requirements?"
+      ]
     },
     seriousExample:
       "Economic downturns are blamed on a minority group, diverting attention from policy, market cycles, and systemic issues.",
@@ -2588,12 +2588,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "One group or person is blamed for broad, complex problems.",
       "Little evidence connects the target to the full scope of harm.",
-      "Alternative causes are ignored or suppressed.",
+      "Alternative causes are ignored or suppressed."
     ],
     responseStrategies: [
       "Ask for evidence linking the target to the claimed effects.",
       "List and analyze other plausible causes.",
-      "Highlight complexity to resist simplistic blame.",
+      "Highlight complexity to resist simplistic blame."
     ],
     severity: "High",
     typeLabel: "Propaganda tactic",
@@ -2601,7 +2601,7 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: ["strawman", "poisoning-the-well", "card-stacking"],
     seoTitle: "Scapegoating – The Fallacy Guide",
     seoDescription:
-      "Scapegoating blames a target for complex problems to deflect responsibility. Learn to restore nuance and evidence.",
+      "Scapegoating blames a target for complex problems to deflect responsibility. Learn to restore nuance and evidence."
   },
   {
     slug: "selection-bias",
@@ -2615,14 +2615,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Select data or participants with hidden criteria.",
       "Analyze as if the sample were representative.",
-      "Draw conclusions that don’t hold for the full population.",
+      "Draw conclusions that don’t hold for the full population."
     ],
     everydayExample: {
       setup: "Product feedback.",
       dialogue: [
         "A: All our users love us—look at these survey replies.",
-        "B: Those are only from our most active fans. What about churned users?",
-      ],
+        "B: Those are only from our most active fans. What about churned users?"
+      ]
     },
     seriousExample:
       "Medical studies recruit healthier volunteers, leading to overstated treatment benefits compared to the general population.",
@@ -2633,12 +2633,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Sample source is narrow or self-selected.",
       "Exclusions or dropouts are high and unexamined.",
-      "Claims of generality without demonstrating representativeness.",
+      "Claims of generality without demonstrating representativeness."
     ],
     responseStrategies: [
       "Ask how the sample was chosen and who was excluded.",
       "Request replication with representative sampling.",
-      "Weight or adjust for selection where possible.",
+      "Weight or adjust for selection where possible."
     ],
     severity: "High",
     typeLabel: "Statistical fallacy",
@@ -2646,7 +2646,7 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: ["sampling-bias", "publication-bias", "survivorship-bias"],
     seoTitle: "Selection Bias – The Fallacy Guide",
     seoDescription:
-      "Selection bias skews conclusions with unrepresentative samples. Learn to check who’s included—and who isn’t.",
+      "Selection bias skews conclusions with unrepresentative samples. Learn to check who’s included—and who isn’t."
   },
   {
     slug: "simpsons-paradox",
@@ -2660,14 +2660,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Identify a trend within subgroups.",
       "Aggregate the groups and find the opposite trend.",
-      "Confounder distribution differs across subgroups, reversing the trend when combined.",
+      "Confounder distribution differs across subgroups, reversing the trend when combined."
     ],
     everydayExample: {
       setup: "Customer ratings.",
       dialogue: [
         "A: Each region rates us higher this quarter, but combined ratings fell.",
-        "B: Region sizes shifted; the weighted average changed.",
-      ],
+        "B: Region sizes shifted; the weighted average changed."
+      ]
     },
     seriousExample:
       "Treatment A outperforms B in each demographic subgroup, but overall B looks better because more severe cases received A.",
@@ -2678,12 +2678,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Aggregate trend differs from subgroup trends.",
       "Confounders or group sizes shift between levels of analysis.",
-      "Claims of contradiction without confounder analysis.",
+      "Claims of contradiction without confounder analysis."
     ],
     responseStrategies: [
       "Stratify data and examine confounder distribution.",
       "Clarify that aggregation can hide or flip trends.",
-      "Explain the role of weighting and group sizes.",
+      "Explain the role of weighting and group sizes."
     ],
     severity: "Medium",
     typeLabel: "Statistical paradox",
@@ -2691,11 +2691,11 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: [
       "masked-relationship-fallacy",
       "selection-bias",
-      "ecological-fallacy",
+      "ecological-fallacy"
     ],
     seoTitle: "Simpson’s Paradox – The Fallacy Guide",
     seoDescription:
-      "Simpson’s paradox shows trends reversing when data are aggregated. Learn to check confounders and stratify before concluding.",
+      "Simpson’s paradox shows trends reversing when data are aggregated. Learn to check confounders and stratify before concluding."
   },
   {
     slug: "smokescreen",
@@ -2709,14 +2709,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Introduce many side issues or dense detail.",
       "Shift focus away from the main claim.",
-      "Avoid returning to the central question or evidence.",
+      "Avoid returning to the central question or evidence."
     ],
     everydayExample: {
       setup: "Performance review.",
       dialogue: [
         "A: Let’s discuss missed deadlines.",
-        "B: First, consider tool choice, team history, market shifts, and this 10-point theory...",
-      ],
+        "B: First, consider tool choice, team history, market shifts, and this 10-point theory..."
+      ]
     },
     seriousExample:
       "In debates, a speaker unleashes a barrage of semi-related facts to prevent focused scrutiny of a core policy failure.",
@@ -2727,12 +2727,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Sudden, dense detail tangential to the question.",
       "Main issue remains unaddressed after lengthy diversion.",
-      "Difficult to pin down a clear, relevant answer.",
+      "Difficult to pin down a clear, relevant answer."
     ],
     responseStrategies: [
       "Name the smokescreen and restate the core question.",
       "Limit scope: address one issue at a time.",
-      "Summarize and park tangents for later if needed.",
+      "Summarize and park tangents for later if needed."
     ],
     severity: "Medium",
     typeLabel: "Relevance fallacy",
@@ -2740,7 +2740,7 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: ["red-herring", "firehose-of-falsehood", "gish-gallop"],
     seoTitle: "Smokescreen – The Fallacy Guide",
     seoDescription:
-      "Smokescreen floods discussion with tangents to hide weak arguments. Learn to refocus on the core issue.",
+      "Smokescreen floods discussion with tangents to hide weak arguments. Learn to refocus on the core issue."
   },
   {
     slug: "sunk-cost-fallacy",
@@ -2754,13 +2754,13 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Note time/money already invested.",
       "Use that investment as justification to continue.",
-      "Ignore current evidence about expected future value.",
+      "Ignore current evidence about expected future value."
     ],
     everydayExample: {
       setup: "Subscription waste.",
       dialogue: [
-        "A: I paid for a year; I have to keep using it even if it’s not helpful.",
-      ],
+        "A: I paid for a year; I have to keep using it even if it’s not helpful."
+      ]
     },
     seriousExample:
       "Organizations keep funding failing projects because of prior expenditures and political capital, compounding losses.",
@@ -2771,28 +2771,28 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Justifications cite past investment, not future prospects.",
       "Hesitation to pivot despite negative forecasts.",
-      "Emotional attachment to prior effort outweighs fresh evidence.",
+      "Emotional attachment to prior effort outweighs fresh evidence."
     ],
     responseStrategies: [
       "Reframe decisions around expected future value.",
       "Acknowledge sunk costs and separate them from go/no-go choices.",
-      "Set predefined exit criteria to prevent escalation.",
+      "Set predefined exit criteria to prevent escalation."
     ],
     severity: "Medium",
     typeLabel: "Decision bias",
     typicalContexts: [
       "Project management",
       "Investing",
-      "Personal commitments",
+      "Personal commitments"
     ],
     relatedSlugs: [
       "planning-fallacy",
       "illusion-of-control",
-      "appeal-to-probability",
+      "appeal-to-probability"
     ],
     seoTitle: "Sunk Cost Fallacy – The Fallacy Guide",
     seoDescription:
-      "Sunk cost fallacy keeps investing because of past spend, not future value. Learn to pivot using forward-looking decisions.",
+      "Sunk cost fallacy keeps investing because of past spend, not future value. Learn to pivot using forward-looking decisions."
   },
   {
     slug: "survivorship-bias",
@@ -2806,14 +2806,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Observe surviving cases (e.g., successful companies, winners).",
       "Ignore failures that didn’t make it into the sample.",
-      "Draw conclusions based only on survivors.",
+      "Draw conclusions based only on survivors."
     ],
     everydayExample: {
       setup: "Career advice.",
       dialogue: [
         "A: Drop out like that famous founder—you’ll make it big.",
-        "B: We don’t hear from the many dropouts who didn’t succeed.",
-      ],
+        "B: We don’t hear from the many dropouts who didn’t succeed."
+      ]
     },
     seriousExample:
       "Warplane armor was first added where returning planes had fewest holes; analysts realized missing data were from planes that didn’t return.",
@@ -2824,24 +2824,24 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Conclusions drawn from only visible successes.",
       "Absence of data on attempts that failed or disappeared.",
-      "Advice based on exceptional cases presented as typical.",
+      "Advice based on exceptional cases presented as typical."
     ],
     responseStrategies: [
       "Ask about the denominator: how many attempts failed?",
       "Seek data on non-survivors or missing cases.",
-      "Temper conclusions with full distributions, not highlight reels.",
+      "Temper conclusions with full distributions, not highlight reels."
     ],
     severity: "High",
     typeLabel: "Statistical fallacy",
     typicalContexts: [
       "Entrepreneurship advice",
       "Investing",
-      "Historical analysis",
+      "Historical analysis"
     ],
     relatedSlugs: ["selection-bias", "publication-bias", "cherry-picking"],
     seoTitle: "Survivorship Bias – The Fallacy Guide",
     seoDescription:
-      "Survivorship bias looks only at successes and ignores failures. Learn to ask about the missing data to avoid skewed conclusions.",
+      "Survivorship bias looks only at successes and ignores failures. Learn to ask about the missing data to avoid skewed conclusions."
   },
   {
     slug: "genetic-fallacy",
@@ -2855,14 +2855,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Note the source or origin of a claim.",
       "Accept or reject the claim because of that origin.",
-      "Skip evaluating the actual evidence or logic.",
+      "Skip evaluating the actual evidence or logic."
     ],
     everydayExample: {
       setup: "Product recommendation.",
       dialogue: [
         "A: That idea came from a competitor, so it must be bad.",
-        "B: The source doesn’t decide quality—let’s check the facts.",
-      ],
+        "B: The source doesn’t decide quality—let’s check the facts."
+      ]
     },
     seriousExample:
       "Research is dismissed because it was funded by a disfavored institution, without examining the methodology or data.",
@@ -2873,12 +2873,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Focus on who/where a claim came from rather than what supports it.",
       "No discussion of data or logic.",
-      "Positive or negative bias based purely on source.",
+      "Positive or negative bias based purely on source."
     ],
     responseStrategies: [
       "Acknowledge source context, then request evidence and methodology.",
       "Separate provenance from proof.",
-      "Evaluate the claim on its merits after noting potential biases.",
+      "Evaluate the claim on its merits after noting potential biases."
     ],
     severity: "Medium",
     typeLabel: "Relevance fallacy",
@@ -2886,7 +2886,7 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: ["ad-hominem", "appeal-to-motive", "poisoning-the-well"],
     seoTitle: "Genetic Fallacy – The Fallacy Guide",
     seoDescription:
-      "Genetic fallacy accepts or rejects claims because of their source. Learn to separate provenance from proof.",
+      "Genetic fallacy accepts or rejects claims because of their source. Learn to separate provenance from proof."
   },
   {
     slug: "fallacy-of-composition",
@@ -2900,14 +2900,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Note a property of individual parts.",
       "Assume the whole shares that property.",
-      "Ignore how combination could change the property.",
+      "Ignore how combination could change the property."
     ],
     everydayExample: {
       setup: "Team skills.",
       dialogue: [
         "A: Each engineer is talented; the team will automatically be high-performing.",
-        "B: Coordination and processes matter—talent alone may not scale.",
-      ],
+        "B: Coordination and processes matter—talent alone may not scale."
+      ]
     },
     seriousExample:
       "Economic argument claims that because each sector is efficient, the entire economy must be efficient, overlooking interdependencies and coordination failures.",
@@ -2918,12 +2918,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Whole is assumed to mirror parts without examining interactions.",
       "Ignores emergent properties or coordination effects.",
-      "Sweeping conclusions drawn from component traits alone.",
+      "Sweeping conclusions drawn from component traits alone."
     ],
     responseStrategies: [
       "Ask how interactions change properties at the whole level.",
       "Look for examples where combined parts behave differently.",
-      "Request evidence specific to the whole system.",
+      "Request evidence specific to the whole system."
     ],
     severity: "Medium",
     typeLabel: "Relevance fallacy",
@@ -2931,11 +2931,11 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: [
       "fallacy-of-division",
       "hasty-generalisation",
-      "reification",
+      "reification"
     ],
     seoTitle: "Fallacy of Composition – The Fallacy Guide",
     seoDescription:
-      "Fallacy of composition assumes the whole shares the parts’ traits. Learn to check for interactions and emergent properties.",
+      "Fallacy of composition assumes the whole shares the parts’ traits. Learn to check for interactions and emergent properties."
   },
   {
     slug: "fallacy-of-division",
@@ -2949,14 +2949,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Note a property of the whole.",
       "Assume each part shares that property.",
-      "Ignore differences among components.",
+      "Ignore differences among components."
     ],
     everydayExample: {
       setup: "Company reputation.",
       dialogue: [
         "A: The company is innovative, so every team must be innovative.",
-        "B: Some teams may be rigid despite the company’s overall reputation.",
-      ],
+        "B: Some teams may be rigid despite the company’s overall reputation."
+      ]
     },
     seriousExample:
       "From a country’s average wealth, someone assumes every citizen is affluent, ignoring distribution and inequality.",
@@ -2967,28 +2967,28 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Traits of a collective are projected onto individuals without evidence.",
       "Variation within the whole is ignored.",
-      "Assumes uniformity where heterogeneity is likely.",
+      "Assumes uniformity where heterogeneity is likely."
     ],
     responseStrategies: [
       "Ask for data at the individual/subcomponent level.",
       "Highlight variation within the group.",
-      "Differentiate between aggregate metrics and individual cases.",
+      "Differentiate between aggregate metrics and individual cases."
     ],
     severity: "Medium",
     typeLabel: "Relevance fallacy",
     typicalContexts: [
       "Statistics interpretation",
       "Stereotypes",
-      "Economic summaries",
+      "Economic summaries"
     ],
     relatedSlugs: [
       "fallacy-of-composition",
       "ecological-fallacy",
-      "hasty-generalisation",
+      "hasty-generalisation"
     ],
     seoTitle: "Fallacy of Division – The Fallacy Guide",
     seoDescription:
-      "Fallacy of division assumes parts mirror the whole. Learn to account for variation and avoid overgeneralizing.",
+      "Fallacy of division assumes parts mirror the whole. Learn to account for variation and avoid overgeneralizing."
   },
   {
     slug: "denying-the-antecedent",
@@ -3004,8 +3004,8 @@ export const fallacies: Fallacy[] = [
       setup: "Access rules.",
       dialogue: [
         "A: If you have a badge you can enter. You don’t have a badge, so you can’t enter.",
-        "B: Guests can enter with escort—the conclusion doesn’t follow strictly.",
-      ],
+        "B: Guests can enter with escort—the conclusion doesn’t follow strictly."
+      ]
     },
     seriousExample:
       "A diagnostic: If disease D then marker M. Patient lacks M, so they can’t have D. This ignores other presentations or test errors.",
@@ -3016,12 +3016,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Argument mirrors the structure If A then B; Not A; therefore Not B.",
       "Assumes the antecedent is necessary, not just sufficient.",
-      "Ignores alternative routes to the consequent.",
+      "Ignores alternative routes to the consequent."
     ],
     responseStrategies: [
       "Point out that other conditions may also produce B.",
       "Ask whether A is necessary or merely sufficient.",
-      "Provide counterexamples where B occurs without A.",
+      "Provide counterexamples where B occurs without A."
     ],
     severity: "Medium",
     typeLabel: "Formal fallacy",
@@ -3029,11 +3029,11 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: [
       "affirming-the-consequent",
       "undistributed-middle",
-      "quantifier-shift",
+      "quantifier-shift"
     ],
     seoTitle: "Denying the Antecedent – The Fallacy Guide",
     seoDescription:
-      "Denying the antecedent treats a sufficient condition as necessary. Learn why Not A doesn’t prove Not B.",
+      "Denying the antecedent treats a sufficient condition as necessary. Learn why Not A doesn’t prove Not B."
   },
   {
     slug: "undistributed-middle",
@@ -3047,14 +3047,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "All/Some M are P.",
       "All/Some S are M.",
-      "Therefore, All/Some S are P (invalid when M is undistributed).",
+      "Therefore, All/Some S are P (invalid when M is undistributed)."
     ],
     everydayExample: {
       setup: "Club membership.",
       dialogue: [
         "A: Some artists are coders. Some musicians are artists. Therefore, some musicians are coders.",
-        "B: The shared middle ‘artists’ isn’t fully distributed—conclusion doesn’t follow.",
-      ],
+        "B: The shared middle ‘artists’ isn’t fully distributed—conclusion doesn’t follow."
+      ]
     },
     seriousExample:
       "Policy: Some countries with regulation X have low crime. Some countries with regulation Y have regulation X. Therefore, regulation Y causes low crime. The link is invalid without distribution.",
@@ -3065,24 +3065,24 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Middle term appears in both premises but doesn’t refer to all its members.",
       "Conclusion links groups without demonstrated overlap.",
-      "Often uses ‘some’ with ambiguous scope.",
+      "Often uses ‘some’ with ambiguous scope."
     ],
     responseStrategies: [
       "Check whether the middle term is distributed in at least one premise.",
       "Test with Venn diagrams or concrete counterexamples.",
-      "Clarify quantities (all/some) to see if overlap is ensured.",
+      "Clarify quantities (all/some) to see if overlap is ensured."
     ],
     severity: "Medium",
     typeLabel: "Formal fallacy",
     typicalContexts: [
       "Logic structures",
       "Policy arguments",
-      "Everyday syllogisms",
+      "Everyday syllogisms"
     ],
     relatedSlugs: ["fallacy-of-four-terms", "illicit-major", "illicit-minor"],
     seoTitle: "Undistributed Middle – The Fallacy Guide",
     seoDescription:
-      "Undistributed middle links categories without proper overlap. Learn to check distribution in syllogisms.",
+      "Undistributed middle links categories without proper overlap. Learn to check distribution in syllogisms."
   },
   {
     slug: "illicit-major",
@@ -3096,14 +3096,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Premises mention the major term without covering all of it.",
       "Conclusion asserts something about all of the major term.",
-      "Scope expands without support.",
+      "Scope expands without support."
     ],
     everydayExample: {
       setup: "Hiring rule.",
       dialogue: [
         "A: Some engineers are managers. All managers attend training. Therefore, all engineers attend training.",
-        "B: ‘Engineers’ were not distributed in premises; scope jumped in conclusion.",
-      ],
+        "B: ‘Engineers’ were not distributed in premises; scope jumped in conclusion."
+      ]
     },
     seriousExample:
       "Legal argument: Some people in Group X are criminals. Therefore, all criminals (major term) are from Group X. The conclusion overreaches the premise.",
@@ -3114,12 +3114,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Conclusion speaks about all members of the major term.",
       "Premises only address part of that term.",
-      "Category scope expands in the conclusion.",
+      "Category scope expands in the conclusion."
     ],
     responseStrategies: [
       "Check distribution of terms in premises versus conclusion.",
       "Restate with explicit quantifiers to expose the leap.",
-      "Provide counterexamples showing the overreach.",
+      "Provide counterexamples showing the overreach."
     ],
     severity: "Medium",
     typeLabel: "Formal fallacy",
@@ -3127,7 +3127,7 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: ["illicit-minor", "undistributed-middle", "quantifier-shift"],
     seoTitle: "Illicit Major – The Fallacy Guide",
     seoDescription:
-      "Illicit major overextends a term’s scope in syllogisms. Learn to check distribution before accepting the conclusion.",
+      "Illicit major overextends a term’s scope in syllogisms. Learn to check distribution before accepting the conclusion."
   },
   {
     slug: "illicit-minor",
@@ -3141,14 +3141,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Premises mention the minor term without covering all of it.",
       "Conclusion applies the minor term universally.",
-      "Scope jump is unsupported.",
+      "Scope jump is unsupported."
     ],
     everydayExample: {
       setup: "Team policy.",
       dialogue: [
         "A: Some QA analysts are testers. All QA analysts must certify releases. Therefore, all testers must certify releases.",
-        "B: ‘Testers’ weren’t distributed; the conclusion overreaches.",
-      ],
+        "B: ‘Testers’ weren’t distributed; the conclusion overreaches."
+      ]
     },
     seriousExample:
       "Argument: Some members of Group Y are experts. All experts should lead. Therefore, all of Group Y should lead. The minor term is overdistributed.",
@@ -3159,12 +3159,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Conclusion universalizes the minor term.",
       "Premises only partially address that term.",
-      "Distribution status changes from premises to conclusion.",
+      "Distribution status changes from premises to conclusion."
     ],
     responseStrategies: [
       "Track quantifiers for each term in premises and conclusion.",
       "Use examples to show not all members fit the conclusion.",
-      "Highlight the unsupported scope expansion.",
+      "Highlight the unsupported scope expansion."
     ],
     severity: "Medium",
     typeLabel: "Formal fallacy",
@@ -3172,7 +3172,7 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: ["illicit-major", "undistributed-middle", "quantifier-shift"],
     seoTitle: "Illicit Minor – The Fallacy Guide",
     seoDescription:
-      "Illicit minor distributes the minor term in the conclusion without premise support. Learn to track quantifiers and avoid the leap.",
+      "Illicit minor distributes the minor term in the conclusion without premise support. Learn to track quantifiers and avoid the leap."
   },
   {
     slug: "fallacy-of-four-terms",
@@ -3186,14 +3186,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Two premises appear to share a middle term.",
       "Ambiguity or equivocation actually creates two different middle terms.",
-      "Conclusion draws on disconnected terms, making inference invalid.",
+      "Conclusion draws on disconnected terms, making inference invalid."
     ],
     everydayExample: {
       setup: "Label confusion.",
       dialogue: [
         "A: All banks have vaults. River banks are natural wonders. Therefore, natural wonders have vaults.",
-        "B: ‘Bank’ is used in two senses—this introduces a fourth term.",
-      ],
+        "B: ‘Bank’ is used in two senses—this introduces a fourth term."
+      ]
     },
     seriousExample:
       "Policy uses ‘security’ to mean safety in one premise and economic security in another, then draws conclusions as if the same term connected them.",
@@ -3204,12 +3204,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Key term shifts meaning between premises.",
       "More than three distinct concepts appear across premises and conclusion.",
-      "Conclusion relies on an apparent shared term that is actually different.",
+      "Conclusion relies on an apparent shared term that is actually different."
     ],
     responseStrategies: [
       "Clarify definitions of repeated terms.",
       "Check that only three distinct terms are used throughout.",
-      "Expose the equivocation that created the extra term.",
+      "Expose the equivocation that created the extra term."
     ],
     severity: "Medium",
     typeLabel: "Formal fallacy",
@@ -3217,7 +3217,7 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: ["equivocation", "undistributed-middle", "illicit-major"],
     seoTitle: "Fallacy of Four Terms – The Fallacy Guide",
     seoDescription:
-      "Fallacy of four terms uses an extra distinct term in a syllogism, breaking validity. Learn to spot hidden equivocations.",
+      "Fallacy of four terms uses an extra distinct term in a syllogism, breaking validity. Learn to spot hidden equivocations."
   },
   {
     slug: "modal-fallacy",
@@ -3231,14 +3231,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "State something is possible.",
       "Conclude it is necessary or actual.",
-      "Or treat probabilistic claims as certainties.",
+      "Or treat probabilistic claims as certainties."
     ],
     everydayExample: {
       setup: "Project risk.",
       dialogue: [
         "A: It’s possible the launch slips, so it’s inevitable we’ll miss.",
-        "B: Possible isn’t certain—what’s the likelihood and mitigation?",
-      ],
+        "B: Possible isn’t certain—what’s the likelihood and mitigation?"
+      ]
     },
     seriousExample:
       "Policy argues that because a breach could happen, it must happen, justifying extreme measures without assessing actual risk.",
@@ -3249,28 +3249,28 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Language shifts from ‘could/might’ to ‘must/will’ without evidence.",
       "Probabilistic claims are treated as certainties.",
-      "Modal terms used inconsistently between premises and conclusion.",
+      "Modal terms used inconsistently between premises and conclusion."
     ],
     responseStrategies: [
       "Keep modal scope explicit: distinguish possible, probable, and necessary.",
       "Ask for evidence supporting any shift in modality.",
-      "Quantify risks instead of using vague modal escalation.",
+      "Quantify risks instead of using vague modal escalation."
     ],
     severity: "Medium",
     typeLabel: "Formal fallacy",
     typicalContexts: [
       "Risk arguments",
       "Policy rhetoric",
-      "Everyday reasoning",
+      "Everyday reasoning"
     ],
     relatedSlugs: [
       "appeal-to-probability",
       "slippery-slope",
-      "quantifier-shift",
+      "quantifier-shift"
     ],
     seoTitle: "Modal Fallacy – The Fallacy Guide",
     seoDescription:
-      "Modal fallacy confuses possible, probable, and necessary. Learn to keep modalities clear and avoid overstating certainty.",
+      "Modal fallacy confuses possible, probable, and necessary. Learn to keep modalities clear and avoid overstating certainty."
   },
   {
     slug: "quantifier-shift",
@@ -3284,14 +3284,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Premises use quantifiers (all/some/none) in one order.",
       "Conclusion swaps their order or scope.",
-      "Inference assumes equivalence despite scope change.",
+      "Inference assumes equivalence despite scope change."
     ],
     everydayExample: {
       setup: "Support networks.",
       dialogue: [
         "A: Everyone has someone to talk to. Therefore, there’s someone who everyone talks to.",
-        "B: That doesn’t follow; the quantifiers changed scope.",
-      ],
+        "B: That doesn’t follow; the quantifiers changed scope."
+      ]
     },
     seriousExample:
       "An argument claims that because each problem has some expert who can solve it, there exists an expert who can solve all problems—an invalid shift.",
@@ -3302,24 +3302,24 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Quantifiers (‘all’, ‘some’, ‘any’, ‘every’) change order between premises and conclusion.",
       "Conclusion suddenly asserts a stronger or different scope.",
-      "Natural language hides the shift.",
+      "Natural language hides the shift."
     ],
     responseStrategies: [
       "Rewrite statements with explicit quantifiers or formal logic.",
       "Check whether the same scope is preserved from premises to conclusion.",
-      "Provide counterexamples showing the non-equivalence.",
+      "Provide counterexamples showing the non-equivalence."
     ],
     severity: "Medium",
     typeLabel: "Formal fallacy",
     typicalContexts: [
       "Philosophical arguments",
       "Set-based reasoning",
-      "Everyday language",
+      "Everyday language"
     ],
     relatedSlugs: ["modal-fallacy", "illicit-major", "illicit-minor"],
     seoTitle: "Quantifier Shift – The Fallacy Guide",
     seoDescription:
-      "Quantifier shift swaps ‘all’ and ‘some’ scopes, changing meaning. Learn to keep quantifiers aligned to preserve validity.",
+      "Quantifier shift swaps ‘all’ and ‘some’ scopes, changing meaning. Learn to keep quantifiers aligned to preserve validity."
   },
   {
     slug: "false-cause",
@@ -3333,13 +3333,13 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Notice a relationship or sequence between A and B.",
       "Infer causation without testing alternatives.",
-      "Ignore confounders, mechanisms, or control comparisons.",
+      "Ignore confounders, mechanisms, or control comparisons."
     ],
     everydayExample: {
       setup: "Weather superstition.",
       dialogue: [
-        "A: Every time I carry an umbrella it rains, so the umbrella causes rain.",
-      ],
+        "A: Every time I carry an umbrella it rains, so the umbrella causes rain."
+      ]
     },
     seriousExample:
       "A policy is credited for economic growth because growth followed its implementation, without controlling for global cycles.",
@@ -3350,12 +3350,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Causal language based only on timing or co-movement.",
       "No discussion of confounders or alternative causes.",
-      "Mechanisms are absent or weak.",
+      "Mechanisms are absent or weak."
     ],
     responseStrategies: [
       "Ask for evidence ruling out other causes.",
       "Request mechanism and controlled comparisons.",
-      "Rephrase as a hypothesis pending validation.",
+      "Rephrase as a hypothesis pending validation."
     ],
     severity: "Medium",
     typeLabel: "Causal fallacy",
@@ -3365,11 +3365,11 @@ export const fallacies: Fallacy[] = [
       "cum-hoc",
       "third-variable-fallacy",
       "spurious-correlation",
-      "reversed-causation",
+      "reversed-causation"
     ],
     seoTitle: "False Cause – The Fallacy Guide",
     seoDescription:
-      "False cause asserts causation without evidence. Learn to demand mechanisms, controls, and confounder checks.",
+      "False cause asserts causation without evidence. Learn to demand mechanisms, controls, and confounder checks."
   },
   {
     slug: "cum-hoc",
@@ -3383,14 +3383,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Observe A and B occur together.",
       "Conclude A causes B (or B causes A) because of co-occurrence.",
-      "Ignore confounders or testing causality.",
+      "Ignore confounders or testing causality."
     ],
     everydayExample: {
       setup: "Marketing metric.",
       dialogue: [
         "A: Sales rise when we post memes, so memes cause sales.",
-        "B: Both might rise during campaigns—check other factors.",
-      ],
+        "B: Both might rise during campaigns—check other factors."
+      ]
     },
     seriousExample:
       "A health trend links diet and disease across regions and concludes causation without controlling for lifestyle, genetics, or environment.",
@@ -3400,12 +3400,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Causal claim rests solely on simultaneous movement.",
       "Confounders are unaddressed.",
-      "No experimental or longitudinal evidence is offered.",
+      "No experimental or longitudinal evidence is offered."
     ],
     responseStrategies: [
       "Ask for controls and tests that separate variables.",
       "Propose confounders that could drive both.",
-      "Distinguish correlation from causal inference methods.",
+      "Distinguish correlation from causal inference methods."
     ],
     severity: "Medium",
     typeLabel: "Causal fallacy",
@@ -3413,11 +3413,11 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: [
       "false-cause",
       "third-variable-fallacy",
-      "spurious-correlation",
+      "spurious-correlation"
     ],
     seoTitle: "Cum Hoc Ergo Propter Hoc – The Fallacy Guide",
     seoDescription:
-      "Cum hoc assumes co-occurring variables cause each other. Learn to separate correlation from causation.",
+      "Cum hoc assumes co-occurring variables cause each other. Learn to separate correlation from causation."
   },
   {
     slug: "third-variable-fallacy",
@@ -3431,14 +3431,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Notice A and B move together.",
       "Assume A causes B (or vice versa).",
-      "Ignore a third factor C that affects both A and B.",
+      "Ignore a third factor C that affects both A and B."
     ],
     everydayExample: {
       setup: "Health anecdote.",
       dialogue: [
         "A: People who carry lighters get lung disease, so lighters cause it.",
-        "B: Smoking is the third factor causing both.",
-      ],
+        "B: Smoking is the third factor causing both."
+      ]
     },
     seriousExample:
       "Crime and ice cream sales rise together; climate/temperature is the third factor influencing both.",
@@ -3449,12 +3449,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Causal claims from observational correlation without controls.",
       "Alternative common causes unaddressed.",
-      "Interventions are proposed on the wrong variable.",
+      "Interventions are proposed on the wrong variable."
     ],
     responseStrategies: [
       "Identify plausible confounders and request controlled analysis.",
       "Use designs that can isolate effects (RCTs, matched samples).",
-      "Be cautious with observational data before acting on causation.",
+      "Be cautious with observational data before acting on causation."
     ],
     severity: "High",
     typeLabel: "Causal fallacy",
@@ -3462,11 +3462,11 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: [
       "false-cause",
       "spurious-correlation",
-      "masked-relationship-fallacy",
+      "masked-relationship-fallacy"
     ],
     seoTitle: "Third Variable Fallacy – The Fallacy Guide",
     seoDescription:
-      "Third variable fallacy ignores confounders and misreads correlation as causation. Learn to check hidden drivers.",
+      "Third variable fallacy ignores confounders and misreads correlation as causation. Learn to check hidden drivers."
   },
   {
     slug: "reversed-causation",
@@ -3480,14 +3480,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Observe correlation between A and B.",
       "Assume A causes B.",
-      "Ignore that B could cause or influence A.",
+      "Ignore that B could cause or influence A."
     ],
     everydayExample: {
       setup: "Productivity apps.",
       dialogue: [
         "A: Productive people use this app, so the app makes them productive.",
-        "B: Productive people may choose the app; the direction is unclear.",
-      ],
+        "B: Productive people may choose the app; the direction is unclear."
+      ]
     },
     seriousExample:
       "Studies link stress and smartphone use; concluding phones cause stress overlooks that stressed people may use phones more.",
@@ -3498,28 +3498,28 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Causal claims without temporal or mechanistic justification.",
       "No exploration of whether B could precede or drive A.",
-      "Interventions target the wrong direction.",
+      "Interventions target the wrong direction."
     ],
     responseStrategies: [
       "Check temporal order and plausible mechanisms.",
       "Consider bidirectional relationships and design studies to test direction.",
-      "Avoid interventions until direction is clearer.",
+      "Avoid interventions until direction is clearer."
     ],
     severity: "Medium",
     typeLabel: "Causal fallacy",
     typicalContexts: [
       "Health research",
       "Behavior studies",
-      "Business metrics",
+      "Business metrics"
     ],
     relatedSlugs: [
       "false-cause",
       "third-variable-fallacy",
-      "spurious-correlation",
+      "spurious-correlation"
     ],
     seoTitle: "Reversed Causation – The Fallacy Guide",
     seoDescription:
-      "Reversed causation mistakes which variable drives the other. Learn to test direction before acting.",
+      "Reversed causation mistakes which variable drives the other. Learn to test direction before acting."
   },
   {
     slug: "spurious-correlation",
@@ -3533,14 +3533,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Find correlation between A and B.",
       "Assume it is meaningful or causal.",
-      "Ignore coincidence, seasonality, or hidden common drivers.",
+      "Ignore coincidence, seasonality, or hidden common drivers."
     ],
     everydayExample: {
       setup: "Quirky stats.",
       dialogue: [
         "A: Ice cream sales and sunburns correlate; ice cream must cause sunburn.",
-        "B: Warm weather drives both—correlation is spurious.",
-      ],
+        "B: Warm weather drives both—correlation is spurious."
+      ]
     },
     seriousExample:
       "Stock returns correlate with unrelated indicators (e.g., lunar cycles); acting on it leads to poor strategies.",
@@ -3551,12 +3551,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Odd or non-mechanistic correlations touted as meaningful.",
       "No plausible causal pathway.",
-      "Seasonality or external cycles unexamined.",
+      "Seasonality or external cycles unexamined."
     ],
     responseStrategies: [
       "Ask for causal mechanisms and robustness tests.",
       "Check if the correlation persists across controls and time.",
-      "Beware of multiple comparisons and data mining artifacts.",
+      "Beware of multiple comparisons and data mining artifacts."
     ],
     severity: "Medium",
     typeLabel: "Causal fallacy",
@@ -3564,7 +3564,7 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: ["false-cause", "third-variable-fallacy", "cum-hoc"],
     seoTitle: "Spurious Correlation – The Fallacy Guide",
     seoDescription:
-      "Spurious correlation confuses coincidence for causation. Learn to demand mechanisms and robustness before acting.",
+      "Spurious correlation confuses coincidence for causation. Learn to demand mechanisms and robustness before acting."
   },
   {
     slug: "anecdotal-fallacy",
@@ -3578,14 +3578,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Provide a personal or isolated story.",
       "Generalize from it to broad conclusions.",
-      "Ignore wider data or representative samples.",
+      "Ignore wider data or representative samples."
     ],
     everydayExample: {
       setup: "Health remedy.",
       dialogue: [
         "A: My friend used this and felt better; it works.",
-        "B: One case isn’t evidence—what do controlled studies show?",
-      ],
+        "B: One case isn’t evidence—what do controlled studies show?"
+      ]
     },
     seriousExample:
       "Policy or medical advice based on a handful of testimonials while dismissing large-scale studies.",
@@ -3596,12 +3596,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "One or few stories offered as proof.",
       "Lack of representative data or controls.",
-      "Emphasis on personal experience over population evidence.",
+      "Emphasis on personal experience over population evidence."
     ],
     responseStrategies: [
       "Acknowledge the story but request larger, controlled evidence.",
       "Point to base rates and broader studies.",
-      "Clarify that anecdotes show possibility, not prevalence.",
+      "Clarify that anecdotes show possibility, not prevalence."
     ],
     severity: "Medium",
     typeLabel: "Weak induction",
@@ -3609,11 +3609,11 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: [
       "misleading-vividness",
       "cherry-picking",
-      "appeal-to-emotion",
+      "appeal-to-emotion"
     ],
     seoTitle: "Anecdotal Fallacy – The Fallacy Guide",
     seoDescription:
-      "Anecdotal fallacy uses personal stories as proof. Learn to balance anecdotes with representative evidence.",
+      "Anecdotal fallacy uses personal stories as proof. Learn to balance anecdotes with representative evidence."
   },
   {
     slug: "sampling-bias",
@@ -3627,14 +3627,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Define a target population.",
       "Collect a sample in a way that over/under-represents groups.",
-      "Generalize results to the whole population.",
+      "Generalize results to the whole population."
     ],
     everydayExample: {
       setup: "User survey.",
       dialogue: [
         "A: We surveyed only power users online; all love the new UI.",
-        "B: That sample excludes casual users—generalizing is risky.",
-      ],
+        "B: That sample excludes casual users—generalizing is risky."
+      ]
     },
     seriousExample:
       "Clinical trial recruits healthier volunteers, then claims broad efficacy and safety for the general population.",
@@ -3645,12 +3645,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Sample source differs systematically from population.",
       "Undercoverage or overcoverage of groups.",
-      "Claims of generality without sampling justification.",
+      "Claims of generality without sampling justification."
     ],
     responseStrategies: [
       "Ask how the sample was drawn and who was excluded.",
       "Weight or stratify samples to match the population.",
-      "Replicate with random or stratified sampling before broad claims.",
+      "Replicate with random or stratified sampling before broad claims."
     ],
     severity: "High",
     typeLabel: "Statistical fallacy",
@@ -3658,7 +3658,7 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: ["selection-bias", "survivorship-bias", "publication-bias"],
     seoTitle: "Sampling Bias – The Fallacy Guide",
     seoDescription:
-      "Sampling bias skews results with unrepresentative samples. Learn to check sample design before generalizing.",
+      "Sampling bias skews results with unrepresentative samples. Learn to check sample design before generalizing."
   },
   {
     slug: "publication-bias",
@@ -3672,14 +3672,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Only certain kinds of results get published or promoted.",
       "Public/analyst view is based on this skewed set.",
-      "Conclusions overstate effects because missing data are ignored.",
+      "Conclusions overstate effects because missing data are ignored."
     ],
     everydayExample: {
       setup: "Product testimonials.",
       dialogue: [
         "A: All reviews we see are positive.",
-        "B: Are negative ones filtered or unpublished?",
-      ],
+        "B: Are negative ones filtered or unpublished?"
+      ]
     },
     seriousExample:
       "Medical literature shows mainly positive trials; unpublished null trials mean the apparent efficacy is exaggerated.",
@@ -3690,24 +3690,24 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Only positive/novel results are cited.",
       "Difficulty finding null or replication studies.",
-      "Large effects shrink when full data sets emerge.",
+      "Large effects shrink when full data sets emerge."
     ],
     responseStrategies: [
       "Seek registries and pre-registered studies including null results.",
       "Consider funnel plots or bias assessments in meta-analyses.",
-      "Discount hype when unseen data likely exist.",
+      "Discount hype when unseen data likely exist."
     ],
     severity: "High",
     typeLabel: "Statistical bias",
     typicalContexts: [
       "Science publication",
       "Corporate reporting",
-      "Marketing",
+      "Marketing"
     ],
     relatedSlugs: ["survivorship-bias", "selection-bias", "cherry-picking"],
     seoTitle: "Publication Bias – The Fallacy Guide",
     seoDescription:
-      "Publication bias hides null results, inflating apparent effects. Learn to look for missing data before trusting conclusions.",
+      "Publication bias hides null results, inflating apparent effects. Learn to look for missing data before trusting conclusions."
   },
   {
     slug: "ecological-fallacy",
@@ -3721,14 +3721,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Observe group-level relationship or average.",
       "Apply it to individuals within the group.",
-      "Ignore variability among individuals.",
+      "Ignore variability among individuals."
     ],
     everydayExample: {
       setup: "Regional behavior.",
       dialogue: [
         "A: City X has high income, so everyone there must be wealthy.",
-        "B: Averages hide inequality; individuals vary widely.",
-      ],
+        "B: Averages hide inequality; individuals vary widely."
+      ]
     },
     seriousExample:
       "Policy derived from national-level correlations assumes the same effect on each person, misallocating resources.",
@@ -3739,12 +3739,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Group stats used to characterize individuals.",
       "No acknowledgment of variance or distribution.",
-      "Stereotyping based on location or group averages.",
+      "Stereotyping based on location or group averages."
     ],
     responseStrategies: [
       "Ask for individual-level data or distributions.",
       "Differentiate aggregate trends from individual cases.",
-      "Avoid stereotyping individuals from group metrics.",
+      "Avoid stereotyping individuals from group metrics."
     ],
     severity: "Medium",
     typeLabel: "Statistical fallacy",
@@ -3752,7 +3752,7 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: ["fallacy-of-division", "simpsons-paradox", "selection-bias"],
     seoTitle: "Ecological Fallacy – The Fallacy Guide",
     seoDescription:
-      "Ecological fallacy maps group data onto individuals. Learn to separate aggregate trends from individual variation.",
+      "Ecological fallacy maps group data onto individuals. Learn to separate aggregate trends from individual variation."
   },
   {
     slug: "thought-terminating-cliche",
@@ -3766,14 +3766,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "A challenge or question is raised.",
       "A cliché is offered as a final word.",
-      "Discussion stops without addressing substance.",
+      "Discussion stops without addressing substance."
     ],
     everydayExample: {
       setup: "Process critique.",
       dialogue: [
         "A: Why do we deploy like this?",
-        "B: It is what it is—move on.",
-      ],
+        "B: It is what it is—move on."
+      ]
     },
     seriousExample:
       "In political or organizational settings, slogans shut down debate about controversial practices without providing reasons.",
@@ -3784,12 +3784,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Conversation ends with a slogan or truism.",
       "No evidence or reasoning accompanies the closure.",
-      "Questions are framed as illegitimate for asking.",
+      "Questions are framed as illegitimate for asking."
     ],
     responseStrategies: [
       "Ask for reasons beyond the slogan.",
       "Acknowledge the phrase and restate the unanswered question.",
-      "Invite concrete evidence or alternatives.",
+      "Invite concrete evidence or alternatives."
     ],
     severity: "Medium",
     typeLabel: "Rhetorical tactic",
@@ -3797,11 +3797,11 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: [
       "glittering-generalities",
       "deepity",
-      "appeal-to-common-practice",
+      "appeal-to-common-practice"
     ],
     seoTitle: "Thought-Terminating Cliché – The Fallacy Guide",
     seoDescription:
-      "Thought-terminating clichés shut down debate without reasons. Learn to move past slogans to substance.",
+      "Thought-terminating clichés shut down debate without reasons. Learn to move past slogans to substance."
   },
   {
     slug: "deepity",
@@ -3815,11 +3815,11 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Present an ambiguous, lofty statement.",
       "Let the audience supply a profound-sounding interpretation.",
-      "Avoid specific, testable content.",
+      "Avoid specific, testable content."
     ],
     everydayExample: {
       setup: "Self-help slogan.",
-      dialogue: ["“Love is just a word, but it’s also everything.”"],
+      dialogue: ["“Love is just a word, but it’s also everything.”"]
     },
     seriousExample:
       "In debates, phrases like “reality is an illusion” are used to sidestep concrete discussion, sounding profound without actionable meaning.",
@@ -3830,28 +3830,28 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Ambiguous, poetic phrasing with no clear testable claim.",
       "Multiple readings: one trivial, one dubious.",
-      "Pushback is framed as lacking insight.",
+      "Pushback is framed as lacking insight."
     ],
     responseStrategies: [
       "Ask for a clear, single meaning or concrete implications.",
       "Separate the trivial reading from the intended strong claim.",
-      "Request evidence or examples tied to a specific interpretation.",
+      "Request evidence or examples tied to a specific interpretation."
     ],
     severity: "Low",
     typeLabel: "Rhetorical flourish",
     typicalContexts: [
       "Philosophical chatter",
       "Marketing slogans",
-      "Motivational talk",
+      "Motivational talk"
     ],
     relatedSlugs: [
       "glittering-generalities",
       "thought-terminating-cliche",
-      "equivocation",
+      "equivocation"
     ],
     seoTitle: "Deepity – The Fallacy Guide",
     seoDescription:
-      "A deepity sounds profound but is trivial or meaningless on inspection. Learn to unpack and ask for specific claims.",
+      "A deepity sounds profound but is trivial or meaningless on inspection. Learn to unpack and ask for specific claims."
   },
   {
     slug: "dogwhistles",
@@ -3865,13 +3865,13 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Use ambiguous or coded terms.",
       "Rely on shared context for hidden meaning to a subgroup.",
-      "Deny intent if challenged, citing the surface meaning.",
+      "Deny intent if challenged, citing the surface meaning."
     ],
     everydayExample: {
       setup: "Local politics.",
       dialogue: [
-        "A: He keeps saying ‘neighborhood character’—to some, that’s code for excluding newcomers.",
-      ],
+        "A: He keeps saying ‘neighborhood character’—to some, that’s code for excluding newcomers."
+      ]
     },
     seriousExample:
       "Speeches include historical phrases associated with extremist groups; supporters hear the signal while broader audiences miss it.",
@@ -3882,12 +3882,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Phrases with benign surface meaning but loaded subtext to certain groups.",
       "Patterns of usage aligning with specific ideological signals.",
-      "Denial of intent paired with repeated coded terms.",
+      "Denial of intent paired with repeated coded terms."
     ],
     responseStrategies: [
       "Ask for explicit definitions and policy specifics.",
       "Contextualize the phrase’s history and connotations.",
-      "Expose dual meanings to reduce deniability.",
+      "Expose dual meanings to reduce deniability."
     ],
     severity: "Medium",
     typeLabel: "Rhetorical tactic",
@@ -3895,11 +3895,11 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: [
       "glittering-generalities",
       "virtue-signalling",
-      "gaslighting",
+      "gaslighting"
     ],
     seoTitle: "Dogwhistles – The Fallacy Guide",
     seoDescription:
-      "Dogwhistles use coded language with hidden signals. Learn to surface meanings and press for plain speech.",
+      "Dogwhistles use coded language with hidden signals. Learn to surface meanings and press for plain speech."
   },
   {
     slug: "virtue-signalling",
@@ -3913,14 +3913,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Declare a moral stance publicly.",
       "Offer little substance or action beyond the declaration.",
-      "Use the stance to imply correctness or superiority.",
+      "Use the stance to imply correctness or superiority."
     ],
     everydayExample: {
       setup: "Online posting.",
       dialogue: [
         "A: Posting a hashtag proves we’re solving the issue.",
-        "B: Support is fine, but what evidence or actions back the claim?",
-      ],
+        "B: Support is fine, but what evidence or actions back the claim?"
+      ]
     },
     seriousExample:
       "Organizations issue statements of solidarity without policy changes, using the statements as evidence of moral correctness.",
@@ -3931,12 +3931,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Declarations with minimal evidence or follow-through.",
       "Critique framed as moral failure rather than engaging substance.",
-      "Focus on appearance of virtue over outcomes.",
+      "Focus on appearance of virtue over outcomes."
     ],
     responseStrategies: [
       "Acknowledge values, then ask for evidence of impact.",
       "Distinguish signaling from substantive action.",
-      "Evaluate proposals on outcomes, not declarations.",
+      "Evaluate proposals on outcomes, not declarations."
     ],
     severity: "Low",
     typeLabel: "Rhetorical appeal",
@@ -3944,11 +3944,11 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: [
       "glittering-generalities",
       "dogwhistles",
-      "appeal-to-popularity",
+      "appeal-to-popularity"
     ],
     seoTitle: "Virtue Signalling – The Fallacy Guide",
     seoDescription:
-      "Virtue signalling highlights moral stance without substance. Learn to separate signals from real arguments and actions.",
+      "Virtue signalling highlights moral stance without substance. Learn to separate signals from real arguments and actions."
   },
   {
     slug: "false-balance",
@@ -3962,14 +3962,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Identify a topic with strong evidence on one side.",
       "Present opposing fringe view as equal for ‘balance’.",
-      "Audience infers controversy where little exists.",
+      "Audience infers controversy where little exists."
     ],
     everydayExample: {
       setup: "Health debate.",
       dialogue: [
         "A: Inviting an anti-vax influencer to ‘balance’ a vaccine scientist.",
-        "B: Balance misleads when evidence isn’t balanced.",
-      ],
+        "B: Balance misleads when evidence isn’t balanced."
+      ]
     },
     seriousExample:
       "Media panels put climate scientists against non-experts to simulate equal debate, understating consensus.",
@@ -3980,12 +3980,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Equal platforming despite stark evidence asymmetry.",
       "Fringe views presented without disclosing their fringe status.",
-      "Consensus or expertise is downplayed.",
+      "Consensus or expertise is downplayed."
     ],
     responseStrategies: [
       "Clarify consensus levels and evidence weight.",
       "Disclose fringe status and credentials differences.",
-      "Frame coverage proportional to evidence, not optics.",
+      "Frame coverage proportional to evidence, not optics."
     ],
     severity: "High",
     typeLabel: "Propaganda/Media bias",
@@ -3993,7 +3993,7 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: ["quote-mining", "glittering-generalities", "selection-bias"],
     seoTitle: "False Balance – The Fallacy Guide",
     seoDescription:
-      "False balance portrays fringe and evidence-backed views as equal. Learn to weigh claims by evidence, not optics.",
+      "False balance portrays fringe and evidence-backed views as equal. Learn to weigh claims by evidence, not optics."
   },
   {
     slug: "quote-mining",
@@ -4007,13 +4007,13 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Extract a quote fragment.",
       "Omit context that changes its meaning.",
-      "Use the fragment to support a misleading conclusion.",
+      "Use the fragment to support a misleading conclusion."
     ],
     everydayExample: {
       setup: "Performance review.",
       dialogue: [
-        "A: You said ‘this project is a failure’—ignoring you were summarizing a risk scenario.",
-      ],
+        "A: You said ‘this project is a failure’—ignoring you were summarizing a risk scenario."
+      ]
     },
     seriousExample:
       "Scientific statements are clipped to suggest certainty or support for the opposite of the author’s conclusion.",
@@ -4024,12 +4024,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Short fragments used as decisive proof.",
       "Lack of broader context or surrounding text.",
-      "Claims seem at odds with the source’s known position.",
+      "Claims seem at odds with the source’s known position."
     ],
     responseStrategies: [
       "Consult the full source context.",
       "Highlight missing context that reverses/qualifies the meaning.",
-      "Be wary of fragmented quotes used as primary evidence.",
+      "Be wary of fragmented quotes used as primary evidence."
     ],
     severity: "High",
     typeLabel: "Propaganda tactic",
@@ -4037,7 +4037,7 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: ["half-truth", "card-stacking", "strawman"],
     seoTitle: "Quote Mining – The Fallacy Guide",
     seoDescription:
-      "Quote mining strips context to mislead. Learn to check full sources before accepting clipped claims.",
+      "Quote mining strips context to mislead. Learn to check full sources before accepting clipped claims."
   },
   {
     slug: "gaslighting",
@@ -4051,14 +4051,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Deny or reinterpret events the target experienced.",
       "Insist the target is misremembering or overreacting.",
-      "Repeat until the target doubts their own perception.",
+      "Repeat until the target doubts their own perception."
     ],
     everydayExample: {
       setup: "Workplace denial.",
       dialogue: [
         "A: You promised this deadline.",
-        "B: I never said that; you must be imagining it.",
-      ],
+        "B: I never said that; you must be imagining it."
+      ]
     },
     seriousExample:
       "In abusive relationships or authoritarian settings, records are altered or denied, making victims question their sanity and accept the imposed narrative.",
@@ -4069,24 +4069,24 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Consistent denial of documented events.",
       "Accusations that the target is irrational for recalling events.",
-      "Contradictions with evidence paired with pressure to accept the denial.",
+      "Contradictions with evidence paired with pressure to accept the denial."
     ],
     responseStrategies: [
       "Keep written records and third-party confirmations.",
       "Check memories against external evidence.",
-      "Name the tactic and seek support outside the manipulative dynamic.",
+      "Name the tactic and seek support outside the manipulative dynamic."
     ],
     severity: "High",
     typeLabel: "Manipulative tactic",
     typicalContexts: [
       "Abuse dynamics",
       "Authoritarian control",
-      "Toxic workplaces",
+      "Toxic workplaces"
     ],
     relatedSlugs: ["poisoning-the-well", "smokescreen", "appeal-to-motive"],
     seoTitle: "Gaslighting – The Fallacy Guide",
     seoDescription:
-      "Gaslighting makes targets doubt their reality to gain control. Learn signs and how to anchor back to evidence.",
+      "Gaslighting makes targets doubt their reality to gain control. Learn signs and how to anchor back to evidence."
   },
   {
     slug: "oversimplification",
@@ -4100,14 +4100,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Present a complex issue.",
       "Reduce it to one cause or variable.",
-      "Argue solutions based only on that simplified view.",
+      "Argue solutions based only on that simplified view."
     ],
     everydayExample: {
       setup: "Project delays.",
       dialogue: [
         "A: Delays happen only because people don’t work hard enough.",
-        "B: Scope, tooling, staffing, and requirements also matter.",
-      ],
+        "B: Scope, tooling, staffing, and requirements also matter."
+      ]
     },
     seriousExample:
       "Policy argues crime is solely due to individual morality, ignoring socio-economic factors, policing practices, and community resources.",
@@ -4118,12 +4118,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Single-cause explanations for multifaceted issues.",
       "Little acknowledgment of interacting factors.",
-      "Sweeping prescriptions based on a narrow view.",
+      "Sweeping prescriptions based on a narrow view."
     ],
     responseStrategies: [
       "List other plausible factors and evidence for them.",
       "Show interactions and trade-offs.",
-      "Seek multifactor data before endorsing single-cause fixes.",
+      "Seek multifactor data before endorsing single-cause fixes."
     ],
     severity: "Medium",
     typeLabel: "Propaganda tactic",
@@ -4131,11 +4131,11 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: [
       "smokescreen",
       "fallacy-of-composition",
-      "hasty-generalisation",
+      "hasty-generalisation"
     ],
     seoTitle: "Oversimplification – The Fallacy Guide",
     seoDescription:
-      "Oversimplification reduces complex issues to single causes. Learn to reintroduce nuance and multiple factors.",
+      "Oversimplification reduces complex issues to single causes. Learn to reintroduce nuance and multiple factors."
   },
   {
     slug: "whataboutism",
@@ -4149,14 +4149,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Receive a criticism or claim.",
       "Respond by citing another problem or opponent’s wrongdoing.",
-      "Claim the original issue is thereby invalid or unimportant.",
+      "Claim the original issue is thereby invalid or unimportant."
     ],
     everydayExample: {
       setup: "Team feedback.",
       dialogue: [
         "A: We missed our deadline.",
-        "B: What about the design team missing theirs last month?",
-      ],
+        "B: What about the design team missing theirs last month?"
+      ]
     },
     seriousExample:
       "A government confronted about rights violations deflects by highlighting other countries’ abuses instead of addressing the allegations.",
@@ -4167,24 +4167,24 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Criticism answered with “what about…” and a different issue.",
       "No engagement with the substance of the original point.",
-      "Appeal to comparative wrongdoing as a shield.",
+      "Appeal to comparative wrongdoing as a shield."
     ],
     responseStrategies: [
       "Acknowledge the deflection and return to the original issue.",
       "Address the new issue separately if relevant, but not as a substitute.",
-      "Clarify that multiple wrongs can be considered without canceling each other out.",
+      "Clarify that multiple wrongs can be considered without canceling each other out."
     ],
     severity: "Medium",
     typeLabel: "Debate deflection",
     typicalContexts: [
       "Politics",
       "Online debates",
-      "Accountability discussions",
+      "Accountability discussions"
     ],
     relatedSlugs: ["appeal-to-hypocrisy", "red-herring", "smokescreen"],
     seoTitle: "Whataboutism – The Fallacy Guide",
     seoDescription:
-      "Whataboutism deflects criticism by pointing elsewhere. Learn to spot the diversion and refocus on the original point.",
+      "Whataboutism deflects criticism by pointing elsewhere. Learn to spot the diversion and refocus on the original point."
   },
   {
     slug: "appeal-to-probability",
@@ -4198,14 +4198,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Note that an event is possible or has some probability.",
       "Treat that as evidence the event will occur (or must be acted on as if certain).",
-      "Ignore magnitude of probability and mitigating factors.",
+      "Ignore magnitude of probability and mitigating factors."
     ],
     everydayExample: {
       setup: "Project risk.",
       dialogue: [
         "A: This might fail, so it definitely will unless we cancel now.",
-        "B: What’s the actual likelihood and impact? Let’s assess proportionally.",
-      ],
+        "B: What’s the actual likelihood and impact? Let’s assess proportionally."
+      ]
     },
     seriousExample:
       "Policy argues for extreme measures because a threat is possible, without weighing its probability and cost-effectiveness.",
@@ -4216,12 +4216,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Language shifts from ‘could’ to ‘will’ without quantification.",
       "Nonzero risk treated as inevitable.",
-      "Risk trade-offs and probabilities are absent.",
+      "Risk trade-offs and probabilities are absent."
     ],
     responseStrategies: [
       "Quantify probability and impact.",
       "Consider mitigations and compare alternatives.",
-      "Differentiate possible from probable and certain.",
+      "Differentiate possible from probable and certain."
     ],
     severity: "Medium",
     typeLabel: "Decision bias",
@@ -4229,7 +4229,7 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: ["modal-fallacy", "planning-fallacy", "illusion-of-control"],
     seoTitle: "Appeal to Probability – The Fallacy Guide",
     seoDescription:
-      "Appeal to probability turns ‘could’ into ‘will’. Learn to quantify risk instead of assuming inevitability.",
+      "Appeal to probability turns ‘could’ into ‘will’. Learn to quantify risk instead of assuming inevitability."
   },
   {
     slug: "appeal-to-normality",
@@ -4243,14 +4243,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Identify that many people do or experience X.",
       "Infer that X is acceptable or correct because it is normal.",
-      "Skip evaluation of harm, benefit, or alternatives.",
+      "Skip evaluation of harm, benefit, or alternatives."
     ],
     everydayExample: {
       setup: "Work habits.",
       dialogue: [
         "A: Everyone works late; it’s normal, so it’s fine.",
-        "B: Prevalence doesn’t prove it’s healthy or effective.",
-      ],
+        "B: Prevalence doesn’t prove it’s healthy or effective."
+      ]
     },
     seriousExample:
       "A practice is defended because it is ‘industry standard,’ despite evidence of harm or inefficiency.",
@@ -4261,12 +4261,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Normal/common cited as main justification.",
       "Little evidence of outcomes or ethics.",
-      "Dismissal of change because status quo is prevalent.",
+      "Dismissal of change because status quo is prevalent."
     ],
     responseStrategies: [
       "Ask for evidence of effectiveness or harm, beyond commonality.",
       "Provide examples where common practices were harmful.",
-      "Distinguish descriptive norms from prescriptive justification.",
+      "Distinguish descriptive norms from prescriptive justification."
     ],
     severity: "Medium",
     typeLabel: "Decision bias",
@@ -4274,11 +4274,11 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: [
       "appeal-to-common-practice",
       "appeal-to-popularity",
-      "appeal-to-nature",
+      "appeal-to-nature"
     ],
     seoTitle: "Appeal to Normality – The Fallacy Guide",
     seoDescription:
-      "Appeal to normality says something is fine because it’s common. Learn to separate prevalence from proof.",
+      "Appeal to normality says something is fine because it’s common. Learn to separate prevalence from proof."
   },
   {
     slug: "slippery-slope",
@@ -4292,14 +4292,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "If X happens, then maybe Y will happen.",
       "Assume Y leads to Z, an extreme outcome.",
-      "Treat Z as inevitable, not just possible.",
+      "Treat Z as inevitable, not just possible."
     ],
     everydayExample: {
       setup: "Discussing flexible work hours.",
       dialogue: [
         "A: “Could we allow one remote day per week?”",
-        "B: “If we start that, soon nobody will come to the office at all.”",
-      ],
+        "B: “If we start that, soon nobody will come to the office at all.”"
+      ]
     },
     seriousExample:
       "A city argues that permitting limited street vending will ‘inevitably’ destroy all brick-and-mortar businesses, without evidence for the cascade.",
@@ -4310,12 +4310,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "A chain of events is asserted with little evidence for each link.",
       "Language of inevitability (“will”, “inevitable”) is used for speculative steps.",
-      "No consideration of safeguards that would break the chain.",
+      "No consideration of safeguards that would break the chain."
     ],
     responseStrategies: [
       "Ask for evidence connecting each step in the chain.",
       "Identify stopgaps or policies that prevent the extreme outcome.",
-      "Distinguish between possibility and probability.",
+      "Distinguish between possibility and probability."
     ],
     severity: "Medium",
     typeLabel: "Logical fallacy",
@@ -4323,7 +4323,7 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: ["appeal-to-emotion", "false-dichotomy"],
     seoTitle: "Slippery Slope – The Fallacy Guide",
     seoDescription:
-      "Slippery slope arguments predict extreme consequences from small changes. Learn the pattern and how to respond.",
+      "Slippery slope arguments predict extreme consequences from small changes. Learn the pattern and how to respond."
   },
   {
     slug: "false-dichotomy",
@@ -4337,14 +4337,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Offer two choices as if they are exhaustive.",
       "Ignore nuanced or combined options.",
-      "Push acceptance of one extreme as the only alternative to the other.",
+      "Push acceptance of one extreme as the only alternative to the other."
     ],
     everydayExample: {
       setup: "A team budget discussion.",
       dialogue: [
         "A: “We either cut all travel or keep spending recklessly.”",
-        "B: “We could also set limits and prioritize essential trips.”",
-      ],
+        "B: “We could also set limits and prioritize essential trips.”"
+      ]
     },
     seriousExample:
       "A national debate frames security as a choice between ‘total surveillance’ or ‘total chaos,’ excluding proportional approaches.",
@@ -4355,12 +4355,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Only two options are presented for a complex issue.",
       "Middle ground or combinations are ignored.",
-      "Agreement is demanded quickly because “there is no alternative.”",
+      "Agreement is demanded quickly because “there is no alternative.”"
     ],
     responseStrategies: [
       "Name the false choice and offer additional options.",
       "Ask why only those two choices are considered.",
-      "Reframe the problem with broader criteria.",
+      "Reframe the problem with broader criteria."
     ],
     severity: "Medium",
     typeLabel: "Logical fallacy",
@@ -4368,7 +4368,7 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: ["slippery-slope", "appeal-to-popularity"],
     seoTitle: "False Dichotomy – The Fallacy Guide",
     seoDescription:
-      "False dichotomy forces a choice between two options when more exist. See patterns and counters.",
+      "False dichotomy forces a choice between two options when more exist. See patterns and counters."
   },
   {
     slug: "begging-the-question",
@@ -4382,14 +4382,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "State a claim.",
       "Use the claim (or a synonym) as a supporting premise.",
-      "Conclude the claim is true because the premise repeats it.",
+      "Conclude the claim is true because the premise repeats it."
     ],
     everydayExample: {
       setup: "Discussing product quality.",
       dialogue: [
         "A: “This is the best app because it’s superior to every competitor.”",
-        "B: “You just restated ‘best’ without evidence.”",
-      ],
+        "B: “You just restated ‘best’ without evidence.”"
+      ]
     },
     seriousExample:
       "An agency asserts a policy is legitimate because it is lawful, and claims it is lawful because the agency issued it.",
@@ -4400,12 +4400,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Key premise and conclusion say essentially the same thing.",
       "The argument fails if you strip out synonymous wording.",
-      "No external evidence is provided beyond the claim itself.",
+      "No external evidence is provided beyond the claim itself."
     ],
     responseStrategies: [
       "Ask for an independent reason to believe the premise.",
       "Point out where the conclusion reappears in the premises.",
-      "Rephrase the claim and show the circular structure.",
+      "Rephrase the claim and show the circular structure."
     ],
     severity: "Medium",
     typeLabel: "Logical fallacy",
@@ -4413,7 +4413,7 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: ["appeal-to-ignorance", "affirming-the-consequent"],
     seoTitle: "Begging the Question – The Fallacy Guide",
     seoDescription:
-      "Begging the question uses the conclusion as a premise. Spot the circular pattern and learn quick counters.",
+      "Begging the question uses the conclusion as a premise. Spot the circular pattern and learn quick counters."
   },
   {
     slug: "hasty-generalisation",
@@ -4427,13 +4427,13 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Observe a small or biased sample.",
       "Extend the observation to a broad population.",
-      "Ignore sample size, randomness, or alternative explanations.",
+      "Ignore sample size, randomness, or alternative explanations."
     ],
     everydayExample: {
       setup: "After trying one café.",
       dialogue: [
-        "A: “The coffee was bad in that town, so all cafés there must be terrible.”",
-      ],
+        "A: “The coffee was bad in that town, so all cafés there must be terrible.”"
+      ]
     },
     seriousExample:
       "A pilot study of 12 participants is used to claim a health supplement works for everyone, ignoring the need for larger, controlled trials.",
@@ -4444,12 +4444,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Strong, sweeping language based on a handful of cases.",
       "No mention of sample size, randomness, or controls.",
-      "Anecdotes are treated as universal proof.",
+      "Anecdotes are treated as universal proof."
     ],
     responseStrategies: [
       "Ask about sample size and selection.",
       "Request broader data or controlled studies.",
-      "Show counterexamples or variability within the population.",
+      "Show counterexamples or variability within the population."
     ],
     severity: "Medium",
     typeLabel: "Logical fallacy",
@@ -4457,7 +4457,7 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: ["correlation-is-not-causation", "appeal-to-popularity"],
     seoTitle: "Hasty Generalisation – The Fallacy Guide",
     seoDescription:
-      "Hasty generalisation stretches small samples into big claims. Learn the warning signs and responses.",
+      "Hasty generalisation stretches small samples into big claims. Learn the warning signs and responses."
   },
   {
     slug: "correlation-is-not-causation",
@@ -4471,14 +4471,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Notice two trends occur together.",
       "Assume one trend causes the other.",
-      "Ignore confounding variables or reverse causality.",
+      "Ignore confounding variables or reverse causality."
     ],
     everydayExample: {
       setup: "Comparing sales and social media.",
       dialogue: [
         "A: “Every time we post memes, sales rise. Memes cause revenue.”",
-        "B: “Or maybe we post memes during campaigns that already boost sales.”",
-      ],
+        "B: “Or maybe we post memes during campaigns that already boost sales.”"
+      ]
     },
     seriousExample:
       "A city links higher bike-share use to rising rents and claims bike lanes cause gentrification, ignoring broader economic drivers.",
@@ -4489,12 +4489,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Causal language (“causes,” “leads to”) attached to mere co-movement.",
       "Little discussion of controls, confounders, or alternative explanations.",
-      "Timing or mechanisms are vague or missing.",
+      "Timing or mechanisms are vague or missing."
     ],
     responseStrategies: [
       "Ask for evidence ruling out confounders or reversed causality.",
       "Request experimental or quasi-experimental support.",
-      "Rephrase the claim as a hypothesis needing testing.",
+      "Rephrase the claim as a hypothesis needing testing."
     ],
     severity: "Medium",
     typeLabel: "Logical fallacy",
@@ -4502,7 +4502,7 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: ["hasty-generalisation", "affirming-the-consequent"],
     seoTitle: "Correlation Is Not Causation – The Fallacy Guide",
     seoDescription:
-      "Correlation alone cannot prove cause. See the pattern, examples, and questions that expose the gap.",
+      "Correlation alone cannot prove cause. See the pattern, examples, and questions that expose the gap."
   },
   {
     slug: "affirming-the-consequent",
@@ -4516,14 +4516,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "If A then B is asserted.",
       "B is observed.",
-      "Conclude A is true because B is present.",
+      "Conclude A is true because B is present."
     ],
     everydayExample: {
       setup: "Troubleshooting a device.",
       dialogue: [
         "A: “If the battery is dead, the phone won’t turn on. It won’t turn on, so the battery is dead.”",
-        "B: “Or the charger port or power button could be faulty.”",
-      ],
+        "B: “Or the charger port or power button could be faulty.”"
+      ]
     },
     seriousExample:
       "Investigators assume a suspect is guilty because a piece of evidence predicted for guilt is present, ignoring other explanations for the evidence.",
@@ -4534,12 +4534,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "A conditional statement is reversed without eliminating other causes.",
       "Presence of an outcome is treated as conclusive proof of a single cause.",
-      "Other possible explanations are ignored or dismissed quickly.",
+      "Other possible explanations are ignored or dismissed quickly."
     ],
     responseStrategies: [
       "List other plausible causes for the observed result.",
       "Show that the original conditional does not claim exclusivity.",
-      "Ask for evidence eliminating alternative explanations.",
+      "Ask for evidence eliminating alternative explanations."
     ],
     severity: "Medium",
     typeLabel: "Logical fallacy",
@@ -4547,7 +4547,7 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: ["correlation-is-not-causation", "begging-the-question"],
     seoTitle: "Affirming the Consequent – The Fallacy Guide",
     seoDescription:
-      "Affirming the consequent mistakes an effect for proof of a single cause. Learn the invalid form and counters.",
+      "Affirming the consequent mistakes an effect for proof of a single cause. Learn the invalid form and counters."
   },
   {
     slug: "equivocation",
@@ -4561,13 +4561,13 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Use a term with multiple meanings.",
       "Switch meanings mid-argument.",
-      "Treat the conclusion as supported by the shifted premise.",
+      "Treat the conclusion as supported by the shifted premise."
     ],
     everydayExample: {
       setup: "Playful wordplay.",
       dialogue: [
-        "A: “Feathers are light. What is light cannot be dark. Therefore feathers cannot be dark.”",
-      ],
+        "A: “Feathers are light. What is light cannot be dark. Therefore feathers cannot be dark.”"
+      ]
     },
     seriousExample:
       "A policy document claims a rule is ‘fine’ (penalized) but later cites the same rule as ‘fine’ (acceptable) to justify enforcement decisions.",
@@ -4578,12 +4578,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Key terms with multiple meanings are reused without clarification.",
       "The argument seems to hinge on wordplay.",
-      "Clarifying the definitions makes the conclusion no longer follow.",
+      "Clarifying the definitions makes the conclusion no longer follow."
     ],
     responseStrategies: [
       "Define the term explicitly and stick to one meaning.",
       "Re-evaluate the argument with clarified definitions.",
-      "Ask which meaning is intended at each step.",
+      "Ask which meaning is intended at each step."
     ],
     severity: "Medium",
     typeLabel: "Logical fallacy",
@@ -4591,7 +4591,7 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: ["no-true-scotsman", "loaded-question"],
     seoTitle: "Equivocation Fallacy – The Fallacy Guide",
     seoDescription:
-      "Equivocation swaps meanings mid-argument. Learn how to spot shifting definitions and clarify them.",
+      "Equivocation swaps meanings mid-argument. Learn how to spot shifting definitions and clarify them."
   },
   {
     slug: "no-true-scotsman",
@@ -4605,15 +4605,15 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Make a broad claim about a group.",
       "Face a counterexample.",
-      "Redefine the group to exclude the counterexample.",
+      "Redefine the group to exclude the counterexample."
     ],
     everydayExample: {
       setup: "Sports fandom debate.",
       dialogue: [
         "A: “No true fan ever criticises the team.”",
         "B: “I criticise the team and still support them.”",
-        "A: “Then you’re not a true fan.”",
-      ],
+        "A: “Then you’re not a true fan.”"
+      ]
     },
     seriousExample:
       "A movement claims it is peaceful. When violence occurs by members, leaders insist those individuals were never “real” members, avoiding responsibility.",
@@ -4624,12 +4624,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "Definitions shift after counterexamples appear.",
       "Membership is retroactively revoked to salvage a claim.",
-      "Standards for being “true” are vague or newly introduced.",
+      "Standards for being “true” are vague or newly introduced."
     ],
     responseStrategies: [
       "Fix the definition and ask whether the counterexample fits it.",
       "Point out the moving goalposts.",
-      "Invite revising the generalisation instead of redefining membership.",
+      "Invite revising the generalisation instead of redefining membership."
     ],
     severity: "Medium",
     typeLabel: "Logical fallacy",
@@ -4637,7 +4637,7 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: ["equivocation", "loaded-question"],
     seoTitle: "No True Scotsman – The Fallacy Guide",
     seoDescription:
-      "No True Scotsman protects a claim by redefining membership. Spot the moving goalposts and respond.",
+      "No True Scotsman protects a claim by redefining membership. Spot the moving goalposts and respond."
   },
   {
     slug: "loaded-question",
@@ -4651,14 +4651,14 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Pose a question containing an embedded claim.",
       "Require a yes/no response that accepts the premise.",
-      "Exploit the forced admission that comes with answering directly.",
+      "Exploit the forced admission that comes with answering directly."
     ],
     everydayExample: {
       setup: "Office politics.",
       dialogue: [
         "A: “When did you stop ignoring the security policy?”",
-        "B: “I never ignored it. Let’s address the premise first.”",
-      ],
+        "B: “I never ignored it. Let’s address the premise first.”"
+      ]
     },
     seriousExample:
       "In a press conference, a reporter asks, “Why are you hiding the safety report?” implying concealment regardless of the answer.",
@@ -4669,12 +4669,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "A question smuggles in an accusation or conclusion.",
       "A direct answer implies agreement with a hidden premise.",
-      "Pushback on the premise is framed as evasive.",
+      "Pushback on the premise is framed as evasive."
     ],
     responseStrategies: [
       "Decline the premise and reframe: “I reject that assumption. Here’s what happened.”",
       "Separate the question into fair components before answering.",
-      "Point out the trap to the audience explicitly.",
+      "Point out the trap to the audience explicitly."
     ],
     severity: "Medium",
     typeLabel: "Logical fallacy",
@@ -4682,7 +4682,7 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: ["no-true-scotsman", "ad-hominem"],
     seoTitle: "Loaded Question – The Fallacy Guide",
     seoDescription:
-      "Loaded questions smuggle assumptions into a conversation. Learn to spot the trap and respond cleanly.",
+      "Loaded questions smuggle assumptions into a conversation. Learn to spot the trap and respond cleanly."
   },
   {
     slug: "gish-gallop",
@@ -4696,13 +4696,13 @@ export const fallacies: Fallacy[] = [
     pattern: [
       "Fire off many quick claims in succession.",
       "Avoid depth; move on before responses land.",
-      "Rely on time asymmetry to make rebuttal impractical.",
+      "Rely on time asymmetry to make rebuttal impractical."
     ],
     everydayExample: {
       setup: "A meeting about product strategy.",
       dialogue: [
-        "A: Provides ten scattered objections in one minute—pricing, colors, hiring, market trends—then says, “See, the plan has too many problems.”",
-      ],
+        "A: Provides ten scattered objections in one minute—pricing, colors, hiring, market trends—then says, “See, the plan has too many problems.”"
+      ]
     },
     seriousExample:
       "In a televised debate, a speaker rattles off a dozen questionable statistics and anecdotes, leaving opponents unable to address each within time limits.",
@@ -4713,12 +4713,12 @@ export const fallacies: Fallacy[] = [
     recognitionPoints: [
       "A rapid sequence of loosely related claims with minimal support.",
       "The speaker moves on quickly when challenged.",
-      "Rebutting properly would take far longer than making the claims.",
+      "Rebutting properly would take far longer than making the claims."
     ],
     responseStrategies: [
       "Group claims by theme and address representative examples.",
       "Call out the tactic and reset the pace of discussion.",
-      "Refuse to be rushed; prioritise the most consequential claims first.",
+      "Refuse to be rushed; prioritise the most consequential claims first."
     ],
     severity: "Medium",
     typeLabel: "Logical fallacy",
@@ -4726,6 +4726,6 @@ export const fallacies: Fallacy[] = [
     relatedSlugs: ["red-herring", "strawman"],
     seoTitle: "Gish Gallop – The Fallacy Guide",
     seoDescription:
-      "The Gish Gallop overwhelms with many weak claims. Learn to recognize the firehose pattern and respond effectively.",
-  },
-];
+      "The Gish Gallop overwhelms with many weak claims. Learn to recognize the firehose pattern and respond effectively."
+  }
+]

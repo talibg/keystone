@@ -1,17 +1,17 @@
-import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { Breadcrumbs } from "@/components/Breadcrumbs"
 
 type PageHeaderProps = {
-  title: string;
-  description: string;
-  eyebrow?: string;
-  breadcrumbs?: { label: string; href?: string }[];
-};
+  title: string
+  description: string
+  eyebrow?: string
+  breadcrumbs?: { label: string; href?: string }[]
+}
 
 export function PageHeader({
   title,
   description,
   eyebrow,
-  breadcrumbs,
+  breadcrumbs
 }: PageHeaderProps) {
   return (
     <div className="space-y-3">
@@ -26,5 +26,5 @@ export function PageHeader({
         <p className="text-muted-foreground">{description}</p>
       </div>
     </div>
-  );
+  )
 }

@@ -1,15 +1,16 @@
-import { ArrowRight } from "lucide-react";
-import Link from "next/link";
-import { FallacyCard } from "@/components/FallacyCard";
-import { CategoriesGrid } from "@/components/home/CategoriesGrid";
-import { HeroSection } from "@/components/home/HeroSection";
-import { Button } from "@/components/ui/button";
-import { getAllCategories, getAllFallacies } from "@/lib/fallacies";
+import { ArrowRight } from "lucide-react"
+import Link from "next/link"
+import { FallacyCard } from "@/components/FallacyCard"
+import { CategoriesGrid } from "@/components/home/CategoriesGrid"
+import { HeroSection } from "@/components/home/HeroSection"
+import { Button } from "@/components/ui/button"
+import { getAllCategories, getAllFallacies } from "@/lib/fallacies"
+import { absoluteUrl } from "@/lib/seo"
 
 export default function Home() {
-  const categories = getAllCategories();
-  const fallacies = getAllFallacies();
-  const featuredFallacies = fallacies.slice(0, 9);
+  const categories = getAllCategories()
+  const fallacies = getAllFallacies()
+  const featuredFallacies = fallacies.slice(0, 9)
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -17,16 +18,16 @@ export default function Home() {
     name: "The Fallacy Guide",
     description:
       "The most comprehensive and modern guide to logical fallacies. Learn to spot, understand, and counter common errors in reasoning.",
-    url: "https://fallacyguide.com",
+    url: absoluteUrl("/"),
     potentialAction: {
       "@type": "SearchAction",
       target: {
         "@type": "EntryPoint",
-        urlTemplate: "https://fallacyguide.com/search?q={search_term_string}",
+        urlTemplate: absoluteUrl("/search?q={search_term_string}")
       },
-      "query-input": "required name=search_term_string",
-    },
-  };
+      "query-input": "required name=search_term_string"
+    }
+  }
 
   return (
     <>
@@ -84,5 +85,5 @@ export default function Home() {
         </section>
       </div>
     </>
-  );
+  )
 }

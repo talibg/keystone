@@ -1,13 +1,13 @@
-import Link from "next/link";
-import { CategoryBadge } from "@/components/CategoryBadge";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import type { Fallacy } from "@/data/fallacies";
+import Link from "next/link"
+import { CategoryBadge } from "@/components/CategoryBadge"
+import { Badge } from "@/components/ui/badge"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import type { Fallacy } from "@/data/fallacies"
 
 type Props = {
-  fallacy: Fallacy;
-  showContexts?: boolean;
-};
+  fallacy: Fallacy
+  showContexts?: boolean
+}
 
 export function FallacyCard({ fallacy, showContexts = false }: Props) {
   return (
@@ -40,5 +40,5 @@ export function FallacyCard({ fallacy, showContexts = false }: Props) {
         </div>
       </Card>
     </Link>
-  );
+  )
 }

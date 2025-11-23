@@ -5,76 +5,76 @@ import {
   Clock,
   Info,
   MessageSquare,
-  Shield,
-} from "lucide-react";
-import type { Metadata } from "next";
-import Link from "next/link";
-import { notFound } from "next/navigation";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { FallacySummaryCard } from "@/components/FallacySummaryCard";
-import ShareButton from "@/components/ShareButton";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import type { Fallacy } from "@/data/fallacies";
+  Shield
+} from "lucide-react"
+import type { Metadata } from "next"
+import Link from "next/link"
+import { notFound } from "next/navigation"
+import { Breadcrumbs } from "@/components/Breadcrumbs"
+import { FallacySummaryCard } from "@/components/FallacySummaryCard"
+import ShareButton from "@/components/ShareButton"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import type { Fallacy } from "@/data/fallacies"
 import {
   getAllFallacies,
   getCategoryBySlug,
   getCategoryClasses,
   getFallacyBySlug,
-  getPrevNextFallacies,
-} from "@/lib/fallacies";
+  getPrevNextFallacies
+} from "@/lib/fallacies"
+import { absoluteUrl, canonicalPath } from "@/lib/seo"
 
 type FallacyPageProps = {
-  params: Promise<{ slug: string }>;
-};
+  params: Promise<{ slug: string }>
+}
 
-const siteUrl = "https://fallacyguide.com";
-const defaultOgImage = `${siteUrl}/og-default.svg`;
-const WORDS_PER_MINUTE = 220;
+const defaultOgImage = canonicalPath("/og-default.svg")
+const WORDS_PER_MINUTE = 220
 
 const estimateReadingTime = (text: string) => {
-  const words = text.trim().split(/\s+/).length;
-  const minutes = Math.max(1, Math.round(words / WORDS_PER_MINUTE));
-  return `${minutes}-${minutes + 1} min read`;
-};
+  const words = text.trim().split(/\s+/).length
+  const minutes = Math.max(1, Math.round(words / WORDS_PER_MINUTE))
+  return `${minutes}-${minutes + 1} min read`
+}
 
 export function generateStaticParams() {
-  return getAllFallacies().map((fallacy) => ({ slug: fallacy.slug }));
+  return getAllFallacies().map((fallacy) => ({ slug: fallacy.slug }))
 }
 
 export async function generateMetadata({
-  params,
+  params
 }: FallacyPageProps): Promise<Metadata> {
-  const { slug } = await params;
-  const fallacy = getFallacyBySlug(slug);
+  const { slug } = await params
+  const fallacy = getFallacyBySlug(slug)
 
   if (!fallacy) {
     return {
-      title: "Fallacy not found – The Fallacy Guide",
-    };
+      title: "Fallacy not found – The Fallacy Guide"
+    }
   }
 
-  const canonical = `${siteUrl}/fallacies/${fallacy.slug}`;
-  const ogImage = `${siteUrl}/og/fallacy/${fallacy.slug}`;
-  const nameIncludesFallacy = fallacy.name.toLowerCase().includes("fallacy");
+  const canonical = canonicalPath(`/fallacies/${fallacy.slug}`)
+  const ogImage = canonicalPath(`/og/fallacy/${fallacy.slug}`)
+  const nameIncludesFallacy = fallacy.name.toLowerCase().includes("fallacy")
   const pageTitle = nameIncludesFallacy
     ? `${fallacy.name}: Definition, Examples & How to Fix It`
-    : `${fallacy.name} Fallacy: Definition, Examples & How to Fix It`;
-  const datePublished = "2024-12-01";
-  const dateModified = new Date().toISOString();
+    : `${fallacy.name} Fallacy: Definition, Examples & How to Fix It`
+  const datePublished = "2024-12-01"
+  const dateModified = new Date().toISOString()
   const ogImageEntry = {
     url: ogImage,
     width: 1200,
     height: 630,
-    alt: `${fallacy.name} — ${fallacy.shortDefinition}`,
-  };
+    alt: `${fallacy.name} — ${fallacy.shortDefinition}`
+  }
 
   return {
     title: { absolute: pageTitle },
     description: fallacy.seoDescription,
     alternates: {
-      canonical,
+      canonical
     },
     openGraph: {
       type: "article",
@@ -83,52 +83,51 @@ export async function generateMetadata({
       url: canonical,
       images: [ogImageEntry],
       publishedTime: datePublished,
-      modifiedTime: dateModified,
+      modifiedTime: dateModified
     },
     twitter: {
       card: "summary_large_image",
       title: pageTitle,
       description: fallacy.seoDescription,
-      images: [ogImage || defaultOgImage],
-    },
-  };
+      images: [ogImage || defaultOgImage]
+    }
+  }
 }
 
 export default async function FallacyPage({ params }: FallacyPageProps) {
-  const { slug } = await params;
-  const fallacy = getFallacyBySlug(slug);
+  const { slug } = await params
+  const fallacy = getFallacyBySlug(slug)
 
   if (!fallacy) {
-    notFound();
+    notFound()
   }
 
-  const category = getCategoryBySlug(fallacy.category.slug);
+  const category = getCategoryBySlug(fallacy.category.slug)
   const related = fallacy.relatedSlugs
     .map((relatedSlug) => getFallacyBySlug(relatedSlug))
-    .filter((item): item is Fallacy => Boolean(item));
+    .filter((item): item is Fallacy => Boolean(item))
 
   const { prev: previous, next } = getPrevNextFallacies(
     fallacy.slug,
-    "category",
-  );
+    "category"
+  )
   const categorySiblings = getAllFallacies().filter(
     (item) =>
-      item.category.slug === fallacy.category.slug &&
-      item.slug !== fallacy.slug,
-  );
+      item.category.slug === fallacy.category.slug && item.slug !== fallacy.slug
+  )
   const relatedFallback = categorySiblings.filter(
-    (item) => !fallacy.relatedSlugs.includes(item.slug),
-  );
+    (item) => !fallacy.relatedSlugs.includes(item.slug)
+  )
   const relatedDisplay = (related.length > 0 ? related : relatedFallback).slice(
     0,
-    5,
-  );
-  const nameIncludesFallacy = fallacy.name.toLowerCase().includes("fallacy");
+    5
+  )
+  const nameIncludesFallacy = fallacy.name.toLowerCase().includes("fallacy")
   const pageTitle = nameIncludesFallacy
     ? `${fallacy.name}: Definition, Examples & How to Fix It`
-    : `${fallacy.name} Fallacy: Definition, Examples & How to Fix It`;
-  const datePublished = "2024-12-01";
-  const dateModified = new Date().toISOString();
+    : `${fallacy.name} Fallacy: Definition, Examples & How to Fix It`
+  const datePublished = "2024-12-01"
+  const dateModified = new Date().toISOString()
   const readingTime = estimateReadingTime(
     [
       fallacy.explanation,
@@ -136,29 +135,29 @@ export default async function FallacyPage({ params }: FallacyPageProps) {
       fallacy.whyItIsFallacious,
       fallacy.whyPeopleUseIt,
       fallacy.responseStrategies.join(" "),
-      fallacy.recognitionPoints.join(" "),
-    ].join(" "),
-  );
+      fallacy.recognitionPoints.join(" ")
+    ].join(" ")
+  )
   const fallacyHeading = nameIncludesFallacy
     ? fallacy.name
-    : `The ${fallacy.name} Fallacy`;
+    : `The ${fallacy.name} Fallacy`
   const explanationHeading = nameIncludesFallacy
     ? `What is the ${fallacy.name}?`
-    : `What is the ${fallacy.name} fallacy?`;
-  const examplesHeading = `Examples of ${fallacy.name} in Everyday Life`;
+    : `What is the ${fallacy.name} fallacy?`
+  const examplesHeading = `Examples of ${fallacy.name} in Everyday Life`
   const summaryPoints = [
     `Definition: ${fallacy.shortDefinition}`,
     `Impact: ${fallacy.name} distorts reasoning by ${fallacy.whyItIsFallacious}`,
-    `Identify: Look for patterns like ${fallacy.pattern[0] ?? "a repeated shortcut in reasoning"}`,
-  ];
+    `Identify: Look for patterns like ${fallacy.pattern[0] ?? "a repeated shortcut in reasoning"}`
+  ]
   const commonPhrases = [
     `“${fallacy.name}” style claim: ${fallacy.shortDefinition}`,
     `Watch for phrasing that skips evidence, e.g. "${fallacy.shortDefinition.split(".")[0]}"`,
     fallacy.pattern[0]
       ? `Pattern hint: ${fallacy.pattern[0]}`
-      : "Pattern hint: leaps that dodge evidence",
-  ];
-  const variants = relatedDisplay.slice(0, 3);
+      : "Pattern hint: leaps that dodge evidence"
+  ]
+  const variants = relatedDisplay.slice(0, 3)
   const toc = [
     { label: "Summary", href: "#summary" },
     { label: "Explanation", href: "#explanation" },
@@ -167,15 +166,24 @@ export default async function FallacyPage({ params }: FallacyPageProps) {
     { label: "Examples", href: "#examples" },
     { label: "Often Confused With", href: "#confused-with" },
     { label: "FAQ", href: "#faq" },
-    { label: "Further Reading", href: "#further-reading" },
-  ];
+    { label: "Further Reading", href: "#further-reading" }
+  ]
+  const canonical = canonicalPath(`/fallacies/${fallacy.slug}`)
+  const fallacyUrl = absoluteUrl(canonical)
+  const categoryPath = category
+    ? canonicalPath(`/categories/${category.slug}`)
+    : canonicalPath("/categories")
+  const categoryUrl = category
+    ? absoluteUrl(categoryPath)
+    : absoluteUrl("/categories")
+  const homeUrl = absoluteUrl("/")
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: pageTitle,
     description: fallacy.seoDescription,
-    url: `${siteUrl}/fallacies/${fallacy.slug}`,
+    url: fallacyUrl,
     inLanguage: "en",
     datePublished,
     dateModified,
@@ -185,20 +193,20 @@ export default async function FallacyPage({ params }: FallacyPageProps) {
       ? {
           "@type": "CollectionPage",
           name: category.name,
-          url: `${siteUrl}/categories/${category.slug}`,
+          url: categoryUrl
         }
       : undefined,
     author: {
       "@type": "Organization",
       name: "The Fallacy Guide Editorial Team",
-      url: siteUrl,
+      url: homeUrl
     },
     publisher: {
       "@type": "Organization",
       name: "The Fallacy Guide",
-      url: siteUrl,
-    },
-  };
+      url: homeUrl
+    }
+  }
 
   const breadcrumbList = {
     "@context": "https://schema.org",
@@ -208,30 +216,28 @@ export default async function FallacyPage({ params }: FallacyPageProps) {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: siteUrl,
+        item: homeUrl
       },
       {
         "@type": "ListItem",
         position: 2,
         name: category ? category.name : "Categories",
-        item: category
-          ? `${siteUrl}/categories/${category.slug}`
-          : `${siteUrl}/categories`,
+        item: category ? categoryUrl : absoluteUrl("/categories")
       },
       {
         "@type": "ListItem",
         position: 3,
         name: fallacy.name,
-        item: `${siteUrl}/fallacies/${fallacy.slug}`,
-      },
-    ],
-  };
+        item: fallacyUrl
+      }
+    ]
+  }
 
-  const confusedWith = relatedDisplay[0];
+  const confusedWith = relatedDisplay[0]
   const faqEntries = [
     {
       question: `Is ${fallacy.name} always invalid?`,
-      answer: `${fallacy.name} signals a weak reasoning pattern. Even if the conclusion is true, the path to it is unreliable and should be rebuilt with sound support.`,
+      answer: `${fallacy.name} signals a weak reasoning pattern. Even if the conclusion is true, the path to it is unreliable and should be rebuilt with sound support.`
     },
     {
       question: confusedWith
@@ -239,19 +245,19 @@ export default async function FallacyPage({ params }: FallacyPageProps) {
         : `How is ${fallacy.name} different from similar fallacies?`,
       answer: confusedWith
         ? `${fallacy.name} follows the pattern listed here, while ${confusedWith.name} fails in a different way. Looking at the pattern helps choose the right diagnosis.`
-        : `${fallacy.name} has its own distinct pattern—compare the steps to nearby fallacies to see why this one misleads.`,
+        : `${fallacy.name} has its own distinct pattern—compare the steps to nearby fallacies to see why this one misleads.`
     },
     {
       question: `Where does ${fallacy.name} commonly appear?`,
       answer:
-        "You will find it in everyday debates, opinion columns, marketing claims, and quick social posts—anywhere speed or emotion encourages shortcuts.",
+        "You will find it in everyday debates, opinion columns, marketing claims, and quick social posts—anywhere speed or emotion encourages shortcuts."
     },
     {
       question: `Can ${fallacy.name} ever be reasonable?`,
       answer:
-        "It can feel persuasive, but it remains logically weak. A careful version should replace the fallacious step with evidence or valid structure.",
-    },
-  ];
+        "It can feel persuasive, but it remains logically weak. A careful version should replace the fallacious step with evidence or valid structure."
+    }
+  ]
 
   const faqJsonLd = {
     "@context": "https://schema.org",
@@ -261,10 +267,10 @@ export default async function FallacyPage({ params }: FallacyPageProps) {
       name: entry.question,
       acceptedAnswer: {
         "@type": "Answer",
-        text: entry.answer,
-      },
-    })),
-  };
+        text: entry.answer
+      }
+    }))
+  }
 
   return (
     <article className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
@@ -281,7 +287,7 @@ export default async function FallacyPage({ params }: FallacyPageProps) {
             category
               ? { label: category.name, href: `/categories/${category.slug}` }
               : { label: "Categories", href: "/categories" },
-            { label: fallacy.name },
+            { label: fallacy.name }
           ]}
         />
         <div className="flex items-center justify-between text-sm text-muted-foreground gap-3">
@@ -292,7 +298,7 @@ export default async function FallacyPage({ params }: FallacyPageProps) {
           <ShareButton
             title={fallacy.name}
             text={fallacy.shortDefinition}
-            url={`${siteUrl}/fallacies/${fallacy.slug}`}
+            url={fallacyUrl}
           />
         </div>
       </div>
@@ -433,11 +439,11 @@ export default async function FallacyPage({ params }: FallacyPageProps) {
                   </div>
                   <div className="space-y-3">
                     {fallacy.everydayExample.dialogue.map((line) => {
-                      const [label, ...rest] = line.split(":");
+                      const [label, ...rest] = line.split(":")
                       const content = rest
                         .join(":")
                         .trim()
-                        .replace(/^"|"$/g, "");
+                        .replace(/^"|"$/g, "")
                       return (
                         <div
                           key={`${label}-${content}`}
@@ -450,7 +456,7 @@ export default async function FallacyPage({ params }: FallacyPageProps) {
                             {content}
                           </span>
                         </div>
-                      );
+                      )
                     })}
                   </div>
                 </CardContent>
@@ -768,5 +774,5 @@ export default async function FallacyPage({ params }: FallacyPageProps) {
         </aside>
       </div>
     </article>
-  );
+  )
 }

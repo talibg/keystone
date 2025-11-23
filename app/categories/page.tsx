@@ -1,23 +1,28 @@
-import { LayersIcon } from "lucide-react";
-import Link from "next/link";
-import { PageHeader } from "@/components/PageHeader";
+import { LayersIcon } from "lucide-react"
+import type { Metadata } from "next"
+import Link from "next/link"
+import { PageHeader } from "@/components/PageHeader"
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { getAllCategories } from "@/lib/fallacies";
+  CardTitle
+} from "@/components/ui/card"
+import { getAllCategories } from "@/lib/fallacies"
+import { canonicalPath } from "@/lib/seo"
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Categories – The Fallacy Guide",
   description:
     "Explore logical fallacies by category to understand how they group together.",
-};
+  alternates: {
+    canonical: canonicalPath("/categories")
+  }
+}
 
 export default function CategoriesPage() {
-  const categories = getAllCategories();
+  const categories = getAllCategories()
 
   return (
     <div className="space-y-6">
@@ -53,5 +58,5 @@ export default function CategoriesPage() {
         ))}
       </div>
     </div>
-  );
+  )
 }

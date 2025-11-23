@@ -1,8 +1,14 @@
-export const metadata = {
+import type { Metadata } from "next"
+import { canonicalPath } from "@/lib/seo"
+
+export const metadata: Metadata = {
   title: "Terms of Use",
   description:
     "Terms of use for The Fallacy Guide - legal terms and conditions for using this website.",
-};
+  alternates: {
+    canonical: canonicalPath("/terms")
+  }
+}
 
 export default function TermsPage() {
   return (
@@ -14,7 +20,7 @@ export default function TermsPage() {
           {new Date().toLocaleDateString("en-US", {
             month: "long",
             day: "numeric",
-            year: "numeric",
+            year: "numeric"
           })}
         </p>
       </header>
@@ -195,5 +201,5 @@ export default function TermsPage() {
         </p>
       </section>
     </div>
-  );
+  )
 }

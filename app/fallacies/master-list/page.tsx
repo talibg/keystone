@@ -1,11 +1,16 @@
-import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { masterList } from "@/data/masterList";
+import type { Metadata } from "next"
+import { Breadcrumbs } from "@/components/Breadcrumbs"
+import { masterList } from "@/data/masterList"
+import { canonicalPath } from "@/lib/seo"
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Master List of Logical Fallacies",
   description:
     "A comprehensive, category-organised master list of logical fallacies with concise summaries.",
-};
+  alternates: {
+    canonical: canonicalPath("/fallacies/master-list")
+  }
+}
 
 export default function MasterListPage() {
   return (
@@ -13,7 +18,7 @@ export default function MasterListPage() {
       <Breadcrumbs
         items={[
           { label: "Home", href: "/" },
-          { label: "Master List of Logical Fallacies" },
+          { label: "Master List of Logical Fallacies" }
         ]}
       />
 
@@ -57,5 +62,5 @@ export default function MasterListPage() {
         ))}
       </div>
     </div>
-  );
+  )
 }
